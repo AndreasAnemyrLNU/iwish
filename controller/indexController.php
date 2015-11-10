@@ -17,13 +17,13 @@ class IndexController
 
         //Init model/object from _POST['payload'] created @ github in a repo.
         $jsonObj = json_decode($_POST['payload']);
-        $jsonObjCommits     = $jsonObj->commits[0];
-        $jsonObjAuthor      = $jsonObjCommits->author;
-        $jsonObjCommitter   = $jsonObjCommits->committer;
-        $jsonObjAdded       = $jsonObjCommits->added;
-        $jsonObjRemoved     = $jsonObjCommits->removed;
-        $jsonObjModified    = $jsonObjCommits->removed;
-        $jsonObjRepository  = $jsonObj->repository;
+        $jsonObjCommits     = $jsonObj->        commits[0];
+        $jsonObjAuthor      = $jsonObjCommits-> author;
+        $jsonObjCommitter   = $jsonObjCommits-> committer;
+        $jsonObjAdded       = $jsonObjCommits-> added[0];
+        $jsonObjRemoved     = $jsonObjCommits-> removed[0];
+        $jsonObjModified    = $jsonObjCommits-> removed[0];
+        $jsonObjRepository  = $jsonObj->        repository;
 
         $author = new \model\Author
         (
