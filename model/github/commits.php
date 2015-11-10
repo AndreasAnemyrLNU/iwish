@@ -16,6 +16,7 @@ class commits
     private $message;
     private $timestamp;
     private $url;
+    private $author;
 
     /**
      * commits constructor.
@@ -24,21 +25,17 @@ class commits
      * @param $message
      * @param $timestamp
      * @param $url
+     * @param $author
      */
-    public function __construct($id, $distinct, $message, $timestamp, $url)
+
+    public function __construct($id, $distinct, $message, $timestamp, $url, $author)
     {
         $this->id = $id;
         $this->distinct = $distinct;
         $this->message = $message;
         $this->timestamp = $timestamp;
         $this->url = $url;
-
-
-
-
-
-
-
+        $this->author = $author;
     }
 
     /**
