@@ -10,6 +10,13 @@
 require_once("controller/indexController.php");
 
 
+//module
+//github
+require_once("model/github/commits.php");
+require_once("model/github/webhook.php");
+//
+
+
 
 $indexController = new \controller\indexController();
 
