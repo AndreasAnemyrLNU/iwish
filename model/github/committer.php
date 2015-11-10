@@ -9,7 +9,7 @@
 namespace model;
 
 
-class committer
+class Committer
 {
     private $name;
     private $email;

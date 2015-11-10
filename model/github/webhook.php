@@ -9,7 +9,7 @@
 namespace model;
 
 
-class webhook
+class Webhook
 {
     private $m_ref;
     private $m_before;
@@ -26,20 +26,20 @@ class webhook
     private $m_sender;
 
     public function __construct(
-                                    $ref,
-                                    $before,
-                                    $after,
-                                    $created,
-                                    $deleted,
-                                    $forced,
-                                    $base_ref,
-                                    $compare,
-                                    $commits,
-                                    $headCommit,
-                                    $repository,
-                                    $pusher,
-                                    $sender
-                                )
+        $ref,
+        $before,
+        $after,
+        $created,
+        $deleted,
+        $forced,
+        $base_ref,
+        $compare,
+        \model\Commits $commits,
+        $headCommit,
+        $repository,
+        $pusher,
+        $sender
+    )
     {
         $this->m_ref = $ref;
         $this->m_before = $before;
@@ -56,111 +56,5 @@ class webhook
         $this->m_sender = $sender;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getAfter()
-    {
-        return $this->m_after;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getBaseRef()
-    {
-        return $this->m_base_ref;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getBefore()
-    {
-        return $this->m_before;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCommits()
-    {
-        return $this->m_commits;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getComnpare()
-    {
-        return $this->m_compare;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCreated()
-    {
-        return $this->m_created;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getDeleted()
-    {
-        return $this->m_deleted;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getForced()
-    {
-        return $this->m_forced;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getHeadCommit()
-    {
-        return $this->m_headCommit;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPusher()
-    {
-        return $this->m_pusher;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getRef()
-    {
-        return $this->m_ref;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getRepository()
-    {
-        return $this->m_repository;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getSender()
-    {
-        return $this->m_sender;
-    }
-
-
 }
-
 

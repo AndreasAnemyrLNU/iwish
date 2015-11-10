@@ -9,49 +9,95 @@
 namespace controller;
 
 
-class indexController
+class IndexController
 {
 
     public function doIndex()
     {
 
         //Init model/object from _POST['payload'] created @ github in a repo.
-        $data = json_decode($_POST['payload']);
+        $jsonObj = json_decode($_POST['payload']);
+        $jsonObjCommits     = $jsonObj->commits[0];
+        $jsonObjAuthor      = $jsonObjCommits->author;
+        $jsonObjCommitter   = $jsonObjCommits->committer;
+        $jsonObjAdded       = $jsonObjCommits->added;
+        $jsonObjRemoved     = $jsonObjCommits->removed;
+        $jsonObjModified    = $jsonObjCommits->removed;
+        $jsonObjRepository  = $jsonObj->repository;
 
-        $author = new \model\author
+        $author = new \model\Author
         (
-            $data->{'commits'}[0]->{'author'}->{'name'},
-            $data->{'commits'}[0]->{'author'}->{'email'},
-            $data->{'commits'}[0]->{'author'}->{'username'}
+            $jsonObjAuthor->name,
+            $jsonObjAuthor->email,
+            $jsonObjAuthor->username
         );
 
-        $commits = new \model\commits
+        $committer = new\model\Committer
         (
-            $data->{'commits'}[0]->{'id'},
-            $data->{'commits'}[0]->{'distinct'},
-            $data->{'commits'}[0]->{'message'},
-            $data->{'commits'}[0]->{'timestamp'},
-            $data->{'commits'}[0]->{'url'},
-            $author
+            $jsonObjCommitter->name,
+            $jsonObjCommitter->email,
+            $jsonObjCommitter->username
         );
 
-        $payLoadDataGeneratedFromAWebHookAtGithub = new \model\webhook
+        $added = new\model\Added
         (
-            $data->{'ref'},
-            $data->{'before'},
-            $data->{'after'},
-            $data->{'created'},
-            $data->{'deleted'},
-            $data->{'forced'},
-            $data->{'base_ref'},
-            $data->{'compare'},
+            $jsonObjAdded
+        );
+
+        $removed = new\model\Removed
+        (
+            $jsonObjRemoved
+        );
+
+        $modified = new\model\Modified
+        (
+            $jsonObjModified
+        );
+
+        $commits = new \model\Commits
+        (
+            $jsonObjCommits->id,
+            $jsonObjCommits->distinct,
+            $jsonObjCommits->message,
+            $jsonObjCommits->timestamp,
+            $jsonObjCommits->url,
+            $author,
+            $committer,
+            $added,
+            $removed,
+            $modified
+        );
+
+
+        $repository = new \model\Repository
+        (
+            $jsonObjRepository->id,
+            $jsonObjRepository->name,
+            $jsonObjRepository->full_name,
+            new \model\Owner
+            (
+                $jsonObjRepository->owner->name,
+                $jsonObjRepository->owner->email
+            )
+        );
+
+        $payLoadDataGeneratedFromAWebHookAtGithub = new \model\Webhook
+        (
+            $jsonObj->ref,
+            $jsonObj->before,
+            $jsonObj->after,
+            $jsonObj->created,
+            $jsonObj->deleted,
+            $jsonObj->forced,
+            $jsonObj->base_ref,
+            $jsonObj->compare,
             $commits,
-            $data->{'head_commit'},
-            $data->{'repository'},
-            $data->{'pusher'},
-            $data->{'sender'}
+            // TODO -> No parsing fixed. Just parsting string but not obj init...
+            $jsonObj->head_commit,
+            $repository,
+            $jsonObj->pusher,
+            $jsonObj->sender
         );
-
 
 
         file_put_contents('webhook.data', print_r($payLoadDataGeneratedFromAWebHookAtGithub, true));

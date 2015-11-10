@@ -9,7 +9,7 @@
 namespace model;
 
 
-class author
+class Author
 {
     private $name;
     private $emial;

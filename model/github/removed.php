@@ -9,7 +9,7 @@
 namespace model;
 
 
-class removed
+class Removed
 {
     private $removed;
 

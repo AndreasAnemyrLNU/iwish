@@ -9,7 +9,7 @@
 namespace model;
 
 
-class commits
+class Commits
 {
     private $id;
     private $distinct;
@@ -17,6 +17,10 @@ class commits
     private $timestamp;
     private $url;
     private $author;
+    private $committer;
+    private $added;
+    private $removed;
+    private $modified;
 
     /**
      * commits constructor.
@@ -26,57 +30,23 @@ class commits
      * @param $timestamp
      * @param $url
      * @param $author
+     * @param $committer
+     * @param $added
+     * @param $removed
+     * @param $modified
      */
 
-    public function __construct($id, $distinct, $message, $timestamp, $url, $author)
+    public function __construct($id, $distinct, $message, $timestamp, $url, $author, $committer, $added, $removed, $modified)
     {
-        $this->id = $id;
-        $this->distinct = $distinct;
-        $this->message = $message;
-        $this->timestamp = $timestamp;
-        $this->url = $url;
-        $this->author = $author;
+        $this->id           = $id;
+        $this->distinct     = $distinct;
+        $this->message      = $message;
+        $this->timestamp    = $timestamp;
+        $this->url          = $url;
+        $this->author       = $author;
+        $this->committer    = $committer;
+        $this->added        = $added;
+        $this->removed      = $removed;
+        $this->modified     = $modified;
     }
-
-    /**
-     * @return mixed
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getDistinct()
-    {
-        return $this->distinct;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getMessage()
-    {
-        return $this->message;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getTimestamp()
-    {
-        return $this->timestamp;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getUrl()
-    {
-        return $this->url;
-    }
-
-
 }

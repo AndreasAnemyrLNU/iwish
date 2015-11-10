@@ -9,7 +9,7 @@
 namespace model;
 
 
-class added
+class Added
 {
     private $added;
 
