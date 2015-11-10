@@ -7,5 +7,10 @@
  */
 
 
+require_once("controller/indexController.php");
 
 
+
+$indexController = new \controller\indexController();
+
+$indexController->doIndex();
