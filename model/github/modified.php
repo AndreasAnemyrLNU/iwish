@@ -9,7 +9,7 @@
 namespace model;
 
 
-class modified
+class Modified
 {
     private $modified;
 
