@@ -11,6 +11,7 @@ namespace controller;
 
 class indexController
 {
+
     public function doIndex()
     {
         file_put_contents(test.data, $_POST['payload']);
