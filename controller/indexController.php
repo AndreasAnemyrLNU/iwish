@@ -15,6 +15,7 @@ class IndexController
     public function doIndex()
     {
 
+//
         //Init model/object from _POST['payload'] created @ github in a repo.
         $jsonObj = json_decode($_POST['payload']);
         $jsonObjCommits     = $jsonObj->        commits[0];
