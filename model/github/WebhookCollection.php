@@ -27,7 +27,7 @@ class WebhookCollection
         return $this->webhooks;
     }
 
-    public function addSerializedWebhook($webhook)
+    public function addSerializedWebhook(\model\Webhook $webhook)
     {
         $this->webhooks[] = $webhook;
     }

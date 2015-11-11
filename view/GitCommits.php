@@ -24,10 +24,18 @@ class GitCommits
 
     public function getHTML()
     {
-        foreach($this->webhookCollection as $webhook)
+
+        $webHookCollection = $this->webhookCollection->getWebhooks();
+
+        foreach($webHookCollection as $webhook)
         {
-            echo $webhook;
+            $this->RenderWebHook($webhook);
         }
+    }
+
+    private function RenderWebHook(\model\Webhook $webhook)
+    {
+        echo $webhook->getSender()->getLogin();
     }
 
 }

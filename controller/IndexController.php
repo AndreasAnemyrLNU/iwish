@@ -24,7 +24,13 @@ class IndexController
         $dal = new \model\webhookFileSystemDAL();
         $webCollection = $dal->Read();
 
-        return new \view\GitCommits($webCollection);
+
+
+        $view = new \view\GitCommits($webCollection);
+
+        $view->getHTML();
+
+
 
         if($this->gitPayLoadView->DidGithubSendArchiveParamSetToTrue())
         {

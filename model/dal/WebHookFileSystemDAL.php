@@ -19,9 +19,19 @@ class webhookFileSystemDAL
 
         foreach($files as $file)
         {
-            $webHookCollection->addSerializedWebhook(unserialize(file_get_contents('data/webhook/' . $file)));
+            if($this->IgnoreThedDotAndTheDotDot($file))
+            {
+                $webhook = unserialize(file_get_contents('data/webhook/' . $file));
+                $webHookCollection->addSerializedWebhook($webhook);    
+            }
         }
-
         return $webHookCollection;
+    }
+
+    public function IgnoreThedDotAndTheDotDot($file)
+    {
+        if($file == '.' || '..')
+            return false;
+        return true;
     }
 }
