@@ -22,7 +22,7 @@ class IndexController
         $jsonObjAdded       = $jsonObjCommits->added;
         $jsonObjRemoved     = $jsonObjCommits->removed;
         $jsonObjModified    = $jsonObjCommits->modified;
-        $jsonObjHeadCommit  = $jsonObjCommits->head_commit;
+        $jsonObjHeadCommit  = $jsonObj->head_commit;
         $jsonObjRepository  = $jsonObj->repository;
         $jsonPusher         = $jsonObj->pusher;
         $jsonSender         = $jsonObj->sender;
