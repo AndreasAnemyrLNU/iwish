@@ -72,19 +72,19 @@ class IndexController
 
         $headCommit = new \model\HeadCommit
         (
-            $jsonObjHeadCommit->m_id,
-            $jsonObjHeadCommit->m_distinct,
-            $jsonObjHeadCommit->m_message,
-            $jsonObjHeadCommit->m_timestamp,
-            $jsonObjHeadCommit->m_url,
-            $jsonObjHeadCommit->m_author,
-            $jsonObjHeadCommit->m_name,
-            $jsonObjHeadCommit->m_email,
-            $jsonObjHeadCommit->m_username,
-            $jsonObjHeadCommit->m_committer,
-            $jsonObjHeadCommit->m_added,
-            $jsonObjHeadCommit->m_removed,
-            $jsonObjHeadCommit->m_modified
+            $jsonObjHeadCommit->id,
+            $jsonObjHeadCommit->distinct,
+            $jsonObjHeadCommit->message,
+            $jsonObjHeadCommit->timestamp,
+            $jsonObjHeadCommit->url,
+            $jsonObjHeadCommit->author,
+            $jsonObjHeadCommit->name,
+            $jsonObjHeadCommit->email,
+            $jsonObjHeadCommit->username,
+            $jsonObjHeadCommit->committer,
+            $jsonObjHeadCommit->added,
+            $jsonObjHeadCommit->removed,
+            $jsonObjHeadCommit->modified
         );
 
         $repository = new \model\Repository
