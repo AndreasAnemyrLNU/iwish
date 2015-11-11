@@ -27,10 +27,12 @@ class GitCommits
 
         $webHookCollection = $this->webhookCollection->getWebhooks();
 
+        $ret = "";
         foreach($webHookCollection as $webhook)
         {
             $this->RenderWebHook($webhook);
         }
+        return $ret;
     }
 
     private function RenderWebHook(\model\Webhook $webhook)
