@@ -21,6 +21,12 @@ class IndexController
     public function DoIndex()
     {
 
+        if($this->gitPayLoadView->DidGithubSendArchiveParamSetToTrue())
+        {
+            $gitController = new \controller\GitController();
+            $gitController->doParse($this->gitPayLoadView->GetPayLoad());
+        }
+
         $dal = new \model\webhookFileSystemDAL();
         $webCollection = $dal->Read();
 
@@ -28,14 +34,7 @@ class IndexController
 
         $view = new \view\GitCommits($webCollection);
 
-        $view->getHTML();
+        return $view;
 
-
-
-        if($this->gitPayLoadView->DidGithubSendArchiveParamSetToTrue())
-        {
-            $gitController = new \controller\GitController();
-            $gitController->doParse($this->gitPayLoadView->GetPayLoad());
-        }
     }
 }

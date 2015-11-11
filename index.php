@@ -30,17 +30,10 @@
     require_once("controller/GitController.php");
     // github
 
-try
-{
     $controller = new \controller\IndexController();
-    $controller->DoIndex();
-}
-catch (\Exception $e)
-{
-    print_r($e);
-}
+    $content = $controller->DoIndex();
 
-    //$pageHTML = new \view\indexPage($content->getHTML());
+    $pageHTML = new \view\indexPage($content->getHTML());
 
 
 
