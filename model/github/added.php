@@ -14,7 +14,7 @@ class Added
     private $added;
 
     /**
-     * added constructor.
+     * added constructor..
      * @param $added
      */
     public function __construct($added)

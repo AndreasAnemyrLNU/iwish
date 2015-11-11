@@ -34,6 +34,7 @@ class Commits
      * @param $added
      * @param $removed
      * @param $modified
+
      */
 
     public function __construct($id, $distinct, $message, $timestamp, $url, $author, $committer, $added, $removed, $modified)

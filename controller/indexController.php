@@ -14,8 +14,6 @@ class IndexController
 
     public function doIndex()
     {
-//sdffd
-//
         //Init model/object from _POST['payload'] created @ github in a repo.
         $jsonObj = json_decode($_POST['payload']);
         $jsonObjCommits     = $jsonObj->commits[0];
@@ -23,8 +21,9 @@ class IndexController
         $jsonObjCommitter   = $jsonObjCommits->committer;
         $jsonObjAdded       = $jsonObjCommits->added;
         $jsonObjRemoved     = $jsonObjCommits->removed;
-        $jsonObjModified    = $jsonObjCommits->removed;
+        $jsonObjModified    = $jsonObjCommits->modified;
         $jsonObjRepository  = $jsonObj->repository;
+        $jsonPusher         = $jsonObj->pusher;
 
         $author = new \model\Author
         (
@@ -82,6 +81,12 @@ class IndexController
             )
         );
 
+        $jsonPusher = new \model\Pusher
+        (
+            $jsonPusher->name,
+            $jsonPusher->email
+        );
+
         $payLoadDataGeneratedFromAWebHookAtGithub = new \model\Webhook
         (
             $jsonObj->ref,
@@ -97,7 +102,8 @@ class IndexController
             $jsonObj->head_commit,
             $repository,
             $jsonObj->pusher,
-            $jsonObj->sender
+            $jsonObj->sender,
+            $jsonObj->clone_url
         );
 
 

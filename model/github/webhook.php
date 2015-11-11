@@ -24,6 +24,7 @@ class Webhook
     private $m_repository;
     private $m_pusher;
     private $m_sender;
+    private $m_clone_url;
 
     public function __construct(
         $ref,
@@ -37,8 +38,9 @@ class Webhook
         \model\Commits $commits,
         $headCommit,
         $repository,
-        $pusher,
-        $sender
+        \model\Pusher $pusher,
+        $sender,
+        $clone_url
     )
     {
         $this->m_ref = $ref;
@@ -54,6 +56,8 @@ class Webhook
         $this->m_repository = $repository;
         $this->m_pusher = $pusher;
         $this->m_sender = $sender;
+
+        $this->m_clone_url = $clone_url;
     }
 
 }
