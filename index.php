@@ -7,7 +7,7 @@
  */
 
 
-    require_once("controller/indexController.php");
+    require_once("controller/IndexController.php");
 
     //module
     //github
