@@ -31,9 +31,9 @@
     // github
 
     $controller = new \controller\IndexController();
-    $content = $controller->DoIndex();
+    $view = $controller->DoIndex();
 
-    $pageHTML = new \view\indexPage($content->getHTML());
+    $pageHTML = new \view\indexPage($view->getHTML());
 
 
 
