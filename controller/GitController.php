@@ -200,7 +200,7 @@ class GitController
             $jsonSender->site_admin
         );
 
-        $convertedFromJsonToPhp = new \model\Webhook
+        $webhook = new \model\Webhook
         (
             $jsonObj->ref,
             $jsonObj->before,
@@ -217,7 +217,7 @@ class GitController
             $jsonSender
         );
 
-        file_put_contents('data/../data/' . $commits->getId(), serialize($convertedFromJsonToPhp));
+        file_put_contents('data/../data/webhook/' . $commits->getId(), serialize($webhook));
     }
 
 
