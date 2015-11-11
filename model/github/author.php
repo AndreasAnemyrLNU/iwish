@@ -16,7 +16,7 @@ class Author
     private $m_username;
 
     /**
-     * author constructor.
+     * author constructor...
      * @param $name
      * @param $emial
      * @param $username
