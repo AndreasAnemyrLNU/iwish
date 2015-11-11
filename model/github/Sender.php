@@ -92,4 +92,141 @@ class Sender
         $this->type = $type;
         $this->site_admin = $site_admin;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getLogin()
+    {
+        return $this->login;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAvatarUrl()
+    {
+        return $this->avatar_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getGravatarId()
+    {
+        return $this->gravatar_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHtmlUrlprivate()
+    {
+        return $this->html_urlprivate;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFollowersUrl()
+    {
+        return $this->followers_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFollowingUrl()
+    {
+        return $this->following_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getGistsUrl()
+    {
+        return $this->gists_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getStarredUrl()
+    {
+        return $this->starred_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSubscriptionsUrl()
+    {
+        return $this->subscriptions_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getOrganizationsUrl()
+    {
+        return $this->organizations_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getReposUrl()
+    {
+        return $this->repos_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEventsUrl()
+    {
+        return $this->events_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getReceivedEventsUrl()
+    {
+        return $this->received_events_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSiteAdmin()
+    {
+        return $this->site_admin;
+    }
+
 }
