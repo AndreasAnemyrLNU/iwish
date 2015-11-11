@@ -24,6 +24,7 @@ class IndexController
         $jsonObjModified    = $jsonObjCommits->modified;
         $jsonObjRepository  = $jsonObj->repository;
         $jsonPusher         = $jsonObj->pusher;
+        $jsonSender         = $jsonObj->sender;
 
         $author = new \model\Author
         (
@@ -87,6 +88,19 @@ class IndexController
             $jsonPusher->email
         );
 
+        $jsonSender = new \model\Sender
+        (
+            $jsonSender->login,
+            $jsonSender->id,
+            $jsonSender->avatar_url,
+            $jsonSender->gravatar_id,
+            $jsonSender->url,
+            $jsonSender->html_url,
+            $jsonSender->followers_url,
+            $jsonSender->following_url
+        );
+
+
         $payLoadDataGeneratedFromAWebHookAtGithub = new \model\Webhook
         (
             $jsonObj->ref,
@@ -98,11 +112,10 @@ class IndexController
             $jsonObj->base_ref,
             $jsonObj->compare,
             $commits,
-            // TODO -> No parsing fixed. Just parsting string but not obj init...
             $jsonObj->head_commit,
             $repository,
             $jsonPusher,
-            $jsonObj->sender,
+            $jsonSender,
             $jsonObj->clone_url
         );
 

@@ -39,7 +39,7 @@ class Webhook
         $headCommit,
         $repository,
         \model\Pusher $pusher,
-        $sender,
+        \model\Sender $sender,
         $clone_url
     )
     {
