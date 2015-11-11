@@ -11,9 +11,9 @@ namespace model;
 
 class Author
 {
-    private $name;
-    private $emial;
-    private $username;
+    private $m_name;
+    private $m_emial;
+    private $m_username;
 
     /**
      * author constructor.
@@ -23,9 +23,9 @@ class Author
      */
     public function __construct($name, $emial, $username)
     {
-        $this->name = $name;
-        $this->emial = $emial;
-        $this->username = $username;
+        $this->m_name = $name;
+        $this->m_emial = $emial;
+        $this->m_username = $username;
     }
 
 

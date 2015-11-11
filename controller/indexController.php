@@ -8,28 +8,22 @@
 
 namespace controller;
 
-
-use view\GitPayload;
-
 class IndexController
 {
 
     private $gitPayLoadView;
 
-    /**
-     * IndexController constructor.
-     */
     public function __construct()
     {
-        $this->gitPayLoadView = new GitPayload();
+        $this->gitPayLoadView = new \view\GitPayload();
     }
 
     public function doIndex()
     {
         if($this->gitPayLoadView->DidGithubSendArchiveParamSetToTrue())
         {
-            $controller = new \controller\GitController();
-            $controller->doGit();
+            $gitController = new \controller\GitController();
+            $gitController->doParse($this->gitPayLoadView->GetPayLoad());
         }
     }
 }

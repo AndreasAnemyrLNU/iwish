@@ -11,7 +11,7 @@ namespace model;
 
 class Added
 {
-    private $added;
+    private $m_added;
 
     /**
      * added constructor..
@@ -19,8 +19,6 @@ class Added
      */
     public function __construct($added)
     {
-        $this->added = $added;
+        $this->m_added = $added;
     }
-
-
 }

@@ -50,4 +50,86 @@ class Commits
         $this->removed      = $removed;
         $this->modified     = $modified;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDistinct()
+    {
+        return $this->distinct;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMessage()
+    {
+        return $this->message;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTimestamp()
+    {
+        return $this->timestamp;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCommitter()
+    {
+        return $this->committer;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAdded()
+    {
+        return $this->added;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRemoved()
+    {
+        return $this->removed;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getModified()
+    {
+        return $this->modified;
+    }
+
+
 }

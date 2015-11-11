@@ -60,7 +60,7 @@ class Sender
         $avatar_url,
         $gravatar_id,
         $url,
-        $html_urlprivate,
+        $html_url,
         $followers_url,
         $following_url,
         $gists_url,

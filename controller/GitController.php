@@ -82,7 +82,7 @@ class GitController
                 $jsonObjHeadCommitCommitter->email,
                 $jsonObjHeadCommitCommitter->username
             ),
-            new\model\Added
+            new \model\Added
             (
                 $jsonObjHeadCommitAdded
             ),
@@ -217,6 +217,8 @@ class GitController
             $jsonSender
         );
 
-        file_put_contents('data/../data/webhook.data', serialize($convertedFromJsonToPhp));
+        file_put_contents('data/../data/webhook.data' . $commits->getId(), serialize($convertedFromJsonToPhp));
     }
+
+
 }
