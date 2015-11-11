@@ -11,5 +11,24 @@ namespace model;
 
 class WebhookCollection
 {
+    private $webhooks;
 
+    /**
+     * WebhookCollection constructor.
+     * @param $webhooks
+     */
+    public function __construct()
+    {
+        $this->webhooks;
+    }
+
+    public function getWebhooks()
+    {
+        return $this->webhooks;
+    }
+
+    public function addSerializedWebhook($webhook)
+    {
+        $this->webhooks[] = $webhook;
+    }
 }

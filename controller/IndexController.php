@@ -18,8 +18,14 @@ class IndexController
         $this->gitPayLoadView = new \view\GitPayload();
     }
 
-    public function doIndex()
+    public function DoIndex()
     {
+
+        $dal = new \model\webhookFileSystemDAL();
+        $webCollection = $dal->Read();
+
+        return new \view\GitCommits($webCollection);
+
         if($this->gitPayLoadView->DidGithubSendArchiveParamSetToTrue())
         {
             $gitController = new \controller\GitController();

@@ -56,5 +56,109 @@ class Webhook
         $this->m_sender = $sender;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getRef()
+    {
+        return $this->m_ref;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBefore()
+    {
+        return $this->m_before;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAfter()
+    {
+        return $this->m_after;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCreated()
+    {
+        return $this->m_created;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDeleted()
+    {
+        return $this->m_deleted;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getForced()
+    {
+        return $this->m_forced;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBaseRef()
+    {
+        return $this->m_base_ref;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCompare()
+    {
+        return $this->m_compare;
+    }
+
+    /**
+     * @return Commits
+     */
+    public function getCommits()
+    {
+        return $this->m_commits;
+    }
+
+    /**
+     * @return HeadCommit
+     */
+    public function getHeadCommit()
+    {
+        return $this->m_headCommit;
+    }
+
+    /**
+     * @return Repository
+     */
+    public function getRepository()
+    {
+        return $this->m_repository;
+    }
+
+    /**
+     * @return Pusher
+     */
+    public function getPusher()
+    {
+        return $this->m_pusher;
+    }
+
+    /**
+     * @return Sender
+     */
+    public function getSender()
+    {
+        return $this->m_sender;
+    }
+
 }
 

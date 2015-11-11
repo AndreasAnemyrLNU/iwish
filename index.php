@@ -7,9 +7,11 @@
  *
  */
 
+    require_once("model/dal/WebHookFileSystemDAL.php");
+    require_once("view/IndexPage.php");
+    require_once("view/GitCommits.php");
     require_once("controller/IndexController.php");
 
-    //module
     //github
     require_once("model/github/Added.php");
     require_once("model/github/Author.php");
@@ -23,14 +25,15 @@
     require_once("model/github/Repository.php");
     require_once("model/github/Sender.php");
     require_once("model/github/Webhook.php");
+    require_once("model/github/WebhookCollection.php");
     require_once("view/GitPaylod.php");
     require_once("controller/GitController.php");
-
+    // github
 
     $controller = new \controller\IndexController();
-    $controller->doIndex();
+    $content = $controller->DoIndex();
 
-
+    $pageHTML = new \view\indexPage($content->getHTML());
 
 
 

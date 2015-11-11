@@ -11,5 +11,20 @@ namespace view;
 
 class indexPage
 {
-
+    public function getHTML($body)
+    {
+        return
+        "
+        <!DOCTYPE html>
+        <html lang=\"sv\">
+            <head>
+            <meta charset=\"UTF-8\">
+            <title></title>
+            </head>
+            <body>
+                $body
+            </body>
+        </html>
+        ";
+    }
 }
