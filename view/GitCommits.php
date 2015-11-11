@@ -30,14 +30,14 @@ class GitCommits
         $ret = "";
         foreach($webHookCollection as $webhook)
         {
-            $this->RenderWebHook($webhook);
+            $ret .= $this->RenderWebHook($webhook);
         }
         return $ret;
-    }
+}
 
     private function RenderWebHook(\model\Webhook $webhook)
     {
-        echo $webhook->getSender()->getLogin();
+        return $webhook->getSender()->getLogin();
     }
 
 }
