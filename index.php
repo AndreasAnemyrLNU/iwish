@@ -16,6 +16,7 @@ require_once("model/github/added.php");
 require_once("model/github/author.php");
 require_once("model/github/commits.php");
 require_once("model/github/Committer.php");
+require_once("model/github/HeadCommit.php");
 require_once("model/github/modified.php");
 require_once("model/github/Owner.php");
 require_once("model/github/removed.php");

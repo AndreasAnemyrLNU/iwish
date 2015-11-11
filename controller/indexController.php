@@ -22,6 +22,7 @@ class IndexController
         $jsonObjAdded       = $jsonObjCommits->added;
         $jsonObjRemoved     = $jsonObjCommits->removed;
         $jsonObjModified    = $jsonObjCommits->modified;
+        $jsonObjHeadCommit  = $jsonObjCommits->head_commit;
         $jsonObjRepository  = $jsonObj->repository;
         $jsonPusher         = $jsonObj->pusher;
         $jsonSender         = $jsonObj->sender;
@@ -69,6 +70,22 @@ class IndexController
             $modified
         );
 
+        $headCommit = new \model\HeadCommit
+        (
+            $jsonObjHeadCommit->m_id,
+            $jsonObjHeadCommit->m_distinct,
+            $jsonObjHeadCommit->m_message,
+            $jsonObjHeadCommit->m_timestamp,
+            $jsonObjHeadCommit->m_url,
+            $jsonObjHeadCommit->m_author,
+            $jsonObjHeadCommit->m_name,
+            $jsonObjHeadCommit->m_email,
+            $jsonObjHeadCommit->m_username,
+            $jsonObjHeadCommit->m_committer,
+            $jsonObjHeadCommit->m_added,
+            $jsonObjHeadCommit->m_removed,
+            $jsonObjHeadCommit->m_modified
+        );
 
         $repository = new \model\Repository
         (
@@ -177,11 +194,10 @@ class IndexController
             $jsonObj->base_ref,
             $jsonObj->compare,
             $commits,
-            $jsonObj->head_commit,
+            $headCommit,
             $repository,
             $jsonPusher,
-            $jsonSender,
-            $jsonObj->clone_url
+            $jsonSender
         );
 
 

@@ -35,8 +35,8 @@ class Webhook
         $base_ref,
         $compare,
         \model\Commits $commits,
-        $headCommit,
-        $repository,
+        \model\HeadCommit $headCommit,
+        \model\Repository $repository,
         \model\Pusher $pusher,
         \model\Sender $sender
     )
