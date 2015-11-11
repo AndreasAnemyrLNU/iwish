@@ -82,7 +82,7 @@ class IndexController
             ),
             $jsonObjRepository->private,
             $jsonObjRepository->html_url,
-            $jsonObjRepository->descriptions,
+            $jsonObjRepository->description,
             $jsonObjRepository->fork,
             $jsonObjRepository->url,
             $jsonObjRepository->forks_url,
