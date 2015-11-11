@@ -11,10 +11,9 @@ namespace controller;
 
 class GitController
 {
-    public function doGit()
+    public function doParse($payload)
     {
-        //Init model/object from _POST['payload'] created @ github in a repo.
-        $jsonObj                    = json_decode($_POST['payload']);
+        $jsonObj                    = json_decode($payload);
         $jsonObjCommits             = $jsonObj->commits[0];
         $jsonObjCommitsAuthor       = $jsonObjCommits->author;
         $jsonObjCommitsCommitter    = $jsonObjCommits->committer;
@@ -189,11 +188,19 @@ class GitController
             $jsonSender->url,
             $jsonSender->html_url,
             $jsonSender->followers_url,
-            $jsonSender->following_url
+            $jsonSender->following_url,
+            $jsonSender->gists_url,
+            $jsonSender->starred_url,
+            $jsonSender->subscriptions_url,
+            $jsonSender->organizations_url,
+            $jsonSender->repos_url,
+            $jsonSender->events_url,
+            $jsonSender->received_events_url,
+            $jsonSender->type,
+            $jsonSender->site_admin
         );
 
-
-        $payLoadDataGeneratedFromAWebHookAtGithub = new \model\Webhook
+        $convertedFromJsonToPhp = new \model\Webhook
         (
             $jsonObj->ref,
             $jsonObj->before,
@@ -210,9 +217,6 @@ class GitController
             $jsonSender
         );
 
-
-        file_put_contents('data/../data/webhook.data', serialize($payLoadDataGeneratedFromAWebHookAtGithub));
-        //file_put_contents('data/../data/webhook.data', print_r($payLoadDataGeneratedFromAWebHookAtGithub, true));
-
+        file_put_contents('data/../data/webhook.data', print_r($convertedFromJsonToPhp, false));
     }
 }
