@@ -15,46 +15,22 @@ class IndexController
     public function doIndex()
     {
         //Init model/object from _POST['payload'] created @ github in a repo.
-        $jsonObj = json_decode($_POST['payload']);
-        $jsonObjCommits     = $jsonObj->commits[0];
-        $jsonObjAuthor      = $jsonObjCommits->author;
-        $jsonObjCommitter   = $jsonObjCommits->committer;
-        $jsonObjAdded       = $jsonObjCommits->added;
-        $jsonObjRemoved     = $jsonObjCommits->removed;
-        $jsonObjModified    = $jsonObjCommits->modified;
-        $jsonObjHeadCommit  = $jsonObj->head_commit;
-        $jsonObjRepository  = $jsonObj->repository;
-        $jsonPusher         = $jsonObj->pusher;
-        $jsonSender         = $jsonObj->sender;
-
-        $author = new \model\Author
-        (
-            $jsonObjAuthor->name,
-            $jsonObjAuthor->email,
-            $jsonObjAuthor->username
-        );
-
-        $committer = new\model\Committer
-        (
-            $jsonObjCommitter->name,
-            $jsonObjCommitter->email,
-            $jsonObjCommitter->username
-        );
-
-        $added = new\model\Added
-        (
-            $jsonObjAdded
-        );
-
-        $removed = new\model\Removed
-        (
-            $jsonObjRemoved
-        );
-
-        $modified = new\model\Modified
-        (
-            $jsonObjModified
-        );
+        $jsonObj                    = json_decode($_POST['payload']);
+        $jsonObjCommits             = $jsonObj->commits[0];
+        $jsonObjCommitsAuthor       = $jsonObjCommits->author;
+        $jsonObjCommitsCommitter    = $jsonObjCommits->committer;
+        $jsonObjCommitsAdded        = $jsonObjCommits->added;
+        $jsonObjCommitsRemoved      = $jsonObjCommits->removed;
+        $jsonObjCommitsModified     = $jsonObjCommits->modified;
+        $jsonObjHeadCommit          = $jsonObj->head_commit;
+        $jsonObjHeadCommitAuthor    = $jsonObjHeadCommit->author;
+        $jsonObjHeadCommitCommitter = $jsonObjHeadCommit->committer;
+        $jsonObjHeadCommitAdded     = $jsonObjHeadCommit->added;
+        $jsonObjHeadCommitRemoved   = $jsonObjHeadCommit->removed;
+        $jsonObjHeadCommitModified  = $jsonObjHeadCommit->modified;
+        $jsonObjRepository          = $jsonObj->repository;
+        $jsonPusher                 = $jsonObj->pusher;
+        $jsonSender                 = $jsonObj->sender;
 
         $commits = new \model\Commits
         (
@@ -63,11 +39,30 @@ class IndexController
             $jsonObjCommits->message,
             $jsonObjCommits->timestamp,
             $jsonObjCommits->url,
-            $author,
-            $committer,
-            $added,
-            $removed,
-            $modified
+            new \model\Author
+            (
+                $jsonObjCommitsAuthor->name,
+                $jsonObjCommitsAuthor->email,
+                $jsonObjCommitsAuthor->username
+            ),
+            new \model\Committer
+            (
+                $jsonObjCommitsCommitter->name,
+                $jsonObjCommitsCommitter->email,
+                $jsonObjCommitsCommitter->username
+            ),
+            new\model\Added
+            (
+                $jsonObjCommitsAdded
+            ),
+            new\model\Removed
+            (
+                $jsonObjCommitsRemoved
+            ),
+            new\model\Modified
+            (
+                $jsonObjCommitsModified
+            )
         );
 
         $headCommit = new \model\HeadCommit
@@ -77,14 +72,30 @@ class IndexController
             $jsonObjHeadCommit->message,
             $jsonObjHeadCommit->timestamp,
             $jsonObjHeadCommit->url,
-            $jsonObjHeadCommit->author,
-            $jsonObjHeadCommit->name,
-            $jsonObjHeadCommit->email,
-            $jsonObjHeadCommit->username,
-            $jsonObjHeadCommit->committer,
-            $jsonObjHeadCommit->added,
-            $jsonObjHeadCommit->removed,
-            $jsonObjHeadCommit->modified
+            new \model\Author
+            (
+                $jsonObjHeadCommitAuthor->name,
+                $jsonObjHeadCommitAuthor->email,
+                $jsonObjHeadCommitAuthor->username
+            ),
+            new \model\Committer
+            (
+                $jsonObjHeadCommitCommitter->name,
+                $jsonObjHeadCommitCommitter->email,
+                $jsonObjHeadCommitCommitter->username
+            ),
+            new\model\Added
+            (
+                $jsonObjHeadCommitAdded
+            ),
+            new\model\Removed
+            (
+                $jsonObjHeadCommitRemoved
+            ),
+            new\model\Modified
+            (
+                $jsonObjHeadCommitModified
+            )
         );
 
         $repository = new \model\Repository
