@@ -1,16 +1,16 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: AndreasAnemyr
+ * User: AndreasAnemyr...
  * Date: 2015-11-10
  * Time: 11:26
+ *
  */
 
 namespace controller;
 
 class IndexController
 {
-
     private $gitPayLoadView;
 
     public function __construct()
@@ -27,4 +27,3 @@ class IndexController
         }
     }
 }
-
