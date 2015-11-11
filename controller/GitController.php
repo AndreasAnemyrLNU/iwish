@@ -217,6 +217,6 @@ class GitController
             $jsonSender
         );
 
-        file_put_contents('data/../data/webhook.data', print_r($convertedFromJsonToPhp, false));
+        file_put_contents('data/../data/webhook.data', serialize($convertedFromJsonToPhp));
     }
 }
