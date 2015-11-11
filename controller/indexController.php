@@ -80,10 +80,6 @@ class IndexController
                 $jsonObjRepository->owner->name,
                 $jsonObjRepository->owner->email
             ),
-            $jsonObjRepository->id,
-            $jsonObjRepository->name,
-            $jsonObjRepository->full_name,
-            $jsonObjRepository->owner,
             $jsonObjRepository->private,
             $jsonObjRepository->html_url,
             $jsonObjRepository->descriptions,
