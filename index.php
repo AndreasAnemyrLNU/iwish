@@ -24,6 +24,7 @@ require_once("model/github/Pusher.php");
 require_once("model/github/Repository.php");
 require_once("model/github/Sender.php");
 require_once("model/github/webhook.php");
+require_once("controller/GitController.php");
 //
 
 $indexController = new \controller\IndexController();
