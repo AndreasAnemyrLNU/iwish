@@ -101,7 +101,7 @@ class IndexController
             // TODO -> No parsing fixed. Just parsting string but not obj init...
             $jsonObj->head_commit,
             $repository,
-            $jsonObj->pusher,
+            $jsonPusher,
             $jsonObj->sender,
             $jsonObj->clone_url
         );
