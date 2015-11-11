@@ -11,7 +11,7 @@ namespace model;
 
 class Modified
 {
-    private $modified;
+    private $m_modified;
 
     /**
      * modified constructor.
@@ -19,7 +19,7 @@ class Modified
      */
     public function __construct($modified)
     {
-        $this->modified = $modified;
+        $this->m_modified = $modified;
     }
 
 

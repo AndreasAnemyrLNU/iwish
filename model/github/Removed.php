@@ -11,7 +11,7 @@ namespace model;
 
 class Removed
 {
-    private $rem;
+    private $m_removed;
 
     /**
      * removed constructor.
@@ -19,6 +19,6 @@ class Removed
      */
     public function __construct($removed)
     {
-        $this->rem = $removed;
+        $this->m_removed = $removed;
     }
 }
