@@ -37,7 +37,7 @@ class WebHookRepository
                 <dt>Full Name: </dt>
                     <dd>{$this->m_repository->getFullName()}</dd>
                 <dt>Owner: </dt>
-                    <dd>OBS Ers‰tt med objekt owner!</dd>
+                    <dd>OBS Ers√§tt med objekt owner!</dd>
                 <dt>Private: </dt>
                     <dd>{$this->m_repository->getPrivate()}</dd>
                 <dt>Html Url: </dt>
