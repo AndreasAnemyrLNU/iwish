@@ -33,6 +33,8 @@
     $controller = new \controller\IndexController();
     $view = $controller->DoIndex();
 
+    //echo $view->getHTML();
+
     $pageHTML = new \view\indexPage();
     $pageHTML->getHTML($view->getHTML());
 

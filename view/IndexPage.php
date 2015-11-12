@@ -13,6 +13,10 @@ class indexPage
 {
     public function getHTML($body)
     {
+
+
+
+
         return
         "
         <!DOCTYPE html>
@@ -26,5 +30,6 @@ class indexPage
             </body>
         </html>
         ";
+
     }
 }

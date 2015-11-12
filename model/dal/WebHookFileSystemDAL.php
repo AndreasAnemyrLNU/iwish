@@ -30,7 +30,7 @@ class webhookFileSystemDAL
 
     public function IgnoreThedDotAndTheDotDot($file)
     {
-        if($file == '.' || '..')
+        if($file === '.' || $file === '..')
             return false;
         return true;
     }

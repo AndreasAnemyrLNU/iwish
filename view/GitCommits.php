@@ -11,12 +11,8 @@ namespace view;
 
 class GitCommits
 {
-
     private $webhookCollection;
 
-    /**
-     * GitCommits constructor.
-     */
     public function __construct(\model\WebhookCollection $webhookCollection)
     {
         $this->webhookCollection = $webhookCollection;
@@ -24,20 +20,18 @@ class GitCommits
 
     public function getHTML()
     {
-
-        $webHookCollection = $this->webhookCollection->getWebhooks();
-
+        $webhooks = $this->webhookCollection->getWebhooks();
         $ret = "";
-        foreach($webHookCollection as $webhook)
+        foreach($webhooks as $webhook)
         {
             $ret .= $this->RenderWebHook($webhook);
         }
         return $ret;
-}
+
+    }
 
     private function RenderWebHook(\model\Webhook $webhook)
     {
         return $webhook->getSender()->getLogin();
     }
-
 }
