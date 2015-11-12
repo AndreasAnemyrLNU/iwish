@@ -14,7 +14,7 @@ class indexPage
     public function getHTML($body)
     {
 
-
+        $bootstrapHTML = new \view\BootstrapCDN();
 
 
         return
@@ -23,6 +23,7 @@ class indexPage
         <html lang=\"sv\">
             <head>
             <meta charset=\"UTF-8\">
+            $bootstrapHTML
             <title></title>
             </head>
             <body>

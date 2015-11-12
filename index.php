@@ -10,6 +10,7 @@
     require_once("model/dal/WebHookFileSystemDAL.php");
     require_once("view/IndexPage.php");
     require_once("view/GitCommits.php");
+    require_once("view/css/BootstrapCDN.php");
     require_once("controller/IndexController.php");
 
     //github
@@ -33,7 +34,7 @@
     $controller = new \controller\IndexController();
     $view = $controller->DoIndex();
 
-    $pageHTML = new \view\indexPage();
-    $pageHTML->getHTML($view->getHTML());
+    $index = new \view\indexPage();
+    echo $index->getHTML($view->getHTML());
 
 
