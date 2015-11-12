@@ -32,6 +32,10 @@ class GitCommits
 
     private function RenderWebHook(\model\Webhook $webhook)
     {
-        return $webhook->getSender()->getLogin();
+        $ret  = "<div class='panel panel-body'>";
+        $ret .= '<p>' . $webhook->getAfter() . '<p>';
+        $ret .= '</div>';
+
+        return $ret;
     }
 }
