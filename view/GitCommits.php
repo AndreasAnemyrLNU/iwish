@@ -22,7 +22,9 @@ class GitCommits
     {
         $webhooks = $this->webhookCollection->getWebhooks();
 
-        $ret =  "<table class='table table-striped'>";
+        $ret = "<div class='panel panel-body'>";
+
+        $ret.=  "<table class='table table-striped'>";
         $ret.=  "<tr>
                     <th>After</th>
                     <th>Before</th>
@@ -34,7 +36,7 @@ class GitCommits
         }
         $ret .= "</table>";
 
-
+        $ret.=  "</div>";
 
         return $ret;
 
@@ -45,11 +47,17 @@ class GitCommits
         $w = $webhook;
         return "<td>{$w->getAfter()}</td>
                 <td>{$w->getBefore()}</td>
-                <td>{$this->GetRepositoryData($w->getRepository())->getId()}</td>";
+                <td>{$this->GetRepositoryData($w->getRepository())->getId()}</td>
+                <td><img src={$this->GetSenderData($w->getSender())->getAvatarUrl()} class='img-responsive' alt='Cinque Terre'></td>";
     }
 
     private function GetRepositoryData(\model\Repository $repository)
     {
         return $repository;
+    }
+
+    private function GetSenderData(\model\Sender $sender)
+    {
+        return $sender;
     }
 }
