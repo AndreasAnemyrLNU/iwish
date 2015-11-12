@@ -21,21 +21,35 @@ class GitCommits
     public function getHTML()
     {
         $webhooks = $this->webhookCollection->getWebhooks();
-        $ret = "";
+
+        $ret =  "<table class='table table-striped'>";
+        $ret.=  "<tr>
+                    <th>After</th>
+                    <th>Before</th>
+                    <th>Id</th>
+                </tr>";
         foreach($webhooks as $webhook)
         {
-            $ret .= $this->RenderWebHook($webhook);
+            $ret .= "<tr>{$this->RenderWebHook($webhook)}</tr>";
         }
+        $ret .= "</table>";
+
+
+
         return $ret;
 
     }
 
     private function RenderWebHook(\model\Webhook $webhook)
     {
-        $ret  = "<div class='panel panel-body'>";
-        $ret .= '<p>' . $webhook->getAfter() . '<p>';
-        $ret .= '</div>';
+        $w = $webhook;
+        return "<td>{$w->getAfter()}</td>
+                <td>{$w->getBefore()}</td>
+                <td>{$this->GetRepositoryData($w->getRepository())->getId()}</td>";
+    }
 
-        return $ret;
+    private function GetRepositoryData(\model\Repository $repository)
+    {
+        return $repository;
     }
 }

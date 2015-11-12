@@ -16,6 +16,8 @@ class indexPage
         $bootstrapCDN      = new \view\BootstrapCDN();
         $bootstrapCSSHTML  = $bootstrapCDN->getStyleheet();
         $bootstrapJSHTML   = $bootstrapCDN->getJavascript();
+        $jqueryCDN         = new \view\JqueryCDN();
+        $jqueryCDNJSHTML   = $jqueryCDN->getJavascript();
 
         return
         "
@@ -81,6 +83,7 @@ class indexPage
               </div><!-- /.container-fluid -->
             </nav>
             $body
+            $jqueryCDNJSHTML
             $bootstrapJSHTML
             </body>
         </html>

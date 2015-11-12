@@ -226,5 +226,556 @@ class Repository
         $this->master_branch = $master_branch;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFullName()
+    {
+        return $this->full_name;
+    }
+
+    /**
+     * @return owner
+     */
+    public function getOwner()
+    {
+        return $this->owner;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPrivate()
+    {
+        return $this->private;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHtmlUrl()
+    {
+        return $this->html_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDescriptions()
+    {
+        return $this->descriptions;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFork()
+    {
+        return $this->fork;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getForksUrl()
+    {
+        return $this->forks_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getKeysUrl()
+    {
+        return $this->keys_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCollaboratorsUrl()
+    {
+        return $this->collaborators_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTeamsUrl()
+    {
+        return $this->teams_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHooksUrl()
+    {
+        return $this->hooks_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIssueEventsUrl()
+    {
+        return $this->issue_events_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEventsUrl()
+    {
+        return $this->events_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAssigneesUrl()
+    {
+        return $this->assignees_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBranchesUrl()
+    {
+        return $this->branches_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTagsUrl()
+    {
+        return $this->tags_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBlobsUrl()
+    {
+        return $this->blobs_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getGitTagsUrl()
+    {
+        return $this->git_tags_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getGitRefsUrl()
+    {
+        return $this->git_refs_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTreesUrl()
+    {
+        return $this->trees_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getStatusesUrl()
+    {
+        return $this->statuses_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLanguagesUrl()
+    {
+        return $this->languages_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getStargazersUrl()
+    {
+        return $this->stargazers_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getContributorsUrl()
+    {
+        return $this->contributors_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSubscribersUrl()
+    {
+        return $this->subscribers_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSubscriptionUrl()
+    {
+        return $this->subscription_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCommitsUrl()
+    {
+        return $this->commits_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getGitCommitsUrl()
+    {
+        return $this->git_commits_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCommentsUrl()
+    {
+        return $this->comments_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIssueCommentUrl()
+    {
+        return $this->issue_comment_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getContentsUrl()
+    {
+        return $this->contents_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCompareUrl()
+    {
+        return $this->compare_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMergesUrl()
+    {
+        return $this->merges_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getArchiveUrl()
+    {
+        return $this->archive_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDownloadsUrl()
+    {
+        return $this->downloads_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIssuesUrl()
+    {
+        return $this->issues_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPullsUrl()
+    {
+        return $this->pulls_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMilestonesUrl()
+    {
+        return $this->milestones_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNotificationsUrl()
+    {
+        return $this->notifications_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLabelsUrl()
+    {
+        return $this->labels_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getReleasesUrl()
+    {
+        return $this->releases_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCreatedAt()
+    {
+        return $this->created_at;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updated_at;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPushedAt()
+    {
+        return $this->pushed_at;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getGitUrl()
+    {
+        return $this->git_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSshUrl()
+    {
+        return $this->ssh_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCloneUrl()
+    {
+        return $this->clone_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSvnUrl()
+    {
+        return $this->svn_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHomepage()
+    {
+        return $this->homepage;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSize()
+    {
+        return $this->size;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getStargazersCount()
+    {
+        return $this->stargazers_count;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getWatchersCount()
+    {
+        return $this->watchers_count;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLanguage()
+    {
+        return $this->language;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHasIssues()
+    {
+        return $this->has_issues;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHasDownloads()
+    {
+        return $this->has_downloads;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHasWiki()
+    {
+        return $this->has_wiki;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHasPages()
+    {
+        return $this->has_pages;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getForksCount()
+    {
+        return $this->forks_count;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMirrorUrl()
+    {
+        return $this->mirror_url;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getOpenIssuesCount()
+    {
+        return $this->open_issues_count;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getForks()
+    {
+        return $this->forks;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getOpenIssues()
+    {
+        return $this->open_issues;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getWatchers()
+    {
+        return $this->watchers;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDefaultBranch()
+    {
+        return $this->default_branch;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getStargazers()
+    {
+        return $this->stargazers;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMasterBranch()
+    {
+        return $this->master_branch;
+    }
 
 }

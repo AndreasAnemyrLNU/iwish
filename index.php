@@ -11,6 +11,7 @@
     require_once("view/IndexPage.php");
     require_once("view/GitCommits.php");
     require_once("view/css/BootstrapCDN.php");
+    require_once("view/js/JqueryCDN.php");
     require_once("controller/IndexController.php");
 
     //github
