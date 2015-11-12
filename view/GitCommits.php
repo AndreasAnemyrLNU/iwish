@@ -47,7 +47,7 @@ class GitCommits
         return "<p>{$w->getAfter()}</p>
                 <p>{$w->getBefore()}</p>
                 <p>{$this->GetRepository($w->getRepository())->getId()}</p>
-                <div><img src={$this->GetSender($w->getSender())->getAvatarUrl()} class='img-responsive img-thumbnail' alt='Cinque Terre'></div>";
+                <div><img src={$this->GetSender($w->getSender())->getAvatarUrl()} class='img-thumbnail' alt='Cinque Terre'></div>";
     }
 
     private function GetRepository(\model\Repository $repository)
