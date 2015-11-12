@@ -27,7 +27,8 @@ class WebHookAuthor
     {
          return
          "
-         <div panel panel-body>
+         <div class='panel panel-body'>
+             <h4 class='h4'>Author</h4>
              <dl class='dl-horizontal'>
                 <dt>Email: </dt>
                 <dd>{$this->m_author->getEmial()}</dd>
