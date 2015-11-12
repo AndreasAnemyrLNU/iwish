@@ -13,6 +13,7 @@
     require_once("view/css/BootstrapCDN.php");
     require_once("view/js/JqueryCDN.php");
     require_once("view/WebHookAuthor.php");
+    require_once("view/WebHookCommits.php");
     require_once("controller/IndexController.php");
 
     //github
