@@ -43,6 +43,7 @@ class WebHookCommits
              </dl>
             {$this->RenderAuthor($this->m_commits->getAuthor())}
             {$this->RenderCommitter($this->m_commits->getCommitter())}
+            {$this->RenderAdded($this->m_commits->getCommitter())}
          </div>
          ";
     }
@@ -56,6 +57,12 @@ class WebHookCommits
     public function RenderCommitter(\model\Committer $c)
     {
         $html = new \view\WebHookCommitter($c);
+        return $html->getHTML();
+    }
+
+    public function RenderAdded(\model\Added $a)
+    {
+        $html = new \view\WebHookCommitter($a->getAdded());
         return $html->getHTML();
     }
 }
