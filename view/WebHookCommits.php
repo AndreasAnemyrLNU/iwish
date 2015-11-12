@@ -43,7 +43,7 @@ class WebHookCommits
              </dl>
             {$this->RenderAuthor($this->m_commits->getAuthor())}
             {$this->RenderCommitter($this->m_commits->getCommitter())}
-            {$this->RenderAdded($this->m_commits->getCommitter())}
+            {$this->RenderAdded($this->m_commits->getAdded())}
          </div>
          ";
     }
