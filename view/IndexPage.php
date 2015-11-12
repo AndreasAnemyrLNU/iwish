@@ -13,9 +13,9 @@ class indexPage
 {
     public function getHTML($body)
     {
-
-        $bootstrapHTML = new \view\BootstrapCDN();
-
+        $bootstrapCDN      = new \view\BootstrapCDN();
+        $bootstrapCSSHTML  = $bootstrapCDN->getStyleheet();
+        $bootstrapJSHTML   = $bootstrapCDN->getJavascript();
 
         return
         "
@@ -23,11 +23,12 @@ class indexPage
         <html lang=\"sv\">
             <head>
             <meta charset=\"UTF-8\">
-            $bootstrapHTML
+            $bootstrapCSSHTML
             <title></title>
             </head>
             <body>
                 $body
+                $bootstrapJSHTML
             </body>
         </html>
         ";
