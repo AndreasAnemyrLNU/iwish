@@ -15,11 +15,11 @@ class WebHookCommits
 
     /**
      * WebHookCommnits constructor.
-     * @param $m_commits
+     * @param $commits
      */
-    public function __construct(\model\Commits $m_commits)
+    public function __construct(\model\Commits $commits)
     {
-        $this->m_commits = $m_commits;
+        $this->m_commits = $commits;
         $this->getHTML();
     }
 
