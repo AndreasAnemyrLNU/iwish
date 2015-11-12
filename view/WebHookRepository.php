@@ -106,6 +106,44 @@ class WebHookRepository
                     <dd>{$this->m_repository->getDownloadsUrl()}</dd>
                 <dt>Issues Url: </dt>
                     <dd>{$this->m_repository->getIssuesUrl()}</dd>
+                <dt>Pulls Url: </dt>
+                    <dd>{$this->m_repository->getPullsUrl()}</dd>
+                 <dt>Milestones Url: </dt>
+                    <dd>{$this->m_repository->getMilestonesUrl()}</dd>
+                <dt>Notifications Url: </dt>
+                    <dd>{$this->m_repository->getNotificationsUrl()}</dd>
+                <dt>Labels Url: </dt>
+                    <dd>{$this->m_repository->getLabelsUrl()}</dd>
+                <dt>Releases Url: </dt>
+                    <dd>{$this->m_repository->getReleasesUrl()}</dd>
+                <dt>Created at: </dt>
+                    <dd>{$this->m_repository->getCreatedAt()}</dd>
+                <dt>Updated at: </dt>
+                    <dd>{$this->m_repository->getUpdatedAt()}</dd>
+                <dt>Pushed at: </dt>
+                    <dd>{$this->m_repository->getPushedAt()}</dd>
+                <dt>Git Url: </dt>
+                    <dd>{$this->m_repository->getGitUrl()}</dd>
+                <dt>SSH Url: </dt>
+                    <dd>{$this->m_repository->getSshUrl()}</dd>
+                <dt>Clone Url: </dt>
+                    <dd>{$this->m_repository->getCloneUrl()}</dd>
+                <dt>SVN Url: </dt>
+                    <dd>{$this->m_repository->getSvnUrl()}</dd>
+                <dt>Homepage Url: </dt>
+                    <dd>{$this->m_repository->getHomepage()}</dd>
+                <dt>Size: </dt>
+                    <dd>{$this->m_repository->getSize()}</dd>
+                <dt>Stargazers Count: </dt>
+                    <dd>{$this->m_repository->getStargazersCount()}</dd>
+                <dt>Watchers Count: </dt>
+                    <dd>{$this->m_repository->getWatchersCount()}</dd>
+                <dt>Language: </dt>
+                    <dd>{$this->m_repository->getLanguage()}</dd>
+                <dt>Has issues: </dt>
+                    <dd>{$this->m_repository->getHasIssues()}</dd>
+                <dt>Has downloads: </dt>
+                    <dd>{$this->m_repository->getHasDownloads()}</dd>
              </dl>
          </div>
          ";
