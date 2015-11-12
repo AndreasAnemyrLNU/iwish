@@ -57,7 +57,11 @@ class GitCommits
                     <div class='col-xs-2 col-sm-2 col-md-2 col-lg-2'>
                         <img src={$this->GetSender($w->getSender())->getAvatarUrl()} class='img-responsive img-circle' alt='Avatar Pic'>
                     </div>
+                </div>
+                <div class='row'>
+                    {$this->RenderAuthor($w->getCommits()->getAuthor())}
                 </div>";
+
     }
 
     private function GetRepository(\model\Repository $repository)
@@ -68,6 +72,11 @@ class GitCommits
     private function GetSender(\model\Sender $sender)
     {
         return $sender;
+    }
+
+    private function RenderAuthor(\model\Author $a)
+    {
+        return new \view\WebHookAuthor($a);
     }
 
 

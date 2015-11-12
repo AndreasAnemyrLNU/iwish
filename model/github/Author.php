@@ -23,4 +23,29 @@ class Author
         $this->m_emial = $emial;
         $this->m_username = $username;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->m_name;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEmial()
+    {
+        return $this->m_emial;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUsername()
+    {
+        return $this->m_username;
+    }
+
 }
