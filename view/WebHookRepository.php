@@ -144,6 +144,22 @@ class WebHookRepository
                     <dd>{$this->m_repository->getHasIssues()}</dd>
                 <dt>Has downloads: </dt>
                     <dd>{$this->m_repository->getHasDownloads()}</dd>
+                <dt>Has wiki: </dt>
+                    <dd>{$this->m_repository->getHasWiki()}</dd>
+                <dt>Has Pages: </dt>
+                    <dd>{$this->m_repository->getHasPages()}</dd>
+                <dt>Forks: </dt>
+                    <dd>{$this->m_repository->getForks()}</dd>
+                <dt>Open issues: </dt>
+                    <dd>{$this->m_repository->getOpenIssues()}</dd>
+                <dt>Watchers: </dt>
+                    <dd>{$this->m_repository->getWatchers()}</dd>
+                <dt>Default Branch: </dt>
+                    <dd>{$this->m_repository->getDefaultBranch()}</dd>
+                <dt>Stargazers: </dt>
+                    <dd>{$this->m_repository->getStargazers()}</dd>
+                <dt>Master branch: </dt>
+                    <dd>{$this->m_repository->getMasterBranch()}</dd>
              </dl>
          </div>
          ";
