@@ -48,6 +48,10 @@ class WebHookRepository
                     <dd>{$this->m_repository->getFork()}</dd>
                 <dt>Fork Url: </dt>
                     <dd>{$this->m_repository->getForksUrl()}</dd>
+                <dt>Keys Url: </dt>
+                    <dd>{$this->m_repository->getKeysUrl()}</dd>
+                <dt>Colloborators Url: </dt>
+                    <dd>{$this->m_repository->getCollaboratorsUrl()}</dd>
              </dl>
          </div>
          ";
