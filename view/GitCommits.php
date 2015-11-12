@@ -20,44 +20,45 @@ class GitCommits
 
     public function getHTML()
     {
+
+        return "<div class = 'panel panel-primary'>
+                    <div class = 'panel-heading'>
+                        <h3 class = 'panel-title'>History of commits to github for this project!</h3>
+                    </div>
+                    <div class = 'panel-body'>
+                        {$this->ExtractWebhook()}
+                    </div>
+                </div>";
+    }
+
+    private function ExtractWebhook()
+    {
         $webhooks = $this->webhookCollection->getWebhooks();
-
-        $ret = "<div class='panel panel-body'>";
-
-        $ret.=  "<table class='table table-striped'>";
-        $ret.=  "<tr>
-                    <th>After</th>
-                    <th>Before</th>
-                    <th>Id</th>
-                </tr>";
+        $ret = "";
         foreach($webhooks as $webhook)
         {
-            $ret .= "<tr>{$this->RenderWebHook($webhook)}</tr>";
+            $ret .= "<div class='well'>{$this->RenderWebHook($webhook)}</div>";
         }
-        $ret .= "</table>";
-
-        $ret.=  "</div>";
-
         return $ret;
-
     }
 
-    private function RenderWebHook(\model\Webhook $webhook)
+    private function RenderWebHook(\model\Webhook $w)
     {
-        $w = $webhook;
-        return "<td>{$w->getAfter()}</td>
-                <td>{$w->getBefore()}</td>
-                <td>{$this->GetRepositoryData($w->getRepository())->getId()}</td>
-                <td><img src={$this->GetSenderData($w->getSender())->getAvatarUrl()} class='img-responsive' alt='Cinque Terre'></td>";
+        return "<p>{$w->getAfter()}</p>
+                <p>{$w->getBefore()}</p>
+                <p>{$this->GetRepository($w->getRepository())->getId()}</p>
+                <div><img src={$this->GetSender($w->getSender())->getAvatarUrl()} class='img-responsive img-thumbnail' alt='Cinque Terre'></div>";
     }
 
-    private function GetRepositoryData(\model\Repository $repository)
+    private function GetRepository(\model\Repository $repository)
     {
         return $repository;
     }
 
-    private function GetSenderData(\model\Sender $sender)
+    private function GetSender(\model\Sender $sender)
     {
         return $sender;
     }
+
+
 }
