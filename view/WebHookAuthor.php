@@ -27,9 +27,16 @@ class WebHookAuthor
     {
          return
          "
-         <div>{$this->m_author->getEmial()}</div>
-         <div>{$this->m_author->getName()}</div>
-         <div>{$this->m_author->getUsername()}</div>
+         <div panel panel-body>
+             <dl>
+                <dt>Email: </dt>
+                <dd>{$this->m_author->getEmial()}</dd>
+                <dt>Name: </dt>
+                <dd>{$this->m_author->getName()}</dd>
+                <dt>Username: </dt>
+                <dd>{$this->m_author->getUsername()}</dd>
+             </dl>
+         </div>
          ";
     }
 }
