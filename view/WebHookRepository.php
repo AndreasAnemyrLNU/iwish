@@ -52,6 +52,22 @@ class WebHookRepository
                     <dd>{$this->m_repository->getKeysUrl()}</dd>
                 <dt>Colloborators Url: </dt>
                     <dd>{$this->m_repository->getCollaboratorsUrl()}</dd>
+                <dt>Team Url: </dt>
+                    <dd>{$this->m_repository->getTeamsUrl()}</dd>
+                <dt>Hooks Url: </dt>
+                    <dd>{$this->m_repository->getHooksUrl()}</dd>
+                <dt>Issue Events Url: </dt>
+                    <dd>{$this->m_repository->getIssueEventsUrl()}</dd>
+                <dt>Events Url: </dt>
+                    <dd>{$this->m_repository->getEventsUrl()}</dd>
+                <dt>Assignees Url: </dt>
+                    <dd>{$this->m_repository->getAssigneesUrl()}</dd>
+                <dt>Branches Url: </dt>
+                    <dd>{$this->m_repository->getBranchesUrl()}</dd>
+                <dt>Tags Url: </dt>
+                    <dd>{$this->m_repository->getTagsUrl()}</dd>
+                <dt>Blobs Url: </dt>
+                    <dd>{$this->m_repository->getBlobsUrl()}</dd>
              </dl>
          </div>
          ";
