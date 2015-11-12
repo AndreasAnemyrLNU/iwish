@@ -26,7 +26,9 @@ class GitCommits
                         <h3 class = 'panel-title'>History of commits to github for this project!</h3>
                     </div>
                     <div class = 'panel-body'>
-                        {$this->ExtractWebhook()}
+                        <div class='container'>
+                            {$this->ExtractWebhook()}
+                        </div>
                     </div>
                 </div>";
     }
@@ -44,10 +46,16 @@ class GitCommits
 
     private function RenderWebHook(\model\Webhook $w)
     {
-        return "<p>{$w->getAfter()}</p>
-                <p>{$w->getBefore()}</p>
-                <p>{$this->GetRepository($w->getRepository())->getId()}</p>
-                <div><img src={$this->GetSender($w->getSender())->getAvatarUrl()} class='img-thumbnail' alt='Cinque Terre'></div>";
+        return "<div class='row'>
+                    <div class='span2'>
+                        <p>{$w->getAfter()}</p>
+                        <p>{$w->getBefore()}</p>
+                        <p>{$this->GetRepository($w->getRepository())->getId()}</p>
+                    </div>
+                    <div class='span2'>
+                        <img src={$this->GetSender($w->getSender())->getAvatarUrl()} class='img-responsive img-circle' alt='Avatar Pic'>
+                    </div>
+                </div>";
     }
 
     private function GetRepository(\model\Repository $repository)
