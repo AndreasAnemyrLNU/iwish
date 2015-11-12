@@ -16,6 +16,7 @@
     require_once("view/WebHookAuthor.php");
     require_once("view/WebHookCommits.php");
     require_once("view/WebHookCommitter.php");
+    require_once("view/WebHookModified.php");
     require_once("view/WebHookRemoved.php");
     require_once("controller/IndexController.php");
 

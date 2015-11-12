@@ -45,6 +45,7 @@ class WebHookCommits
             {$this->RenderCommitter($this->m_commits->getCommitter())}
             {$this->RenderAdded($this->m_commits->getAdded())}
             {$this->RenderRemoved($this->m_commits->getRemoved())}
+            {$this->RenderModified($this->m_commits->getModified())}
          </div>
          ";
     }
@@ -70,6 +71,12 @@ class WebHookCommits
     public function RenderRemoved(\model\Removed $r)
     {
         $html = new \view\WebHookRemoved($r);
+        return $html->getHTML();
+    }
+
+    public function RenderModified(\model\Modified $m)
+    {
+        $html = new \view\WebHookModified($m);
         return $html->getHTML();
     }
 }
