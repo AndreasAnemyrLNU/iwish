@@ -21,18 +21,24 @@ class GitCommits
     public function getHTML()
     {
 
-        return "<div class='col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1'>
-                    <div class = 'panel panel-primary'>
-                        <div class = 'panel-heading'>
-                            <h3 class = 'panel-title'>History of commits to github for this project!</h3>
-                        </div>
-                        <div class = 'panel-body'>
-                            <div class='container col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1'>
-                                {$this->ExtractWebhook()}
-                            </div>
-                        </div>
+        return
+        "<div class='col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1'>
+            <div class = 'panel panel-primary'>
+                <div class = 'panel-heading'>
+                    <h3 class = 'panel-title'>Webhook DATA!</h3>
+                </div>
+            </div>
+            <div class = 'panel panel-primary'>
+                <div class = 'panel-heading'>
+                    <h3 class = 'panel-title'>History of commits to github for this project!</h3>
+                </div>
+                <div class = 'panel-body'>
+                    <div class='container col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1'>
+                            {$this->ExtractWebhook()}
                     </div>
-                </div>";
+                </div>
+            </div>
+        </div>";
     }
 
     private function ExtractWebhook()
@@ -41,27 +47,53 @@ class GitCommits
         $ret = "";
         foreach($webhooks as $webhook)
         {
-            $ret .= "<div class='well'>{$this->RenderWebHook($webhook)}</div>";
+            $ret .= "{$this->RenderWebHook($webhook)}";
         }
         return $ret;
     }
 
     private function RenderWebHook(\model\Webhook $w)
     {
-        return "<div class='row'>
-                    <div class='col-xs-10 col-sm-10 col-md-10 col-lg-10'>
-                        <p>{$w->getAfter()}</p>
-                        <p>{$w->getBefore()}</p>
-                        <p>{$this->GetRepository($w->getRepository())->getId()}</p>
-                    </div>
-                    <div class='col-xs-2 col-sm-2 col-md-2 col-lg-2'>
-                        <img src={$this->GetSender($w->getSender())->getAvatarUrl()} class='img-responsive img-circle' alt='Avatar Pic'>
-                    </div>
-                </div>
-                <div class='row'>
-                    {$this->RenderAuthor($w->getCommits()->getAuthor())}
-                </div>";
+        return
+        "<div class='row'>
+            <div class='col-xs-10 col-sm-10 col-md-10 col-lg-10'>
+                <dl>
+                    <dt>Ref:</dt>
+                        <dd>{$w->getRef()}</dd>
+                    <dt>Before:</dt>
+                        <dd>{$w->getBefore()}</dd>
+                    <dt>After:</dt>
+                        <dd>{$w->getAfter()}</dd>
+                    <dt>Created:</dt>
+                        <dt>{$w->getCreated()}</dt>
+                    <dt>Deleted:</dt>
+                        <dt>{$w->getDeleted()}</dt>
+                    <dt>Forced:</dt>
+                        <dt>{$w->getForced()}</dt>
+                    <dt>Base Ref:</dt>
+                        <dt>{$w->getBaseRef()}</dt>
+                    <dt>Compare:</dt>
+                        <dt>{$w->getCompare()}</dt>
+                    <dt>Created:</dt>
+                        <dt>{$w->getCreated()}</dt>
+                    <dt>Repository</dt>
+                        <dd>{$this->GetRepository($w->getRepository())->getId()}</dd>
+                </dl>
+            </div>
+            <div class='col-xs-2 col-sm-2 col-md-2 col-lg-2'>
+                <img src={$this->GetSender($w->getSender())->getAvatarUrl()} class='img-responsive img-circle' alt='Avatar Pic'>
+            </div>
+        </div>
+        <div class='row'>
+            {$this->RenderCommits($w->getCommits())}
+        </div>
 
+
+
+
+        <div class='row'>
+            {$this->RenderAuthor($w->getCommits()->getAuthor())}
+        </div>";
     }
 
     private function GetRepository(\model\Repository $repository)
@@ -74,9 +106,16 @@ class GitCommits
         return $sender;
     }
 
+    private function RenderCommits(\model\Commits $c)
+    {
+        $html   = new \view\WebHookCommits($c);
+        return  $html->getHTML();
+    }
+
     private function RenderAuthor(\model\Author $a)
     {
-        return new \view\WebHookAuthor($a);
+        $html   = new \view\WebHookAuthor($a);
+        return  $html->getHTML();
     }
 
 
