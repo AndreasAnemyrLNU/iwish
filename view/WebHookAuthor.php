@@ -17,9 +17,9 @@ class WebHookAuthor
      * WebHookAuthor constructor.
      * @param $m_author
      */
-    public function __construct(\model\Author $m_author)
+    public function __construct(\model\Author $a)
     {
-        $this->m_author = $m_author;
+        $this->m_author = $a;
         $this->getHTML();
     }
 

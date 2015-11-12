@@ -22,5 +22,12 @@ class Modified
         $this->m_modified = $modified;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getModified()
+    {
+        return $this->m_modified;
+    }
 
 }

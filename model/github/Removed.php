@@ -21,4 +21,13 @@ class Removed
     {
         $this->m_removed = $removed;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getRemoved()
+    {
+        return $this->m_removed;
+    }
+
 }

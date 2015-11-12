@@ -21,4 +21,13 @@ class Added
     {
         $this->m_added = $added;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getAdded()
+    {
+        return $this->m_added;
+    }
+
 }

@@ -31,13 +31,31 @@ class WebHookCommits
              <h4 class='h4'>Commits</h4>
              <dl class='dl-horizontal'>
                 <dt>Id: </dt>
-                <dd>{$this->m_commits->getId()}</dd>
+                    <dd>{$this->m_commits->getId()}</dd>
                 <dt>Distinct: </dt>
-                <dd>{$this->m_commits->getDistinct()}</dd>
+                    <dd>{$this->m_commits->getDistinct()}</dd>
                 <dt>Message: </dt>
-                <dd>{$this->m_commits->getMessage()}</dd>
+                    <dd>{$this->m_commits->getMessage()}</dd>
+                <dt>Timestamp: </dt>
+                    <dd>{$this->m_commits->getTimestamp()}</dd>
+                 <dt>Url: </dt>
+                    <dd>{$this->m_commits->getUrl()}</dd>
              </dl>
+            {$this->RenderAuthor($this->m_commits->getAuthor())}
+            {$this->RenderCommitter($this->m_commits->getCommitter())}
          </div>
          ";
+    }
+
+    public function RenderAuthor(\model\Author $a)
+    {
+        $html = new \view\WebHookAuthor($a);
+        return $html->getHTML();
+    }
+
+    public function RenderCommitter(\model\Committer $c)
+    {
+        $html = new \view\WebHookCommitter($c);
+        return $html->getHTML();
     }
 }
