@@ -27,7 +27,7 @@ class WebHookAuthor
     {
          return
          "
-         <div class='panel panel-body'>
+         <div class='panel-body'>
              <h4 class='h4'>Author</h4>
              <dl class='dl-horizontal'>
                 <dt>Email: </dt>
