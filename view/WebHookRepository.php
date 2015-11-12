@@ -68,6 +68,44 @@ class WebHookRepository
                     <dd>{$this->m_repository->getTagsUrl()}</dd>
                 <dt>Blobs Url: </dt>
                     <dd>{$this->m_repository->getBlobsUrl()}</dd>
+                <dt>Git Tags Url: </dt>
+                    <dd>{$this->m_repository->getGitTagsUrl()}</dd>
+                <dt>Git Refs Url: </dt>
+                    <dd>{$this->m_repository->getGitRefsUrl()}</dd>
+                <dt>Trees Url: </dt>
+                    <dd>{$this->m_repository->getTreesUrl()}</dd>
+                <dt>Statuses Url: </dt>
+                    <dd>{$this->m_repository->getStatusesUrl()}</dd>
+                <dt>Languages Url: </dt>
+                    <dd>{$this->m_repository->getLanguagesUrl()}</dd>
+                <dt>Stargazers Url: </dt>
+                    <dd>{$this->m_repository->getStargazersUrl()}</dd>
+                <dt>Contributors Url: </dt>
+                    <dd>{$this->m_repository->getContributorsUrl()}</dd>
+                <dt>Subscribers Url: </dt>
+                    <dd>{$this->m_repository->getSubscribersUrl()}</dd>
+                <dt>Subscription Url: </dt>
+                    <dd>{$this->m_repository->getSubscriptionUrl()}</dd>
+                <dt>Commits Url: </dt>
+                    <dd>{$this->m_repository->getCommitsUrl()}</dd>
+                <dt>Git Commits Url: </dt>
+                    <dd>{$this->m_repository->getGitCommitsUrl()}</dd>
+                <dt>Comments Url: </dt>
+                    <dd>{$this->m_repository->getCommentsUrl()}</dd>
+                <dt>Issue Comment Url: </dt>
+                    <dd>{$this->m_repository->getIssueCommentUrl()}</dd>
+                <dt>Contents Url: </dt>
+                    <dd>{$this->m_repository->getContentsUrl()}</dd>
+                <dt>Compare Url: </dt>
+                    <dd>{$this->m_repository->getCompareUrl()}</dd>
+                <dt>Merges Url: </dt>
+                    <dd>{$this->m_repository->getMergesUrl()}</dd>
+                <dt>Archive Url: </dt>
+                    <dd>{$this->m_repository->getArchiveUrl()}</dd>
+                <dt>Downloads Url: </dt>
+                    <dd>{$this->m_repository->getDownloadsUrl()}</dd>
+                <dt>Issues Url: </dt>
+                    <dd>{$this->m_repository->getIssuesUrl()}</dd>
              </dl>
          </div>
          ";
