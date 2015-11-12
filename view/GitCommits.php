@@ -87,13 +87,10 @@ class GitCommits
         <div class='row'>
             {$this->RenderCommits($w->getCommits())}
         </div>
-
-
-
-
         <div class='row'>
-            {$this->RenderAuthor($w->getCommits()->getAuthor())}
-        </div>";
+            {$this->RenderRepository($w->getRepository())}
+        </div>
+        ";
     }
 
     private function GetRepository(\model\Repository $repository)
@@ -112,11 +109,9 @@ class GitCommits
         return  $html->getHTML();
     }
 
-    private function RenderAuthor(\model\Author $a)
+    private function RenderRepository(\model\Repository $r)
     {
-        $html   = new \view\WebHookAuthor($a);
+        $html   = new \view\WebHookRepository($r);
         return  $html->getHTML();
     }
-
-
 }
