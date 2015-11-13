@@ -87,13 +87,9 @@ class GitCommits
         <div class='row'>
             <div class='panel panel-info'>
                 {$this->RenderCommits($w->getCommits())}
+                {$this->RenderRepository($w->getRepository())}
+                {$this->RenderSender($w->getSender())}
             </div>
-        </div>
-        <div class='row'>
-            {$this->RenderRepository($w->getRepository())}
-        </div>
-        <div class='row'>
-            {$this->RenderSender($w->getSender())}
         </div>
         ";
     }
