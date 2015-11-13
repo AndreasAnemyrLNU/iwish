@@ -26,7 +26,7 @@ class WebHookCommitter
     public function getHTML()
     {
         return
-            "
+        "
          <div class='well'>
              <h4 class='h4'>Committer</h4>
              <dl class='dl-horizontal'>

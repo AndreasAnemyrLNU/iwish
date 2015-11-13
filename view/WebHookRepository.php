@@ -27,7 +27,7 @@ class WebHookRepository
     {
         return
             "
-         <div class='well'>
+         <div class='panel panel-body>
              <h4 class='h4'>Repository</h4>
              <dl class='dl-horizontal'>
                 <dt>Id: </dt>

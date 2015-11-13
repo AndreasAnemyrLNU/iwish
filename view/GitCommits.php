@@ -54,7 +54,7 @@ class GitCommits
 
     private function RenderWebHook(\model\Webhook $w)
     {
-        return
+     return
         "<div class='row'>
             <div class='col-xs-10 col-sm-10 col-md-10 col-lg-10'>
                 <dl>
@@ -79,15 +79,19 @@ class GitCommits
                     <dt>Repository</dt>
                         <dd>{$this->GetRepository($w->getRepository())->getId()}</dd>
                 </dl>
-            </div>
-            <div class='col-xs-2 col-sm-2 col-md-2 col-lg-2'>
-                <img src={$this->GetSender($w->getSender())->getAvatarUrl()} class='img-responsive img-circle' alt='Avatar Pic'>
-            </div>
-            <div class='row'>
-                {$this->RenderCommits($w->getCommits())}
-                {$this->RenderRepository($w->getRepository())}
-                {$this->RenderSender($w->getSender())}
-            </div>
+        </div>
+        <div class='col-xs-2 col-sm-2 col-md-2 col-lg-2'>
+            <img src={$this->GetSender($w->getSender())->getAvatarUrl()} class='img-responsive img-circle' alt='Avatar Pic'>
+        </div>
+        </div>
+        <div class='row'>
+            {$this->RenderCommits($w->getCommits())}
+        </div>
+        <div class='row'>
+            {$this->RenderRepository($w->getRepository())}
+        </div>
+        <div class='row'>
+            {$this->RenderSender($w->getSender())}
         </div>
         ";
     }
