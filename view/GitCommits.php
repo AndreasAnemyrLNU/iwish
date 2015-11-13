@@ -86,11 +86,7 @@ class GitCommits
         </div>
         <div class='row'>
             {$this->RenderCommits($w->getCommits())}
-        </div>
-        <div class='row'>
             {$this->RenderRepository($w->getRepository())}
-        </div>
-        <div class='row'>
             {$this->RenderSender($w->getSender())}
         </div>
         ";
