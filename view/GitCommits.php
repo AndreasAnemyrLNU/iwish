@@ -90,6 +90,9 @@ class GitCommits
         <div class='row'>
             {$this->RenderRepository($w->getRepository())}
         </div>
+        <div class='row'>
+            {$this->RenderSender($w->getSender())}
+        </div>
         ";
     }
 
@@ -114,4 +117,11 @@ class GitCommits
         $html   = new \view\WebHookRepository($r);
         return  $html->getHTML();
     }
+
+    private function RenderSender(\model\Sender $s)
+    {
+        $html   = new \view\WebHookSender($s);
+        return  $html->getHTML();
+    }
+
 }
