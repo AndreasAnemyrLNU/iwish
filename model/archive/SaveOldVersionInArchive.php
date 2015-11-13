@@ -18,7 +18,7 @@ class SaveOldVersionInArchive
      * @param Modified $m
      * @param $before git version...
      */
-    public function SaveFiles(\model\Modified $m, $before)
+    public function SaveFiles()
     {
         //$filenames = $m->getModified();
 
