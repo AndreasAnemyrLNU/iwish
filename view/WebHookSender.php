@@ -27,43 +27,41 @@ class WebHookSender
     {
         return
         "
-         <div class='col-xs-10 col-sm-10 col-md-10 col-lg-10'>
-             <div class='well'>
-                 <h4 class='h4'>Sender</h4>
-                 <dl class='dl-horizontal'>
-                    <dt>Login: </dt>
-                        <dd>{$this->m_sender->getLogin()}</dd>
-                    <dt>Id: </dt>
-                        <dd>{$this->m_sender->getId()}</dd>
-                    <dt>Avatar Url: </dt>
-                        <dd>{$this->m_sender->getAvatarUrl()}</dd>
-                    <dt>Gravatar Id: </dt>
-                        <dd>{$this->m_sender->getGravatarId()}</dd>
-                    <dt>Url: </dt>
-                        <dd>{$this->m_sender->getUrl()}</dd>
-                     <dt>Html Url </dt>
-                        <dd>{$this->m_sender->getHtmlUrlprivate()}</dd>
-                    <dt>Followers Url: </dt>
-                        <dd>{$this->m_sender->getFollowersUrl()}</dd>
-                    <dt>Following Url: </dt>
-                        <dd>{$this->m_sender->getFollowingUrl()}</dd>
-                    <dt>Gists Url: </dt>
-                        <dd>{$this->m_sender->getGistsUrl()}</dd>
-                    <dt>Starred Url: </dt>
-                        <dd>{$this->m_sender->getStarredUrl()}</dd>
-                    <dt>Subscriptions Url: </dt>
-                        <dd>{$this->m_sender->getSubscriptionsUrl()}</dd>
-                    <dt>Organizations Url:</dt>
-                        <dd>{$this->m_sender->getOrganizationsUrl()}</dd>
-                    <dt>Repos Url: </dt>
-                        <dd>{$this->m_sender->getReposUrl()}</dd>
-                    <dt>Events Url: </dt>
-                        <dd>{$this->m_sender->getEventsUrl()}</dd>
-                    <dt>Received Events Url: </dt>
-                        <dd>{$this->m_sender->getReceivedEventsUrl()}</dd>
-                 </dl>
+         <div class='well'>
+             <h4 class='h4'>Sender</h4>
+             <dl class='dl-horizontal'>
+                <dt>Login: </dt>
+                    <dd>{$this->m_sender->getLogin()}</dd>
+                <dt>Id: </dt>
+                    <dd>{$this->m_sender->getId()}</dd>
+                <dt>Avatar Url: </dt>
+                    <dd>{$this->m_sender->getAvatarUrl()}</dd>
+                <dt>Gravatar Id: </dt>
+                    <dd>{$this->m_sender->getGravatarId()}</dd>
+                <dt>Url: </dt>
+                    <dd>{$this->m_sender->getUrl()}</dd>
+                 <dt>Html Url </dt>
+                    <dd>{$this->m_sender->getHtmlUrlprivate()}</dd>
+                <dt>Followers Url: </dt>
+                    <dd>{$this->m_sender->getFollowersUrl()}</dd>
+                <dt>Following Url: </dt>
+                    <dd>{$this->m_sender->getFollowingUrl()}</dd>
+                <dt>Gists Url: </dt>
+                    <dd>{$this->m_sender->getGistsUrl()}</dd>
+                <dt>Starred Url: </dt>
+                    <dd>{$this->m_sender->getStarredUrl()}</dd>
+                <dt>Subscriptions Url: </dt>
+                    <dd>{$this->m_sender->getSubscriptionsUrl()}</dd>
+                <dt>Organizations Url:</dt>
+                    <dd>{$this->m_sender->getOrganizationsUrl()}</dd>
+                <dt>Repos Url: </dt>
+                    <dd>{$this->m_sender->getReposUrl()}</dd>
+                <dt>Events Url: </dt>
+                    <dd>{$this->m_sender->getEventsUrl()}</dd>
+                <dt>Received Events Url: </dt>
+                    <dd>{$this->m_sender->getReceivedEventsUrl()}</dd>
+             </dl>
              </div>
-         </div>
          ";
     }
 }

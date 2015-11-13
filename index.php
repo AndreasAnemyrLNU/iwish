@@ -8,6 +8,7 @@
  */
 
     require_once("model/dal/WebHookFileSystemDAL.php");
+    require_once("model/archive/SaveOldVersionInArchive.php");
     require_once("view/IndexPage.php");
     require_once("view/GitCommits.php");
     require_once("view/css/BootstrapCDN.php");

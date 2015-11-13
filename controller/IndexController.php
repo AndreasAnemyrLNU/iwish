@@ -21,6 +21,10 @@ class IndexController
     public function DoIndex()
     {
 
+        $saver = new \model\SaveOldVersionInArchive();
+        $saver->SaveFiles(null,'2345');
+
+
         if($this->gitPayLoadView->DidGithubSendArchiveParamSetToTrue())
         {
             $gitController = new \controller\GitController();
