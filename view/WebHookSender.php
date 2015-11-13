@@ -28,7 +28,7 @@ class WebHookSender
         return
         "
          <div class='well'>
-             <h4 class='h4'>Commits</h4>
+             <h4 class='h4'>Sender</h4>
              <dl class='dl-horizontal'>
                 <dt>Login: </dt>
                     <dd>{$this->m_sender->getLogin()}</dd>
