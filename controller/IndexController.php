@@ -22,7 +22,7 @@ class IndexController
     {
 
         $saver = new \model\SaveOldVersionInArchive();
-        $saver->SaveFiles(null,'2345');
+        $saver->SaveFiles();
 
 
         if($this->gitPayLoadView->DidGithubSendArchiveParamSetToTrue())

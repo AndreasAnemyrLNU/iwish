@@ -11,7 +11,7 @@ namespace model;
 
 class SaveOldVersionInArchive
 {
-    private static $archiveDir = "data/../../physicaRepoArchive";
+    private static $archiveDir = "data/../../physicalRepoArchive";
 
 
     /**
@@ -33,7 +33,7 @@ class SaveOldVersionInArchive
 
     private function CreateArchive()
     {
-        mkdir(self::$archiveDir . "sdafdsaf");
+        mkdir(self::$archiveDir);
     }
 
 }
