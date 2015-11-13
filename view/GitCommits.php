@@ -83,11 +83,11 @@ class GitCommits
             <div class='col-xs-2 col-sm-2 col-md-2 col-lg-2'>
                 <img src={$this->GetSender($w->getSender())->getAvatarUrl()} class='img-responsive img-circle' alt='Avatar Pic'>
             </div>
-        </div>
-        <div class='row'>
-            {$this->RenderCommits($w->getCommits())}
-            {$this->RenderRepository($w->getRepository())}
-            {$this->RenderSender($w->getSender())}
+            <div class='row'>
+                {$this->RenderCommits($w->getCommits())}
+                {$this->RenderRepository($w->getRepository())}
+                {$this->RenderSender($w->getSender())}
+            </div>
         </div>
         ";
     }
