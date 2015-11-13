@@ -19,6 +19,7 @@
     require_once("view/WebHookModified.php");
     require_once("view/WebHookRemoved.php");
     require_once("view/WebHookRepository.php");
+    require_once("view/WebHookSender.php");
     require_once("controller/IndexController.php");
 
     //github
