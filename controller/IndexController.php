@@ -37,7 +37,7 @@ class IndexController
         $dal = new \model\webhookFileSystemDAL();
         $webCollection = $dal->Read();
 
-        $view = new \view\GitCommits($webCollection);
+        $view = new \view\GitCommits($webCollection, $this->nav);
 
         return $view;
     }

@@ -34,4 +34,12 @@ class Navigation
         if($_POST[self::$controllerKey] === self::$indexControllerValue)
             return true;
     }
+    // End Region :: Evaluate controller
+
+    // Start Region :: Render Querystring for key and value for GET Request
+    // lite this key=value
+    public function RenderParamInQueryString($key, $value)
+    {
+        return "$key&$value";
+    }
 }
