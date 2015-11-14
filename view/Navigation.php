@@ -14,7 +14,6 @@ class Navigation
     //**********************************************************************************
     // Key Readonly
     private static $controllerKey = 'c';
-    //**********************************************************************************
     public static function getControllerKey(){return self::$controllerKey;}
     // Value for private $controller to use.
     // I You declare a new controller you should declare it here!
@@ -27,6 +26,8 @@ class Navigation
     //**********************************************************************************
     private static $downLoadControllerValue = 'download';
     public static function getDownLoadControllerValue(){return self::$downLoadControllerValue;}
+    private static  $shaKey = 'sha';
+    public static function getShaKey(){return self::$shaKey;}
 
     // Start Region :: Evaluate controller
     public function ClientWantsTheDownloadController()
@@ -35,7 +36,7 @@ class Navigation
         {
             if
             (
-                $this->IsValueForControllerKeyInPostEqualsTheTestValue
+                $this->IsValueForControllerKeyInGETEqualsTheTestValue
                 (
                     self::getDownLoadControllerValue()
                 )
@@ -60,10 +61,22 @@ class Navigation
         return false;
     }
 
-    private function IsValueForControllerKeyInPostEqualsTheTestValue($testValue)
+    private function IsValueForControllerKeyInGETEqualsTheTestValue($testValue)
     {
         if($_GET[self::getControllerKey()] === $testValue)
             return true;
         return false;
+    }
+
+    public function ReadValueFromKeyInGET($key)
+    {
+        if($this->HasKeyInGET($key))
+            return $_GET[$key];
+        return "";
+    }
+
+    public function GetWebhookBySha(\model\WebhookCollection $w, $sha)
+    {
+        $w->GetWebHookByIdOfCommits($sha);
     }
 }

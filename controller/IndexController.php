@@ -25,7 +25,8 @@ class IndexController
 
         if($this->nav->ClientWantsTheDownloadController())
         {
-            echo "ClientWantsTheDownloadController";
+            $downloadController = new \controller\DownloadController($this->nav);
+            $downloadController->DoDownload();
         }
 
 

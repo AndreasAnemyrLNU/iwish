@@ -88,8 +88,8 @@ class GitCommits
         </div>
         <div class='row'>
             <div class='panel panel-success'>
-                    <a href=?{$this->nav->RenderParamInQueryString($this->nav->getControllerKey(), $this->nav->getDownLoadControllerValue())}
-                        class='btn btn-lg btn-warning btn-block'>Build Archive ({$w->getCommits()->getId()})
+                    <a href=?{$this->nav->RenderParamInQueryString($this->nav->getControllerKey(), $this->nav->getDownLoadControllerValue())}&{$this->nav->RenderParamInQueryString($this->nav->getShaKey(), $w->getCommits()->getId())}
+                       class='btn btn-lg btn-warning btn-block'>Build Archive ({$w->getCommits()->getId()})
                     </a>
                     {$this->RenderCommits($w->getCommits())}
                     {$this->RenderRepository($w->getRepository())}

@@ -11,5 +11,20 @@ namespace controller;
 
 class DownloadController
 {
+    private $nav;
 
+    public function __construct(\view\Navigation $n)
+    {
+        $this->nav = $n;
+    }
+
+    public function DoDownload()
+    {
+        $saveOldVersionInArchive = new \model\SaveOldVersionInArchive();
+
+        $saveOldVersionInArchive->SaveAllModifiedFilesPhysicallyByCommitVersion
+        (
+            $this->nav->ReadValueFromKeyInGET($this->nav->getShaKey())
+        );
+    }
 }
