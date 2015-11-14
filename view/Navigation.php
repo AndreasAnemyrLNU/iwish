@@ -31,8 +31,18 @@ class Navigation
     // Start Region :: Evaluate controller
     public function ClientWantsTheDownloadController()
     {
-        if($_POST[self::$controllerKey] === self::$indexControllerValue)
-            return true;
+        if($this->HasKeyInGET(self::getControllerKey()))
+        {
+            if
+            (
+                $this->IsValueForControllerKeyInPostEqualsTheTestValue
+                (
+                    self::getDownLoadControllerValue()
+                )
+            )
+                return true;
+        }
+        return false;
     }
     // End Region :: Evaluate controller
 
@@ -40,6 +50,20 @@ class Navigation
     // lite this key=value
     public function RenderParamInQueryString($key, $value)
     {
-        return "$key&$value";
+        return "$key=$value";
+    }
+
+    private function HasKeyInGET($key)
+    {
+        if(isset($_GET[$key]))
+            return true;
+        return false;
+    }
+
+    private function IsValueForControllerKeyInPostEqualsTheTestValue($testValue)
+    {
+        if($_GET[self::getControllerKey()] === $testValue)
+            return true;
+        return false;
     }
 }

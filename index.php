@@ -23,6 +23,7 @@
     require_once("view/WebHookRepository.php");
     require_once("view/WebHookSender.php");
     require_once("controller/IndexController.php");
+    require_once("controller/DownloadController.php");
 
     //github
     require_once("model/github/Added.php");
