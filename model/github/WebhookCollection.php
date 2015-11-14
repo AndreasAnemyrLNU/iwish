@@ -31,4 +31,21 @@ class WebhookCollection
     {
         $this->webhooks[] = $webhook;
     }
+    
+    public function GetWebHookByIdOfCommits($id)
+    {
+        foreach($this->getWebhooks() as $webhook)
+        {
+            $w =$this->GetWebhookAsTypeWebhook($webhook);
+            if($w->getCommits()->getId() == $id)
+                return $w;
+        }
+        return null;
+    }
+
+    public function GetWebhookAsTypeWebhook(\model\Webhook $w)
+    {
+        return $w;
+    }
+
 }
