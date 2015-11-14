@@ -13,11 +13,6 @@ class SaveOldVersionInArchive
 {
     private static $physicalRepoArchive = "/../../data/physicalRepoArchive/";
 
-
-    /**
-     * @param Modified $m
-     * @param $before git version...
-     */
     public function SaveAllModifiedFilesPhysicallyByCommitVersion($sha)
     {
         $dal = new webhookFileSystemDAL();

@@ -12,10 +12,12 @@ namespace controller;
 class IndexController
 {
     private $gitPayLoadView;
+    private $nav;
 
     public function __construct()
     {
         $this->gitPayLoadView = new \view\GitPayload();
+        $this->nav  = new \view\Navigation();
     }
 
     public function DoIndex()
@@ -23,8 +25,6 @@ class IndexController
 
         $saver = new \model\SaveOldVersionInArchive();
         $saver->SaveAllModifiedFilesPhysicallyByCommitVersion('d7c44a150d1d260c80eecac1e0b0b2205d49b3ae');
-
-        /*
 
         //Deccide if Request is from github's payload.
         //If it is -> system should serialize a webhook.
@@ -40,7 +40,5 @@ class IndexController
         $view = new \view\GitCommits($webCollection);
 
         return $view;
-
-        */
     }
 }
