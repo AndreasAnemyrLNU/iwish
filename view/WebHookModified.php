@@ -10,15 +10,11 @@ namespace view;
 
 class WebHookModified
 {
-    private $m_modified;
+    private $m_commits;
 
-    /**
-     * WebHookModified constructor.
-     * @param $modified
-     */
-    public function __construct(\model\Modified $modified)
+    public function __construct(\model\Commits $committs)
     {
-        $this->m_modified = $modified;
+        $this->m_commits = $committs;
         $this->getHTML();
     }
 
@@ -37,7 +33,8 @@ class WebHookModified
 
     private function RenderModified()
     {
-        $files = $this->m_modified->getModified();
+        $files = $this->m_commits->getModified()->getModified();
+
         $ret = "";
         foreach($files as $file)
         {
@@ -46,8 +43,13 @@ class WebHookModified
         return $ret;
     }
 
-    private function RenderFilesLi($filestring)
+    private function RenderFilesLi($file)
     {
-        return "<li>$filestring</li>";
+        return "<li>
+                    <p>$file</p>
+                        <a href=''  class='btn btn-xs btn-success' role='button'>View Code</a>
+                        <a href=''  class='btn btn-xs btn-danger'  role='button'>Republish</a>
+                        <a href=''  class='btn btn-xs btn-danger'  role='button'>Delete!</a>
+                </li>";
     }
 }

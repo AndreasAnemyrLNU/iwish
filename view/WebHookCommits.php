@@ -43,9 +43,9 @@ class WebHookCommits
              </dl>
             {$this->RenderAuthor($this->m_commits->getAuthor())}
             {$this->RenderCommitter($this->m_commits->getCommitter())}
-            {$this->RenderAdded($this->m_commits->getAdded())}
-            {$this->RenderRemoved($this->m_commits->getRemoved())}
-            {$this->RenderModified($this->m_commits->getModified())}
+            {$this->RenderAdded($this->m_commits)}
+            {$this->RenderRemoved($this->m_commits)}
+            {$this->RenderModified($this->m_commits)}
          </div>
          ";
     }
@@ -62,21 +62,21 @@ class WebHookCommits
         return $html->getHTML();
     }
 
-    public function RenderAdded(\model\Added $a)
+    public function RenderAdded(\model\Commits $c)
     {
-        $html = new \view\WebHookAdded($a);
+        $html = new \view\WebHookAdded($c);
         return $html->getHTML();
     }
 
-    public function RenderRemoved(\model\Removed $r)
+    public function RenderRemoved(\model\Commits $c)
     {
-        $html = new \view\WebHookRemoved($r);
+        $html = new \view\WebHookRemoved($c);
         return $html->getHTML();
     }
 
-    public function RenderModified(\model\Modified $m)
+    public function RenderModified(\model\Commits $c)
     {
-        $html = new \view\WebHookModified($m);
+        $html = new \view\WebHookModified($c);
         return $html->getHTML();
     }
 }

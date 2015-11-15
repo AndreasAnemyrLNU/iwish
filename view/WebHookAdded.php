@@ -11,15 +11,11 @@ namespace view;
 
 class WebHookAdded
 {
-    private $m_added;
+    private $m_commits;
 
-    /**
-     * WebHookAdded constructor.
-     * @param $added
-     */
-    public function __construct(\model\Added $added)
+    public function __construct(\model\Commits $committs)
     {
-        $this->m_added = $added;
+        $this->m_commits = $committs;
         $this->getHTML();
     }
 
@@ -38,7 +34,8 @@ class WebHookAdded
 
     private function RenderAdded()
     {
-        $files = $this->m_added->getAdded();
+        $files = $this->m_commits->getAdded()->getAdded();
+
         $ret = "";
         foreach($files as $file)
         {
@@ -47,8 +44,13 @@ class WebHookAdded
         return $ret;
     }
 
-    private function RenderFilesLi($filestring)
+    private function RenderFilesLi($file)
     {
-        return "<li>$filestring</li>";
+        return "<li>
+                    <p>$file</p>
+                        <a href=''  class='btn btn-xs btn-success' role='button'>View Code</a>
+                        <a href=''  class='btn btn-xs btn-danger'  role='button'>Republish</a>
+                        <a href=''  class='btn btn-xs btn-danger'  role='button'>Delete!</a>
+                </li>";
     }
 }

@@ -11,15 +11,11 @@ namespace view;
 
 class WebHookRemoved
 {
-    private $m_Removed;
+    private $m_commits;
 
-    /**
-     * WebHookRemoved constructor.
-     * @param $removed
-     */
-    public function __construct(\model\Removed $removed)
+    public function __construct(\model\Commits $committs)
     {
-        $this->m_removed = $removed;
+        $this->m_commits = $committs;
         $this->getHTML();
     }
 
@@ -38,7 +34,8 @@ class WebHookRemoved
 
     private function RenderRemoved()
     {
-        $files = $this->m_removed->getRemoved();
+        $files = $this->m_commits->getRemoved()->getRemoved();
+
         $ret = "";
         foreach($files as $file)
         {
@@ -47,8 +44,13 @@ class WebHookRemoved
         return $ret;
     }
 
-    private function RenderFilesLi($filestring)
+    private function RenderFilesLi($file)
     {
-        return "<li>$filestring</li>";
+        return "<li>
+                    <p>$file</p>
+                        <a href=''  class='btn btn-xs btn-success' role='button'>View Code</a>
+                        <a href=''  class='btn btn-xs btn-danger'  role='button'>Republish</a>
+                        <a href=''  class='btn btn-xs btn-danger'  role='button'>Delete!</a>
+                </li>";
     }
 }
