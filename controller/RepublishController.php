@@ -9,7 +9,7 @@
 namespace controller;
 
 
-class Republish
+class RepublishController
 {
     private $m_webhook;
     private $m_nav;
@@ -18,5 +18,13 @@ class Republish
     {
         $this->m_webhook = $w;
         $this->m_nav = $n;
+    }
+
+    public function DoRepublishFileInCollection()
+    {
+
+        echo $this->m_nav->ReadValueFromKeyInGET($this->m_nav->GetFileNameKey());
+
+
     }
 }

@@ -29,6 +29,11 @@ class IndexController
             $downloadController->DoDownload();
         }
 
+        if($this->nav->ClientWantsToRepublish)
+        {
+            $republishController = new \controller\RepublishController();
+        }
+
 
         //Deccide if Request is from github's payload.
         //If it is -> system should serialize a webhook.

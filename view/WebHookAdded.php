@@ -50,12 +50,24 @@ class WebHookAdded
     {
         return "<li>
                     <p>$file</p>
-                        <a  href=?{$this->m_nav->RenderGetParam($this->m_nav->getControllerKey(), $this->m_nav->getDownLoadControllerValue())}&{$this->m_nav->RenderGetParam('sadf', '123')}
-                            class='btn btn-xs btn-success' role='button'>View Code</a>
-                        <a  href=''
+                        <!-- Start Region :: View Code -->
+                        <a  href=?{$this->m_nav->RenderGetParam($this->m_nav->getControllerKey(), $this->m_nav->GetViewCodeControllerValue())
+                        }&{$this->m_nav->RenderGetParam($this->m_nav->GetFilesKey(), $this->m_nav->GetFilesAddedValue())
+                        }&{$this->m_nav->RenderGetParam($this->m_nav->GetFileNameKey(), $file )}
                             class='btn btn-xs btn-danger'  role='button'>Republish</a>
-                        <a  href=''
-                            class='btn btn-xs btn-danger'  role='button'>Delete!</a>
+                        <!-- End -->
+                        <!-- Start Region :: Republish -->
+                        <a  href=?{$this->m_nav->RenderGetParam($this->m_nav->getControllerKey(), $this->m_nav->GetRepublishControllerValue())
+                        }&{$this->m_nav->RenderGetParam($this->m_nav->GetFilesKey(), $this->m_nav->GetFilesAddedValue())
+                        }&{$this->m_nav->RenderGetParam($this->m_nav->GetFileNameKey(), $file )}
+                            class='btn btn-xs btn-danger'  role='button'>Republish</a>
+                        <!-- End -->
+                        <!-- Start  Region :: Delete -->
+                        <a  href=?{$this->m_nav->RenderGetParam($this->m_nav->getControllerKey(), $this->m_nav->GetDeleteControllerValue())
+                        }&{$this->m_nav->RenderGetParam($this->m_nav->GetFilesKey(), $this->m_nav->GetFilesAddedValue())
+                        }&{$this->m_nav->RenderGetParam($this->m_nav->GetFileNameKey(), $file )}
+                            class='btn btn-xs btn-danger'  role='button'>Republish</a>
+                        <!-- End -->
                 </li>";
     }
 }

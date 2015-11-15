@@ -24,19 +24,24 @@ class Navigation
     private static $gitControllerValue = 'git';
     public function getGitControllerValue(){return self::$gitControllerValue;}
     //**********************************************************************************
+    private static $republishControllerValue = 'republish';
+    public function GetRepublishControllerValue(){return self::$republishControllerValue;}
+    //**********************************************************************************
     private static $downLoadControllerValue = 'download';
     public function getDownLoadControllerValue(){return self::$downLoadControllerValue;}
     private static  $shaKey = 'sha';
     public function getShaKey(){return self::$shaKey;}
     //**********************************************************************************
-    private static $files = 'f';
-    public function getFiles(){return self::$files;}
-    private static $filesAdded = 'added';
-    public function getFilesAdded(){return self::$filesAdded;}
-    private static $filesModified = 'modified';
-    public function getFilesModified(){return self::$filesModified;}
-    private static $filesRemoved = 'removed';
-    public function getFilesRemoved(){return self::$filesRemoved;}
+    private static $filesKey = 'f';
+    public function GetFilesKey(){return self::$filesKey;}
+    private static $filesAddedValue = 'added';
+    public function GetFilesAddedValue(){return self::$filesAddedValue;}
+    private static $filesModifiedValue = 'modified';
+    public function GetFilesModifiedValue(){return self::$filesModifiedValue;}
+    private static $filesRemovedValue = 'removed';
+    public function GetFilesRemovedValue(){return self::$filesRemovedValue;}
+    private static $fileNameKey = 'fn';
+    public function GetFileNameKey(){return self::$fileNameKey;}
 
     // Start Region :: Evaluate controller
     public function ClientWantsTheDownloadController()
@@ -87,5 +92,10 @@ class Navigation
     public function GetWebhookBySha(\model\WebhookCollection $w, $sha)
     {
         $w->GetWebHookByIdOfCommits($sha);
+    }
+
+    public function ClientWantsToRepublish(\model\WebhookCollection $w)
+    {
+        $this->GetWebhookBySha($w, $this->ReadValueFromKeyInGET($this->getShaKey()));
     }
 }
