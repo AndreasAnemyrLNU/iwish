@@ -88,10 +88,10 @@ class GitCommits
         </div>
         <div class='row'>
             <div class='panel panel-success'>
-                    <a href=?{$this->nav->RenderParamInQueryString($this->nav->getControllerKey(), $this->nav->getDownLoadControllerValue())}&{$this->nav->RenderParamInQueryString($this->nav->getShaKey(), $w->getCommits()->getId())}
+                    <a href=?{$this->nav->RenderGetParam($this->nav->getControllerKey(), $this->nav->getDownLoadControllerValue())}&{$this->nav->RenderGetParam($this->nav->getShaKey(), $w->getCommits()->getId())}
                        class='btn btn-lg btn-warning btn-block'>Build Archive ({$w->getCommits()->getId()})
                     </a>
-                    {$this->RenderCommits($w->getCommits())}
+                    {$this->RenderCommits($w->getCommits(), $this->nav)}
                     {$this->RenderRepository($w->getRepository())}
                     {$this->RenderSender($w->getSender())}
             </div>
@@ -109,9 +109,9 @@ class GitCommits
         return $sender;
     }
 
-    private function RenderCommits(\model\Commits $c)
+    private function RenderCommits(\model\Commits $c, \view\Navigation $nav)
     {
-        $html   = new \view\WebHookCommits($c);
+        $html   = new \view\WebHookCommits($c, $nav);
         return  $html->getHTML();
     }
 

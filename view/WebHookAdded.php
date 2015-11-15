@@ -12,10 +12,12 @@ namespace view;
 class WebHookAdded
 {
     private $m_commits;
+    private $m_nav;
 
-    public function __construct(\model\Commits $committs)
+    public function __construct(\model\Commits $committs, \view\Navigation $n)
     {
         $this->m_commits = $committs;
+        $this->m_nav = $n;
         $this->getHTML();
     }
 
@@ -48,9 +50,12 @@ class WebHookAdded
     {
         return "<li>
                     <p>$file</p>
-                        <a href=''  class='btn btn-xs btn-success' role='button'>View Code</a>
-                        <a href=''  class='btn btn-xs btn-danger'  role='button'>Republish</a>
-                        <a href=''  class='btn btn-xs btn-danger'  role='button'>Delete!</a>
+                        <a  href=?{$this->m_nav->RenderGetParam($this->m_nav->getControllerKey(), $this->m_nav->getDownLoadControllerValue())}&{$this->m_nav->RenderGetParam('sadf', '123')}
+                            class='btn btn-xs btn-success' role='button'>View Code</a>
+                        <a  href=''
+                            class='btn btn-xs btn-danger'  role='button'>Republish</a>
+                        <a  href=''
+                            class='btn btn-xs btn-danger'  role='button'>Delete!</a>
                 </li>";
     }
 }

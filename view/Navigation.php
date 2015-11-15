@@ -14,20 +14,29 @@ class Navigation
     //**********************************************************************************
     // Key Readonly
     private static $controllerKey = 'c';
-    public static function getControllerKey(){return self::$controllerKey;}
+    public function getControllerKey(){return self::$controllerKey;}
     // Value for private $controller to use.
     // I You declare a new controller you should declare it here!
     //**********************************************************************************
     private static $indexControllerValue = 'index';
-    public static function getIndexControllerValue(){return self::$indexControllerValue;}
+    public function getIndexControllerValue(){return self::$indexControllerValue;}
     //**********************************************************************************
     private static $gitControllerValue = 'git';
-    public static function getGitControllerValue(){return self::$gitControllerValue;}
+    public function getGitControllerValue(){return self::$gitControllerValue;}
     //**********************************************************************************
     private static $downLoadControllerValue = 'download';
-    public static function getDownLoadControllerValue(){return self::$downLoadControllerValue;}
+    public function getDownLoadControllerValue(){return self::$downLoadControllerValue;}
     private static  $shaKey = 'sha';
-    public static function getShaKey(){return self::$shaKey;}
+    public function getShaKey(){return self::$shaKey;}
+    //**********************************************************************************
+    private static $files = 'f';
+    public function getFiles(){return self::$files;}
+    private static $filesAdded = 'added';
+    public function getFilesAdded(){return self::$filesAdded;}
+    private static $filesModified = 'modified';
+    public function getFilesModified(){return self::$filesModified;}
+    private static $filesRemoved = 'removed';
+    public function getFilesRemoved(){return self::$filesRemoved;}
 
     // Start Region :: Evaluate controller
     public function ClientWantsTheDownloadController()
@@ -49,7 +58,7 @@ class Navigation
 
     // Start Region :: Render Querystring for key and value for GET Request
     // lite this key=value
-    public function RenderParamInQueryString($key, $value)
+    public function RenderGetParam($key, $value)
     {
         return "$key=$value";
     }

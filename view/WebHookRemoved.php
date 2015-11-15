@@ -12,10 +12,12 @@ namespace view;
 class WebHookRemoved
 {
     private $m_commits;
+    private $m_nav;
 
-    public function __construct(\model\Commits $committs)
+    public function __construct(\model\Commits $committs, \view\Navigation $n)
     {
         $this->m_commits = $committs;
+        $this->m_nav;
         $this->getHTML();
     }
 

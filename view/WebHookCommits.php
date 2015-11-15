@@ -12,13 +12,11 @@ namespace view;
 class WebHookCommits
 {
     private $m_commits;
+    private $m_nav;
 
-    /**
-     * WebHookCommnits constructor.
-     * @param $commits
-     */
-    public function __construct(\model\Commits $commits)
+    public function __construct(\model\Commits $commits, \view\Navigation $nav)
     {
+        $this->m_nav = $nav;
         $this->m_commits = $commits;
         $this->getHTML();
     }
@@ -43,9 +41,9 @@ class WebHookCommits
              </dl>
             {$this->RenderAuthor($this->m_commits->getAuthor())}
             {$this->RenderCommitter($this->m_commits->getCommitter())}
-            {$this->RenderAdded($this->m_commits)}
-            {$this->RenderRemoved($this->m_commits)}
-            {$this->RenderModified($this->m_commits)}
+            {$this->RenderAdded($this->m_commits, $this->m_nav)}
+            {$this->RenderRemoved($this->m_commits, $this->m_nav)}
+            {$this->RenderModified($this->m_commits, $this->m_nav)}
          </div>
          ";
     }
@@ -62,21 +60,21 @@ class WebHookCommits
         return $html->getHTML();
     }
 
-    public function RenderAdded(\model\Commits $c)
+    public function RenderAdded(\model\Commits $c, \view\Navigation $n)
     {
-        $html = new \view\WebHookAdded($c);
+        $html = new \view\WebHookAdded($c, $n);
         return $html->getHTML();
     }
 
-    public function RenderRemoved(\model\Commits $c)
+    public function RenderRemoved(\model\Commits $c, \view\Navigation $n)
     {
-        $html = new \view\WebHookRemoved($c);
+        $html = new \view\WebHookRemoved($c, $n);
         return $html->getHTML();
     }
 
-    public function RenderModified(\model\Commits $c)
+    public function RenderModified(\model\Commits $c, \view\Navigation $n)
     {
-        $html = new \view\WebHookModified($c);
+        $html = new \view\WebHookModified($c, $n);
         return $html->getHTML();
     }
 }
