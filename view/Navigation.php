@@ -27,6 +27,12 @@ class Navigation
     private static $republishControllerValue = 'republish';
     public function GetRepublishControllerValue(){return self::$republishControllerValue;}
     //**********************************************************************************
+    private static $viewCodeControllerValue = 'viewCode';
+    public function GetViewCodeControllerValue(){return self::$viewCodeControllerValue;}
+    //**********************************************************************************
+    private static $deleteControllerValue = 'delete';
+    public function GetDeleteControllerValue(){return self::$deleteControllerValue;}
+    //**********************************************************************************
     private static $downLoadControllerValue = 'download';
     public function getDownLoadControllerValue(){return self::$downLoadControllerValue;}
     private static  $shaKey = 'sha';

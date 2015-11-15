@@ -49,9 +49,24 @@ class WebHookModified
     {
         return "<li>
                     <p>$file</p>
-                        <a href=''  class='btn btn-xs btn-success' role='button'>View Code</a>
-                        <a href=''  class='btn btn-xs btn-danger'  role='button'>Republish</a>
-                        <a href=''  class='btn btn-xs btn-danger'  role='button'>Delete!</a>
+                        <!-- Start Region :: View Code -->
+                        <a  href=?{$this->m_nav->RenderGetParam($this->m_nav->getControllerKey(), $this->m_nav->GetViewCodeControllerValue())
+                        }&{$this->m_nav->RenderGetParam($this->m_nav->GetFilesKey(), $this->m_nav->GetFilesModifiedValue())
+                        }&{$this->m_nav->RenderGetParam($this->m_nav->GetFileNameKey(), $file )}
+                            class='btn btn-xs btn-info'  role='button'>View Code</a>
+                        <!-- End -->
+                        <!-- Start Region :: Republish -->
+                        <a  href=?{$this->m_nav->RenderGetParam($this->m_nav->getControllerKey(), $this->m_nav->GetRepublishControllerValue())
+                        }&{$this->m_nav->RenderGetParam($this->m_nav->GetFilesKey(), $this->m_nav->GetFilesModifiedValue())
+                        }&{$this->m_nav->RenderGetParam($this->m_nav->GetFileNameKey(), $file )}
+                            class='btn btn-xs btn-warning'  role='button'>Republish</a>
+                        <!-- End -->
+                        <!-- Start  Region :: Delete -->
+                        <a  href=?{$this->m_nav->RenderGetParam($this->m_nav->getControllerKey(), $this->m_nav->GetDeleteControllerValue())
+                        }&{$this->m_nav->RenderGetParam($this->m_nav->GetFilesKey(), $this->m_nav->GetFilesModifiedValue())
+                        }&{$this->m_nav->RenderGetParam($this->m_nav->GetFileNameKey(), $file )}
+                            class='btn btn-xs btn-danger'  role='button'>Delete</a>
+                        <!-- End -->
                 </li>";
     }
 }
