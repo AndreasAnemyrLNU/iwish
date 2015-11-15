@@ -13,7 +13,6 @@ class SaveOldVersionInArchive
 {
     private static $physicalRepoArchive = "/../../data/physicalRepoArchive/";
 
-
     public function SaveAllModifiedFilesPhysicallyByCommitVersion($sha)
     {
         // Object in array regarding payloaded JSON from github.

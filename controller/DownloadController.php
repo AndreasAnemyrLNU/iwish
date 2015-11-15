@@ -21,7 +21,7 @@ class DownloadController
     public function DoDownload()
     {
         $saver = new \model\SaveOldVersionInArchive();
-        $saver->SaveAllModifiedFilesPhysicallyByCommitVersion($this->nav->ReadValueFromKeyInGET($this->nav->getShaKey()));
+        $saver->SaveAllModifiedFilesPhysicallyByCommitVersion($this->nav->ReadValueFromKeyInGET($this->nav->GetShaKey()));
     }
 
 

@@ -13,11 +13,15 @@ class IndexController
 {
     private $gitPayLoadView;
     private $nav;
+    private $dal;
+    private $webhookCollection;
 
     public function __construct()
     {
         $this->gitPayLoadView = new \view\GitPayload();
         $this->nav  = new \view\Navigation();
+        $this->dal = new \model\webhookFileSystemDAL();
+        $this->webhookCollection = $this->dal->Read();
     }
 
     public function DoIndex()
@@ -29,9 +33,11 @@ class IndexController
             $downloadController->DoDownload();
         }
 
-        if($this->nav->ClientWantsToRepublish)
+        if($this->nav->ClientWantsToRepublish())
         {
-            $republishController = new \controller\RepublishController();
+            $webhook = $this->nav->GetWebhookBySha($this->webhookCollection);
+            $republishController = new \controller\RepublishController($webhook, $this->nav);
+            $republishController->DoRepublish();
         }
 
 

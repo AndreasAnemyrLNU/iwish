@@ -36,7 +36,7 @@ class Navigation
     private static $downLoadControllerValue = 'download';
     public function getDownLoadControllerValue(){return self::$downLoadControllerValue;}
     private static  $shaKey = 'sha';
-    public function getShaKey(){return self::$shaKey;}
+    public function GetShaKey(){return self::$shaKey;}
     //**********************************************************************************
     private static $filesKey = 'f';
     public function GetFilesKey(){return self::$filesKey;}
@@ -95,13 +95,31 @@ class Navigation
         return "";
     }
 
-    public function GetWebhookBySha(\model\WebhookCollection $w, $sha)
+    public function GetWebhookBySha(\model\WebhookCollection $w)
     {
-        $w->GetWebHookByIdOfCommits($sha);
+        return $w->GetWebHookByIdOfCommits($this->ReadValueFromKeyInGET($this->GetShaKey()));
     }
 
-    public function ClientWantsToRepublish(\model\WebhookCollection $w)
+    public function ClientWantsToViewCode()
     {
-        $this->GetWebhookBySha($w, $this->ReadValueFromKeyInGET($this->getShaKey()));
+        if($this->IsValueForControllerKeyInGETEqualsTheTestValue($this->GetViewCodeControllerValue()))
+            return true;
+        return false;
     }
+
+    public function ClientWantsToRepublish()
+    {
+        if($this->IsValueForControllerKeyInGETEqualsTheTestValue($this->GetRepublishControllerValue()))
+            return true;
+        return false;
+    }
+
+    public function ClientWantsToDelete()
+    {
+        if($this->IsValueForControllerKeyInGETEqualsTheTestValue($this->GetDeleteControllerValue()))
+            return true;
+        return false;
+    }
+
+
 }

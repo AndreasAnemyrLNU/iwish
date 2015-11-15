@@ -20,11 +20,13 @@ class RepublishController
         $this->m_nav = $n;
     }
 
-    public function DoRepublishFileInCollection()
+    public function DoRepublish()
     {
-
-        echo $this->m_nav->ReadValueFromKeyInGET($this->m_nav->GetFileNameKey());
-
-
+        new \model\RepublishFile
+        (
+            $this->m_webhook,
+            $this->m_nav->ReadValueFromKeyInGET($this->m_nav->GetFilesKey()),
+            $this->m_nav->ReadValueFromKeyInGET($this->m_nav->GetFileNameKey())
+        );
     }
 }
