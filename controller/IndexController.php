@@ -40,6 +40,13 @@ class IndexController
             $republishController->DoRepublish();
         }
 
+        if($this->nav->ClientWantsToViewCode())
+        {
+            $webhook = $this->nav->GetWebhookBySha($this->webhookCollection);
+            $viewCodeController = new \controller\ViewCodeController($webhook, $this->nav);
+            $viewCodeController->DoViewCode();
+        }
+
 
         //Deccide if Request is from github's payload.
         //If it is -> system should serialize a webhook.

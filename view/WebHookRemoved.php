@@ -53,19 +53,22 @@ class WebHookRemoved
                         <!-- Start Region :: View Code -->
                         <a  href=?{$this->m_nav->RenderGetParam($this->m_nav->getControllerKey(), $this->m_nav->GetViewCodeControllerValue())
                         }&{$this->m_nav->RenderGetParam($this->m_nav->GetFilesKey(), $this->m_nav->GetFilesAddedValue())
-                        }&{$this->m_nav->RenderGetParam($this->m_nav->GetFileNameKey(), $file )}
+                        }&{$this->m_nav->RenderGetParam($this->m_nav->GetFileNameKey(), $file )
+                        }&{$this->m_nav->RenderGetParam($this->m_nav->GetShaKey(), $this->m_commits->getId() )}
                             class='btn btn-xs btn-info'  role='button'>View Code</a>
                         <!-- End -->
                         <!-- Start Region :: Republish -->
                         <a  href=?{$this->m_nav->RenderGetParam($this->m_nav->getControllerKey(), $this->m_nav->GetRepublishControllerValue())
                         }&{$this->m_nav->RenderGetParam($this->m_nav->GetFilesKey(), $this->m_nav->GetFilesAddedValue())
-                        }&{$this->m_nav->RenderGetParam($this->m_nav->GetFileNameKey(), $file )}
+                        }&{$this->m_nav->RenderGetParam($this->m_nav->GetFileNameKey(), $file )
+                        }&{$this->m_nav->RenderGetParam($this->m_nav->GetShaKey(), $this->m_commits->getId() )}
                             class='btn btn-xs btn-warning'  role='button'>Republish</a>
                         <!-- End -->
                         <!-- Start  Region :: Delete -->
                         <a  href=?{$this->m_nav->RenderGetParam($this->m_nav->getControllerKey(), $this->m_nav->GetDeleteControllerValue())
                         }&{$this->m_nav->RenderGetParam($this->m_nav->GetFilesKey(), $this->m_nav->GetFilesAddedValue())
-                        }&{$this->m_nav->RenderGetParam($this->m_nav->GetFileNameKey(), $file )}
+                        }&{$this->m_nav->RenderGetParam($this->m_nav->GetFileNameKey(), $file )
+                        }&{$this->m_nav->RenderGetParam($this->m_nav->GetShaKey(), $this->m_commits->getId() )}
                             class='btn btn-xs btn-danger'  role='button'>Delete</a>
                         <!-- End -->
                 </li>";

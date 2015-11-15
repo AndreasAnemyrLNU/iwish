@@ -7,8 +7,10 @@
  *
  */
 
-    require_once("model/dal/WebHookFileSystemDAL.php");
     require_once("model/archive/SaveOldVersionInArchive.php");
+    require_once("model/archive/RepublishFile.php");
+    require_once("model/dal/WebHookFileSystemDAL.php");
+    require_once("model/archive/ViewCode.php");
     require_once("view/IndexPage.php");
     require_once("view/GitCommits.php");
     require_once("view/css/BootstrapCDN.php");
@@ -24,6 +26,8 @@
     require_once("view/WebHookSender.php");
     require_once("controller/IndexController.php");
     require_once("controller/DownloadController.php");
+    require_once("controller/RepublishController.php");
+    require_once("controller/ViewCodeController.php");
 
     //github
     require_once("model/github/Added.php");

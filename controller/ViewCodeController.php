@@ -3,13 +3,13 @@
  * Created by PhpStorm.
  * User: AndreasAnemyr
  * Date: 2015-11-15
- * Time: 14:47
+ * Time: 23:24
  */
 
 namespace controller;
 
 
-class RepublishController
+class ViewCodeController
 {
     private $m_webhook;
     private $m_nav;
@@ -20,13 +20,15 @@ class RepublishController
         $this->m_nav = $n;
     }
 
-    public function DoRepublish()
+    public function DoViewCode()
     {
-        new \model\ViewCode
+        $viewCode = new \model\ViewCode
         (
             $this->m_webhook,
             $this->m_nav->ReadValueFromKeyInGET($this->m_nav->GetFilesKey()),
             $this->m_nav->ReadValueFromKeyInGET($this->m_nav->GetFileNameKey())
         );
+
+        echo "<pre>" . htmlentities($viewCode->GetContentInFile()) . "</pre>";
     }
 }
