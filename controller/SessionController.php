@@ -18,15 +18,24 @@ class SessionController
     {
         $this->m_sessionHandler = $sh;
         $this->m_nav = $n;
+        // The first GET Request reads objects and store it by SessionHandler....
+        // So here we do reload!
         $this->m_sessionHandler->ReloadSession();
         $this->DoSession();
     }
 
     public function DoSession()
     {
-        print_r($_SESSION);
+        // This methode reacts client request...
+        //$collection = $this->m_sessionHandler->GetWebhookCollection()->GetCollection();
 
-        //if($this->m_nav->DidClientChangeVisibleStatusForWebhookCommit())
-        //    $this->m_sessionHandler->AddWebhook($this->m_nav->ContentToChangeVisibilityFor());
+        if($this->m_nav->ClientWantsToMakeContentVisible())
+        {
+            $webhookCommit = $this->m_nav->MakeContentVisible();
+            $this->GetTypeWebhookCommit($webhookCommit)->
+        }
+
     }
+
+    public function GetTypeWebhookCommit(\view\WebhookCommits $wc){return $wc;}
 }

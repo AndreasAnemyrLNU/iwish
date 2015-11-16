@@ -13,7 +13,8 @@ class IndexController
     private $gitPayLoadView;
     private $nav;
     private $dal;
-    private $webhookCollection;
+    private $webhookCollection;         //Model
+    private $webhookCommitCollection;   //View
     private $m_sessionHandler;
 
     public function __construct()
@@ -24,13 +25,13 @@ class IndexController
         $this->dal = new \model\webhookFileSystemDAL();
 
 
-        $this->webhookCollection = $this->dal->Read();
+        if($this->webhookCollection == null)
+            $this->webhookCollection = $this->dal->Read();
     }
 
     public function DoIndex()
     {
         new \controller\SessionController($this->nav, $this->m_sessionHandler);
-
 
 
         if($this->nav->ClientWantsTheDownloadController())
@@ -62,10 +63,10 @@ class IndexController
             $gitController->doParse($this->gitPayLoadView->GetPayLoad());
         }
 
-        $dal = new \model\webhookFileSystemDAL();
-        $webCollection = $dal->Read();
+        //$dal = new \model\webhookFileSystemDAL();
+        //$webCollection = $dal->Read();
 
-        $view = new \view\GitCommits($webCollection, $this->nav);
+        $view = new \view\GitCommits($this->webhookCollection, $this->nav);
 
         return $view;
     }

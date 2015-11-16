@@ -57,13 +57,34 @@ class Navigation
     private static $fileNameKey = 'fn';
     public function GetFileNameKey(){return self::$fileNameKey;}
     //**********************************************************************************
-    private static $changeMenuStatusKey = 'changeMenuStatus';
-    public function GetChangeMenuStatusKey(){return self::$changeMenuStatusKey;}
-    private static $changeMenuStatusTrueValue = true;
-    public function GetChangeMenuStatusTrueValue(){return self::$changeMenuStatusTrueValue;}
-    private static $changeMenuStatusFalseValue = false;
-    public function GetChangeMenuStatusFalseValue(){return self::$changeMenuStatusFalseValue;}
-    //**********************************************************************************
+    private static $visibleStatusKey = 'visibleStatusKey';
+    public function GetVisibleStatusKey(){return self::$visibleStatusKey;}
+    private static $visibleStatusValueTrue = true;
+    public function GetVisibleStatusValueAsTrue(){return self::$visibleStatusValueTrue;}
+    private static $visibleStatusValueFalse = false;
+    public function GetVisibleStatusValueAsFalse(){return self::$visibleStatusValueFalse;}
+    public function ToggleVisibleStatus($visibleSatus, $asString)
+    {
+        assert  (
+                    is_bool($visibleSatus) || is_null($visibleSatus),
+                    'Param should be as bool format or null!'
+                );
+        assert
+                (
+                    is_bool($asString),'Param $asString should be as bool format!'
+                );
+
+        if($visibleSatus === true)
+        {
+            return var_export($this->GetVisibleStatusValueAsFalse(), $asString);
+        }
+        else
+        {
+            return var_export($this->GetVisibleStatusValueAsTrue(), $asString);
+        }
+    }
+
+    ///**********************************************************************************
 
     // Start Region :: Evaluate controller
     public function ClientWantsTheDownloadController()
@@ -160,6 +181,47 @@ class Navigation
     public function UnsetCookie($key, $value)
     {
         setcookie($key, $value, time()-(3600));
+    }
+
+    public function RenderFormThatCanMakeContentVisible($buttonName, $visible, $sha)
+    {
+        return
+        "
+        <form method='post' class='form-horizontal' role='form'>
+            <div class='form-group'>
+                <input  type='hidden'
+                        name='{$this->GetVisibleStatusKey()}'
+                        value='{$this->ToggleVisibleStatus($visible, true)}'>
+                <input  type='hidden'
+                        name='{$this->GetShaKey()}'
+                        value='{$sha}'>
+            </div>
+            <div class='form-group'>
+                <button type='submit' class='btn btn-block btn-info'>{$buttonName}</button>
+            </div>
+        </form>
+        ";
+    }
+
+    public function ClientWantsToMakeContentVisible()
+    {
+        return $this->HasKeyInPOST(self::$visibleStatusKey);
+    }
+
+    public function MakeContentVisible()
+    {
+        $sha = $this->ReadValueFromKeyInPOST(self::$shaKey);
+
+        $webHookCommitsCollection = $this->m_sessionhandler->GetWebhookCommitCollection();
+
+        $webhookCommiit =  $webHookCommitsCollection->GetCommitBySha($sha);
+
+
+        if($webhookCommiit == null)
+            throw new \Exception('Posted Sha has no archive. Have you build it locally at server yet?');
+
+        return $webhookCommiit;
+
     }
 
 }

@@ -26,8 +26,9 @@ class WebHookRepository
 
     public function getHTML()
     {
-
-        return $this->ShowIt();
+        if(!$this->visible)
+            return $this->m_nav->RenderFormThatCanMakeContentVisible
+            ('> > > R E P O S I T O R Y > > > ' . $this->m_sha, $this->visible, $this->m_sha);
 
         return
         "
@@ -176,8 +177,8 @@ class WebHookRepository
         <form method='get' class='form-horizontal' role='form'>
             <div class='form-group'>
                 <input  type='hidden'
-                        name='{$this->m_nav->GetChangeMenuStatusKey()}'
-                        value='{$this->m_nav->GetChangeMenuStatusTrueValue()}'>
+                        name='{$this->m_nav->GetVisibleStatusKey()}'
+                        value='{$this->m_nav->ToggleVisibleStatus($this->visible, true)}'>
                 <input  type='hidden'
                         name='{$this->m_nav->GetShaKey()}'
                         value='{$this->m_sha}'>
@@ -189,3 +190,10 @@ class WebHookRepository
         ";
     }
 }
+/*
+private static $visibleStatusKey = 'visibleStatusKey';
+public function GetVisibleStatusKey(){return self::$visibleStatusKey;}
+private static $visibleStatusValueTrue = true;
+public function GetVisibleStatusValueAsTrue(){return self::$visibleStatusValueTrue;}
+private static $visibleStatusValueFalse = false;
+public function GetVisibleStatusValueAsFalse(){return self::$visibleStatusValueFalse;}*/

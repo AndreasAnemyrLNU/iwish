@@ -111,8 +111,8 @@ class GitCommits
 
     private function RenderCommits(\model\Commits $c, \view\Navigation $nav)
     {
-        $wc = new \view\WebhookCommit($c, $nav);
-        $this->nav->GetSessionHandler()->AddWebhook($wc);
+        $wc = new \view\WebhookCommits($c, $nav);
+        $this->nav->GetSessionHandler()->AddWebhookCommit($wc);
         return  $wc->getHTML();
     }
 

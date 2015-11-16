@@ -10,44 +10,42 @@ namespace model;
  */
 class SessionHandler
 {
-    private $m_webhookCollection;
+    // Start Region :::: applications webhookCommitCollection
+    //***************************************************************//
+    private $m_webhookCommitCollection;
 
-    public function __construct()
-    {
-        $this->ReloadSession();
-    }
-
-
-    public function AddWebhook(\view\WebhookCommit $wc)
+    public function AddWebhookCommit(\view\WebhookCommits $wc)
     {
         // Just add if not exists before...
-        if(!$this->GetTypeWebhookCollection($this->m_webhookCollection)->HasSameSha($wc))
+        if(!$this->GetTypeWebhookCollection($this->m_webhookCommitCollection)->HasSameSha($wc))
         {
-            $this->GetTypeWebhookCollection($this->m_webhookCollection)->Add($wc);
-            $_SESSION['webhookCollection'] = $this->m_webhookCollection;
+            $this->GetTypeWebhookCollection($this->m_webhookCommitCollection)->Add($wc);
+            $_SESSION['webhookCommitCollection'] = $this->m_webhookCommitCollection;
         }
     }
 
-    public function GetWebhookCollection()
+    public function GetWebhookCommitCollection()
     {
-        return $this->m_webhookCollection;
-    }
-
-    public function ReloadSession()
-    {
-        if(isset($_SESSION['webhookCollection']))
-        {
-            $this->m_webhookCollection = $_SESSION['webhookCollection'];
-        }
-        else
-        {
-            // Maybe not right to create this collection here. But the purpose is only for state...
-            $this->m_webhookCollection = new \view\WebhookCommitCollection();
-        }
+        return $this->m_webhookCommitCollection;
     }
 
     private function GetTypeWebhookCollection(\view\WebhookCommitCollection $wc)
     {
         return $wc;
+    }
+    //***************************************************************//
+    // End Region :::: applications webhookCommitCollection
+
+    public function ReloadSession()
+    {
+        if(isset($_SESSION['webhookCommitCollection']))
+        {
+            $this->m_webhookCommitCollection = $_SESSION['webhookCommitCollection'];
+        }
+        else
+        {
+            // Maybe not right to create this collection here. But the purpose is only for state...
+            $this->m_webhookCommitCollection = new \view\WebhookCommitCollection();
+        }
     }
 }

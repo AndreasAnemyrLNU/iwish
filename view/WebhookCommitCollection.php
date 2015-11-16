@@ -13,7 +13,7 @@ class WebhookCommitCollection
 {
     private $m_webhookCommits;
 
-    public function Add(\view\WebhookCommit $wC)
+    public function Add(\view\WebhookCommits $wC)
     {
         $this->m_webhookCommits[] = $wC;
     }
@@ -23,7 +23,7 @@ class WebhookCommitCollection
         return $this->m_webhookCommits;
     }
 
-    public function HasSameSha(\view\WebhookCommit $toBeReturnedIfEquals)
+    public function HasSameSha(\view\WebhookCommits $toBeReturnedIfEquals)
     {
         foreach($this->m_webhookCommits as $wc)
         {
@@ -33,7 +33,16 @@ class WebhookCommitCollection
         return false;
     }
 
-    private function GetTypeWebhookCommit(\view\WebhookCommit $wc)
+    public function GetCommitBySha($sha)
+    {
+        foreach($this->m_webhookCommits as $webhookCommit)
+        {
+            if($this->GetTypeWebhookCommit($webhookCommit)->GetCommits()->getId() === $sha)
+                return $webhookCommit;
+        }
+    }
+
+    private function GetTypeWebhookCommit(\view\WebhookCommits $wc)
     {
         return $wc;
     }
