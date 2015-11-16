@@ -12,21 +12,25 @@ namespace view;
 class WebHookRepository
 {
     private $m_repository;
+    private $m_nav;
 
-    /**
-     * WebHookRepository constructor.
-     * @param $m_repository
-     */
-    public function __construct(\model\Repository $m_repository)
+    private static $nameOfContent = 'webhookRepository';
+    private function GetNameOfContent(){return self::$nameOfContent;}
+
+    public function __construct(\model\Repository $r, \view\Navigation $n)
     {
-        $this->m_repository = $m_repository;
+        $this->m_repository = $r;
+        $this->m_nav = $n;
         $this->getHTML();
     }
 
     public function getHTML()
     {
+
+        return $this->ShowIt();
+
         return
-            "
+        "
          <div class='well'>
              <h4 class='h4'>Repository</h4>
              <dl class='dl-horizontal'>
@@ -165,35 +169,26 @@ class WebHookRepository
          ";
     }
 
-    /*
-    public function RenderAuthor(\model\Author $a)
+    public function ShowIt()
     {
-        $html = new \view\WebHookAuthor($a);
-        return $html->getHTML();
+
+
+        var_dump($_POST);
+
+        return
+        "
+        <form method='post' class='form-horizontal' role='form'>
+            <div class='form-group'>
+                <input type='hidden'  name='{$this->m_nav->GetContentNameKey()}' value='{$this->GetNameOfContent()}'>
+            </div>
+            <div class='form-group'>
+                <button type='submit' class='btn btn-block btn-info'>Show Repository</button>
+            </div>
+        </form>
+        ";
     }
 
-    public function RenderCommitter(\model\Committer $c)
-    {
-        $html = new \view\WebHookCommitter($c);
-        return $html->getHTML();
-    }
 
-    public function RenderAdded(\model\Added $a)
-    {
-        $html = new \view\WebHookAdded($a);
-        return $html->getHTML();
-    }
 
-    public function RenderRemoved(\model\Removed $r)
-    {
-        $html = new \view\WebHookRemoved($r);
-        return $html->getHTML();
-    }
 
-    public function RenderModified(\model\Modified $m)
-    {
-        $html = new \view\WebHookModified($m);
-        return $html->getHTML();
-    }
-    */
 }

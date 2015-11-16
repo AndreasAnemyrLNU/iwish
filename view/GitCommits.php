@@ -117,7 +117,7 @@ class GitCommits
 
     private function RenderRepository(\model\Repository $r)
     {
-        $html   = new \view\WebHookRepository($r);
+        $html   = new \view\WebHookRepository($r, $this->nav);
         return  $html->getHTML();
     }
 

@@ -15,17 +15,22 @@ class IndexController
     private $nav;
     private $dal;
     private $webhookCollection;
+    private $m_sessionHandler;
 
     public function __construct()
     {
         $this->gitPayLoadView = new \view\GitPayload();
-        $this->nav  = new \view\Navigation();
+        $this->sessionHandler =  new \model\SessionHandler();
+
+        $this->nav  = new \view\Navigation($this->m_sessionHandler);
         $this->dal = new \model\webhookFileSystemDAL();
         $this->webhookCollection = $this->dal->Read();
     }
 
     public function DoIndex()
     {
+        new \controller\SessionController($this->nav);
+
 
         if($this->nav->ClientWantsTheDownloadController())
         {

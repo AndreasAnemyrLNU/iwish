@@ -11,6 +11,13 @@ namespace view;
 
 class Navigation
 {
+    private $m_visibleContents;
+
+    public function __construct(\model\SessionHandler $vc)
+    {
+        $this->m_visibleContents = $vc;
+    }
+
     //**********************************************************************************
     // Key Readonly
     private static $controllerKey = 'c';
@@ -48,6 +55,16 @@ class Navigation
     public function GetFilesRemovedValue(){return self::$filesRemovedValue;}
     private static $fileNameKey = 'fn';
     public function GetFileNameKey(){return self::$fileNameKey;}
+    //**********************************************************************************
+    private static $changeMenuStatusKey = 'changeMenuStatus';
+    public function GetChangeMenuStatusKey(){return self::$changeMenuStatusKey;}
+    private static $changeMenuStatusTrueValue = true;
+    public function GetChangeMenuStatusTrueValue(){return self::$changeMenuStatusTrueValue;}
+    private static $changeMenuStatusFalseValue = false;
+    public function GetChangeMenuStatusFalseValue(){return self::$changeMenuStatusFalseValue;}
+    private static $contentNameKey = 'contentName';
+    public function GetContentNameKey(){return self::$contentNameKey;}
+    //**********************************************************************************
 
     // Start Region :: Evaluate controller
     public function ClientWantsTheDownloadController()
@@ -81,6 +98,13 @@ class Navigation
         return false;
     }
 
+    private function HasKeyInPOST($key)
+    {
+        if(isset($_POST[$key]))
+            return true;
+        return false;
+    }
+
     private function IsValueForControllerKeyInGETEqualsTheTestValue($testValue)
     {
         if($_GET[self::getControllerKey()] === $testValue)
@@ -92,6 +116,13 @@ class Navigation
     {
         if($this->HasKeyInGET($key))
             return $_GET[$key];
+        return "";
+    }
+
+    public function ReadValueFromKeyInPOST($key)
+    {
+        if($this->HasKeyInPOST($key))
+            return $_POST[$key];
         return "";
     }
 
@@ -121,5 +152,27 @@ class Navigation
         return false;
     }
 
+    public function DidClientChangeVisibleStatusForContent()
+    {
+        if($this->HasKeyInPOST(self::GetChangeMenuStatusKey()))
+            return $this->ReadValueFromKeyInPOST(self::$changeMenuStatusKey);
+        return false;
+    }
+
+    public function ContentToChangeVisibilityFor()
+    {
+        return $this->ReadValueFromKeyInPOST(self::$contentNameKey);
+    }
+
+    //Cookies
+    public function SetCookie($key, $value)
+    {
+        setcookie($key, $value, time()+(60*60*24));
+    }
+
+    public function UnsetCookie($key, $value)
+    {
+        setcookie($key, $value, time()-(3600));
+    }
 
 }
