@@ -11,11 +11,12 @@ namespace view;
 
 class Navigation
 {
-    private $m_visibleContents;
+    private $m_sessionhandler;
+    public function GetSessionHandler(){return $this->m_sessionhandler;}
 
-    public function __construct(\model\SessionHandler $vc)
+    public function __construct(\model\SessionHandler $sh)
     {
-        $this->m_visibleContents = $vc;
+        $this->m_sessionhandler = $sh;
     }
 
     //**********************************************************************************
@@ -62,8 +63,6 @@ class Navigation
     public function GetChangeMenuStatusTrueValue(){return self::$changeMenuStatusTrueValue;}
     private static $changeMenuStatusFalseValue = false;
     public function GetChangeMenuStatusFalseValue(){return self::$changeMenuStatusFalseValue;}
-    private static $contentNameKey = 'contentName';
-    public function GetContentNameKey(){return self::$contentNameKey;}
     //**********************************************************************************
 
     // Start Region :: Evaluate controller
@@ -150,18 +149,6 @@ class Navigation
         if($this->IsValueForControllerKeyInGETEqualsTheTestValue($this->GetDeleteControllerValue()))
             return true;
         return false;
-    }
-
-    public function DidClientChangeVisibleStatusForContent()
-    {
-        if($this->HasKeyInPOST(self::GetChangeMenuStatusKey()))
-            return $this->ReadValueFromKeyInPOST(self::$changeMenuStatusKey);
-        return false;
-    }
-
-    public function ContentToChangeVisibilityFor()
-    {
-        return $this->ReadValueFromKeyInPOST(self::$contentNameKey);
     }
 
     //Cookies

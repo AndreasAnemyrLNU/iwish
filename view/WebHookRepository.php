@@ -11,16 +11,16 @@ namespace view;
 
 class WebHookRepository
 {
+    private $visible;
     private $m_repository;
     private $m_nav;
+    private $m_sha;
 
-    private static $nameOfContent = 'webhookRepository';
-    private function GetNameOfContent(){return self::$nameOfContent;}
-
-    public function __construct(\model\Repository $r, \view\Navigation $n)
+    public function __construct(\model\Repository $r, \view\Navigation $n, $sha)
     {
         $this->m_repository = $r;
         $this->m_nav = $n;
+        $this->m_sha = $sha;
         $this->getHTML();
     }
 
@@ -171,15 +171,16 @@ class WebHookRepository
 
     public function ShowIt()
     {
-
-
-        var_dump($_POST);
-
         return
         "
-        <form method='post' class='form-horizontal' role='form'>
+        <form method='get' class='form-horizontal' role='form'>
             <div class='form-group'>
-                <input type='hidden'  name='{$this->m_nav->GetContentNameKey()}' value='{$this->GetNameOfContent()}'>
+                <input  type='hidden'
+                        name='{$this->m_nav->GetChangeMenuStatusKey()}'
+                        value='{$this->m_nav->GetChangeMenuStatusTrueValue()}'>
+                <input  type='hidden'
+                        name='{$this->m_nav->GetShaKey()}'
+                        value='{$this->m_sha}'>
             </div>
             <div class='form-group'>
                 <button type='submit' class='btn btn-block btn-info'>Show Repository</button>
@@ -187,8 +188,4 @@ class WebHookRepository
         </form>
         ";
     }
-
-
-
-
 }

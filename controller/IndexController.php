@@ -6,7 +6,6 @@
  * Time: 11:26
  *
  */
-
 namespace controller;
 
 class IndexController
@@ -20,16 +19,18 @@ class IndexController
     public function __construct()
     {
         $this->gitPayLoadView = new \view\GitPayload();
-        $this->sessionHandler =  new \model\SessionHandler();
-
+        $this->m_sessionHandler =  new \model\SessionHandler();
         $this->nav  = new \view\Navigation($this->m_sessionHandler);
         $this->dal = new \model\webhookFileSystemDAL();
+
+
         $this->webhookCollection = $this->dal->Read();
     }
 
     public function DoIndex()
     {
-        new \controller\SessionController($this->nav);
+        new \controller\SessionController($this->nav, $this->m_sessionHandler);
+
 
 
         if($this->nav->ClientWantsTheDownloadController())

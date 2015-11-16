@@ -10,22 +10,44 @@ namespace model;
  */
 class SessionHandler
 {
-    private $m_visibleContents;
+    private $m_webhookCollection;
 
-    // Reload status for registred contents to be shown in interface....
     public function __construct()
     {
-        $this->m_contents = $_SESSION['visibleContents'];
+        $this->ReloadSession();
     }
 
-    public function AddContentToShow($nameOfContent)
+
+    public function AddWebhook(\view\WebhookCommit $wc)
     {
-        $this->m_contents[] = $nameOfContent;
-        $_SESSION['visibleContents'] = $this->m_contents;
+        // Just add if not exists before...
+        if(!$this->GetTypeWebhookCollection($this->m_webhookCollection)->HasSameSha($wc))
+        {
+            $this->GetTypeWebhookCollection($this->m_webhookCollection)->Add($wc);
+            $_SESSION['webhookCollection'] = $this->m_webhookCollection;
+        }
     }
 
-    public function GetVisibleContents()
+    public function GetWebhookCollection()
     {
-        return $this->m_contents;
+        return $this->m_webhookCollection;
+    }
+
+    public function ReloadSession()
+    {
+        if(isset($_SESSION['webhookCollection']))
+        {
+            $this->m_webhookCollection = $_SESSION['webhookCollection'];
+        }
+        else
+        {
+            // Maybe not right to create this collection here. But the purpose is only for state...
+            $this->m_webhookCollection = new \view\WebhookCommitCollection();
+        }
+    }
+
+    private function GetTypeWebhookCollection(\view\WebhookCommitCollection $wc)
+    {
+        return $wc;
     }
 }

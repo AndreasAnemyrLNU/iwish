@@ -14,16 +14,19 @@ class SessionController
     private $m_sessionHandler;
     private $m_nav;
 
-    public function __construct(\view\Navigation $n)
+    public function __construct(\view\Navigation $n, \model\SessionHandler $sh)
     {
-        $this->m_sessionHandler = new \model\SessionHandler();
+        $this->m_sessionHandler = $sh;
         $this->m_nav = $n;
+        $this->m_sessionHandler->ReloadSession();
         $this->DoSession();
     }
 
     public function DoSession()
     {
-        if($this->m_nav->DidClientChangeVisibleStatusForContent())
-            echo $this->m_nav->ContentToChangeVisibilityFor();
+        print_r($_SESSION);
+
+        //if($this->m_nav->DidClientChangeVisibleStatusForWebhookCommit())
+        //    $this->m_sessionHandler->AddWebhook($this->m_nav->ContentToChangeVisibilityFor());
     }
 }

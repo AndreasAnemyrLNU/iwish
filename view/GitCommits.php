@@ -45,7 +45,7 @@ class GitCommits
 
     private function ExtractWebhook()
     {
-        $webhooks = $this->webhookCollection->getWebhooks();
+        $webhooks = $this->webhookCollection->GetWebhooks();
         $ret = "";
         foreach($webhooks as $webhook)
         {
@@ -92,7 +92,7 @@ class GitCommits
                        class='btn btn-lg btn-warning btn-block'>Build Archive ({$w->getCommits()->getId()})
                     </a>
                     {$this->RenderCommits($w->getCommits(), $this->nav)}
-                    {$this->RenderRepository($w->getRepository())}
+                    {$this->RenderRepository($w->getRepository(), $w->getCommits()->getId())}
                     {$this->RenderSender($w->getSender())}
             </div>
         </div>
@@ -111,13 +111,14 @@ class GitCommits
 
     private function RenderCommits(\model\Commits $c, \view\Navigation $nav)
     {
-        $html   = new \view\WebHookCommits($c, $nav);
-        return  $html->getHTML();
+        $wc = new \view\WebhookCommit($c, $nav);
+        $this->nav->GetSessionHandler()->AddWebhook($wc);
+        return  $wc->getHTML();
     }
 
-    private function RenderRepository(\model\Repository $r)
+    private function RenderRepository(\model\Repository $r, $sha)
     {
-        $html   = new \view\WebHookRepository($r, $this->nav);
+        $html   = new \view\WebHookRepository($r, $this->nav, $sha);
         return  $html->getHTML();
     }
 

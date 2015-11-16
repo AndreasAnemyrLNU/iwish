@@ -19,7 +19,8 @@
     require_once("view/Navigation.php");
     require_once("view/WebHookAdded.php");
     require_once("view/WebHookAuthor.php");
-    require_once("view/WebHookCommits.php");
+    require_once("view/WebhookCommit.php");
+    require_once("view/WebhookCommitCollection.php");
     require_once("view/WebHookCommitter.php");
     require_once("view/WebHookModified.php");
     require_once("view/WebHookRemoved.php");
@@ -48,6 +49,8 @@
     require_once("view/GitPaylod.php");
     require_once("controller/GitController.php");
     // github
+
+    session_start();
 
     $controller = new \controller\IndexController();
     $view = $controller->DoIndex();
