@@ -11,7 +11,7 @@ namespace view;
 
 class WebHookRepository
 {
-    private $visible;
+    private $m_visible;
     private $m_repository;
     private $m_nav;
     private $m_sha;
@@ -19,25 +19,30 @@ class WebHookRepository
 
     public function __construct(\model\Repository $r, \view\Navigation $n, $sha)
     {
-        $this->visible = false;
         $this->m_repository = $r;
         $this->m_nav = $n;
         $this->m_sha = $sha;
-        $this->m_formId = 'view::webhookrepository' . $sha;
+        $this->m_formId = 'view::webhookrepository' . $this->m_sha;
+        $this->m_visible = $this->m_nav->IsVisibilityTrueOrFalse($this->m_formId);
 
         $this->getHTML();
     }
 
     public function getHTML()
     {
-        if(!$this->visible)
-            return $this->m_nav->RenderFormThatCanToggleVisibility
-            ('> > > R E P O S I T O R Y > > > ' . $this->m_sha, $this->visible, $this->m_sha, $this->m_formId);
+        if(!$this->m_visible)
+        return $this->m_nav->RenderFormThatCanToggleVisibility
+            ('R E P O S I T O R Y - - - S H O W', $this->m_visible, $this->m_sha, $this->m_formId);
+        if($this->m_visible)
+            $toggle = '';
+            $toggle =  $this->m_nav->RenderFormThatCanToggleVisibility
+            ('R E P O S I T O R Y - - - H I D E', $this->m_visible, $this->m_sha, $this->m_formId);
 
         return
         "
          <div class='well'>
              <h4 class='h4'>Repository</h4>
+             {$toggle}
              <dl class='dl-horizontal'>
                 <dt>Id: </dt>
                     <dd>{$this->m_repository->getId()}</dd>
@@ -172,5 +177,10 @@ class WebHookRepository
              </dl>
          </div>
          ";
+    }
+
+    private function ToogleContent()
+    {
+
     }
 }

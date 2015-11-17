@@ -13,8 +13,7 @@ class IndexController
     private $gitPayLoadView;
     private $nav;
     private $dal;
-    private $webhookCollection;         //Model
-    private $webhookCommitCollection;   //View
+    private $webhookCollection;
     private $m_sessionHandler;
 
     public function __construct()

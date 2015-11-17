@@ -191,11 +191,15 @@ class Navigation
     public function SetCookie($key, $value)
     {
         setcookie($key, $value, time()+(60*60*24));
+        // Show it now. Directly. That's a hack. A nice hack! :)
+        $_COOKIE[$key] = $value;
     }
 
     public function UnsetCookie($key)
     {
         setcookie($key, '', time()-(3600));
+        // Show it now. Directly. That's a hack. A nice hack! :)
+        $_COOKIE[$key] = 0;
     }
 
     public function RenderFormThatCanToggleVisibility($buttonName, $visible, $sha, $formId)
@@ -240,4 +244,11 @@ class Navigation
         }
         return false;
     }
+
+    public function IsVisibilityTrueOrFalse($formId)
+    {
+        if($this->ReadValueFromKeyInCOOKIE($formId) == true)
+            return true;
+    }
+
 }

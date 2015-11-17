@@ -11,24 +11,38 @@ namespace view;
 
 class WebHookSender
 {
+    private $m_visible;
     private $m_sender;
+    private $m_nav;
+    private $m_sha;
+    private $m_formId;
 
-    /**
-     * WebHookSender constructor.
-     * @param \model\Sender $cs
-     */
-    public function __construct(\model\Sender $s)
+    public function __construct(\model\Sender $s, \view\Navigation $n, $sha)
     {
         $this->m_sender = $s;
+        $this->m_nav = $n;
+        $this->m_sha = $sha;
+        $this->m_formId = 'view::webhooksender' . $sha;
+        $this->m_visible = $this->m_nav->IsVisibilityTrueOrFalse($this->m_formId);
+
         $this->getHTML();
     }
 
     public function getHTML()
     {
+        if(!$this->m_visible)
+            return $this->m_nav->RenderFormThatCanToggleVisibility
+            ('S E N D E R - - - S H O W', $this->m_visible, $this->m_sha, $this->m_formId);
+        if($this->m_visible)
+            $toggle = '';
+            $toggle =  $this->m_nav->RenderFormThatCanToggleVisibility
+            ('S E N D E R - - - H I D E', $this->m_visible, $this->m_sha, $this->m_formId);
+
         return
         "
          <div class='well'>
              <h4 class='h4'>Sender</h4>
+             {$toggle}
              <dl class='dl-horizontal'>
                 <dt>Login: </dt>
                     <dd>{$this->m_sender->getLogin()}</dd>

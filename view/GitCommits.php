@@ -93,7 +93,7 @@ class GitCommits
                     </a>
                     {$this->RenderCommits($w->getCommits(), $this->nav)}
                     {$this->RenderRepository($w->getRepository(), $w->getCommits()->getId())}
-                    {$this->RenderSender($w->getSender())}
+                    {$this->RenderSender($w->getSender(), $w->getCommits()->getId())}
             </div>
         </div>
         ";
@@ -122,9 +122,9 @@ class GitCommits
         return  $html->getHTML();
     }
 
-    private function RenderSender(\model\Sender $s)
+    private function RenderSender(\model\Sender $s, $sha)
     {
-        $html   = new \view\WebHookSender($s);
+        $html   = new \view\WebHookSender($s, $this->nav, $sha);
         return  $html->getHTML();
     }
 
