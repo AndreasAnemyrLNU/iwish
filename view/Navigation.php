@@ -206,7 +206,7 @@ class Navigation
     {
         return
         "
-        <form method='post' class='form-horizontal' role='form'>
+        <form action='#$formId' id='$formId' class='form-horizontal' method='post' name='$formId' role='form'>
             <div class='form-group'>
                 <input  type='hidden'
                         name='{$this->GetVisibleStatusKey()}'
@@ -229,9 +229,6 @@ class Navigation
     {
         if($this->ReadValueFromKeyInPOST(self::$visibleStatusKey) == true)
         {
-
-                var_dump($_POST);
-
                 if($this->ReadValueFromKeyInCOOKIE($this->ReadValueFromKeyInPOST(self::$formIdKey)) == 0)
                 {
                     $this->SetCookie($this->ReadValueFromKeyInPOST(self::$formIdKey),1);

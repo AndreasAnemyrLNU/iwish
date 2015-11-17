@@ -29,6 +29,6 @@ class ViewCodeController
             $this->m_nav->ReadValueFromKeyInGET($this->m_nav->GetFileNameKey())
         );
 
-        echo "<pre>" . htmlentities($viewCode->GetContentInFile()) . "</pre>";
+        return htmlentities($viewCode->GetContentInFile());
     }
 }

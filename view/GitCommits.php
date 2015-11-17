@@ -11,13 +11,15 @@ namespace view;
 
 class GitCommits
 {
-    private $webhookCollection;
-    private $nav;
+    private $m_webhookCollection;
+    private $m_nav;
+    private $m_previewCode;
 
-    public function __construct(\model\WebhookCollection $webhookCollection, \view\Navigation $n)
+    public function __construct(\model\WebhookCollection $webhookCollection, \view\Navigation $n, $previewCode ="")
     {
-        $this->webhookCollection = $webhookCollection;
-        $this->nav = $n;
+        $this->m_webhookCollection = $webhookCollection;
+        $this->m_nav = $n;
+        $this->m_previewCode = $previewCode;
     }
 
     public function getHTML()
@@ -36,7 +38,9 @@ class GitCommits
                 </div>
                 <div class = 'panel-body'>
                     <div class='container col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1'>
+                        <div class='well'>
                             {$this->ExtractWebhook()}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -45,7 +49,7 @@ class GitCommits
 
     private function ExtractWebhook()
     {
-        $webhooks = $this->webhookCollection->GetWebhooks();
+        $webhooks = $this->m_webhookCollection->GetWebhooks();
         $ret = "";
         foreach($webhooks as $webhook)
         {
@@ -57,7 +61,9 @@ class GitCommits
     private function RenderWebHook(\model\Webhook $w)
     {
      return
-        "<div class='row'>
+        "
+        <!--
+        <div class='row'>
             <div class='col-xs-10 col-sm-10 col-md-10 col-lg-10'>
                 <dl>
                     <dt>Ref:</dt>
@@ -86,12 +92,13 @@ class GitCommits
             <img src={$this->GetSender($w->getSender())->getAvatarUrl()} class='img-responsive img-circle' alt='Avatar Pic'>
         </div>
         </div>
+        -->
         <div class='row'>
             <div class='panel panel-success'>
-                    <a href=?{$this->nav->RenderGetParam($this->nav->getControllerKey(), $this->nav->getDownLoadControllerValue())}&{$this->nav->RenderGetParam($this->nav->GetShaKey(), $w->getCommits()->getId())}
+                    <a href=?{$this->m_nav->RenderGetParam($this->m_nav->getControllerKey(), $this->m_nav->getDownLoadControllerValue())}&{$this->nav->RenderGetParam($this->nav->GetShaKey(), $w->getCommits()->getId())}
                        class='btn btn-lg btn-warning btn-block'>Build Archive ({$w->getCommits()->getId()})
                     </a>
-                    {$this->RenderCommits($w->getCommits(), $this->nav)}
+                    {$this->RenderCommits($w->getCommits(), $this->m_nav, $this->m_previewCode)}
                     {$this->RenderRepository($w->getRepository(), $w->getCommits()->getId())}
                     {$this->RenderSender($w->getSender(), $w->getCommits()->getId())}
             </div>
@@ -109,22 +116,22 @@ class GitCommits
         return $sender;
     }
 
-    private function RenderCommits(\model\Commits $c, \view\Navigation $nav)
+    private function RenderCommits(\model\Commits $c, \view\Navigation $nav, $previewCode = "")
     {
-        $wc = new \view\WebhookCommits($c, $nav);
-        $this->nav->GetSessionHandler()->AddWebhookCommit($wc);
+        $wc = new \view\WebhookCommits($c, $nav, $previewCode);
+        $this->m_nav->GetSessionHandler()->AddWebhookCommit($wc);
         return  $wc->getHTML();
     }
 
     private function RenderRepository(\model\Repository $r, $sha)
     {
-        $html   = new \view\WebHookRepository($r, $this->nav, $sha);
+        $html   = new \view\WebHookRepository($r, $this->m_nav, $sha);
         return  $html->getHTML();
     }
 
     private function RenderSender(\model\Sender $s, $sha)
     {
-        $html   = new \view\WebHookSender($s, $this->nav, $sha);
+        $html   = new \view\WebHookSender($s, $this->m_nav, $sha);
         return  $html->getHTML();
     }
 

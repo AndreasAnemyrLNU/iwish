@@ -51,7 +51,7 @@ class IndexController
         {
             $webhook = $this->nav->GetWebhookBySha($this->webhookCollection);
             $viewCodeController = new \controller\ViewCodeController($webhook, $this->nav);
-            $viewCodeController->DoViewCode();
+            $previewCode = $viewCodeController->DoViewCode();
         }
 
 
@@ -63,7 +63,7 @@ class IndexController
             $gitController->doParse($this->gitPayLoadView->GetPayLoad());
         }
 
-        $view = new \view\GitCommits($this->webhookCollection, $this->nav);
+        $view = new \view\GitCommits($this->webhookCollection, $this->nav, $previewCode);
 
         return $view;
     }

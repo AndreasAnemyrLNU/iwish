@@ -178,9 +178,4 @@ class WebHookRepository
          </div>
          ";
     }
-
-    private function ToogleContent()
-    {
-
-    }
 }
