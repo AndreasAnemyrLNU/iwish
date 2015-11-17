@@ -83,7 +83,8 @@ class Navigation
             return var_export($this->GetVisibleStatusValueAsTrue(), $asString);
         }
     }
-
+    public static $formIdKey = 'formIdKey';
+    public function GetFormIdKey() {return self::$formIdKey;}
     ///**********************************************************************************
 
     // Start Region :: Evaluate controller
@@ -125,6 +126,13 @@ class Navigation
         return false;
     }
 
+    private function HasKeyInCOOKIE($key)
+    {
+        if(isset($_COOKIE[$key]))
+            return true;
+        return false;
+    }
+
     private function IsValueForControllerKeyInGETEqualsTheTestValue($testValue)
     {
         if($_GET[self::getControllerKey()] === $testValue)
@@ -136,6 +144,13 @@ class Navigation
     {
         if($this->HasKeyInGET($key))
             return $_GET[$key];
+        return "";
+    }
+
+    public function ReadValueFromKeyInCOOKIE($key)
+    {
+        if($this->HasKeyInCOOKIE($key))
+            return $_COOKIE[$key];
         return "";
     }
 
@@ -178,12 +193,12 @@ class Navigation
         setcookie($key, $value, time()+(60*60*24));
     }
 
-    public function UnsetCookie($key, $value)
+    public function UnsetCookie($key)
     {
-        setcookie($key, $value, time()-(3600));
+        setcookie($key, '', time()-(3600));
     }
 
-    public function RenderFormThatCanMakeContentVisible($buttonName, $visible, $sha)
+    public function RenderFormThatCanToggleVisibility($buttonName, $visible, $sha, $formId)
     {
         return
         "
@@ -195,6 +210,9 @@ class Navigation
                 <input  type='hidden'
                         name='{$this->GetShaKey()}'
                         value='{$sha}'>
+                <input  type='hidden'
+                        name='{$this->GetFormIdKey()}'
+                        value='{$formId}'>
             </div>
             <div class='form-group'>
                 <button type='submit' class='btn btn-block btn-info'>{$buttonName}</button>
@@ -203,25 +221,23 @@ class Navigation
         ";
     }
 
-    public function ClientWantsToMakeContentVisible()
+    public function ClientTogglesVisibility()
     {
-        return $this->HasKeyInPOST(self::$visibleStatusKey);
+        if($this->ReadValueFromKeyInPOST(self::$visibleStatusKey) == true)
+        {
+
+                var_dump($_POST);
+
+                if($this->ReadValueFromKeyInCOOKIE($this->ReadValueFromKeyInPOST(self::$formIdKey)) == 0)
+                {
+                    $this->SetCookie($this->ReadValueFromKeyInPOST(self::$formIdKey),1);
+                }
+                else
+                {
+                    $this->UnsetCookie($this->ReadValueFromKeyInPOST(self::$formIdKey));
+                }
+                return true;
+        }
+        return false;
     }
-
-    public function MakeContentVisible()
-    {
-        $sha = $this->ReadValueFromKeyInPOST(self::$shaKey);
-
-        $webHookCommitsCollection = $this->m_sessionhandler->GetWebhookCommitCollection();
-
-        $webhookCommiit =  $webHookCommitsCollection->GetCommitBySha($sha);
-
-
-        if($webhookCommiit == null)
-            throw new \Exception('Posted Sha has no archive. Have you build it locally at server yet?');
-
-        return $webhookCommiit;
-
-    }
-
 }

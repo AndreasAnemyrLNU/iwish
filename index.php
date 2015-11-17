@@ -19,7 +19,7 @@
     require_once("view/Navigation.php");
     require_once("view/WebHookAdded.php");
     require_once("view/WebHookAuthor.php");
-    require_once("view/WebhookCommit.php");
+    require_once("view/WebhookCommits.php");
     require_once("view/WebhookCommitCollection.php");
     require_once("view/WebHookCommitter.php");
     require_once("view/WebHookModified.php");

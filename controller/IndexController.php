@@ -33,6 +33,7 @@ class IndexController
     {
         new \controller\SessionController($this->nav, $this->m_sessionHandler);
 
+        $this->nav->ClientTogglesVisibility();
 
         if($this->nav->ClientWantsTheDownloadController())
         {
@@ -62,9 +63,6 @@ class IndexController
             $gitController = new \controller\GitController();
             $gitController->doParse($this->gitPayLoadView->GetPayLoad());
         }
-
-        //$dal = new \model\webhookFileSystemDAL();
-        //$webCollection = $dal->Read();
 
         $view = new \view\GitCommits($this->webhookCollection, $this->nav);
 

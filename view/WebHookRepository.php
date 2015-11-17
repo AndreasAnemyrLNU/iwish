@@ -15,20 +15,24 @@ class WebHookRepository
     private $m_repository;
     private $m_nav;
     private $m_sha;
+    private $m_formId;
 
     public function __construct(\model\Repository $r, \view\Navigation $n, $sha)
     {
+        $this->visible = false;
         $this->m_repository = $r;
         $this->m_nav = $n;
         $this->m_sha = $sha;
+        $this->m_formId = 'view::webhookrepository' . $sha;
+
         $this->getHTML();
     }
 
     public function getHTML()
     {
         if(!$this->visible)
-            return $this->m_nav->RenderFormThatCanMakeContentVisible
-            ('> > > R E P O S I T O R Y > > > ' . $this->m_sha, $this->visible, $this->m_sha);
+            return $this->m_nav->RenderFormThatCanToggleVisibility
+            ('> > > R E P O S I T O R Y > > > ' . $this->m_sha, $this->visible, $this->m_sha, $this->m_formId);
 
         return
         "
@@ -169,31 +173,4 @@ class WebHookRepository
          </div>
          ";
     }
-
-    public function ShowIt()
-    {
-        return
-        "
-        <form method='get' class='form-horizontal' role='form'>
-            <div class='form-group'>
-                <input  type='hidden'
-                        name='{$this->m_nav->GetVisibleStatusKey()}'
-                        value='{$this->m_nav->ToggleVisibleStatus($this->visible, true)}'>
-                <input  type='hidden'
-                        name='{$this->m_nav->GetShaKey()}'
-                        value='{$this->m_sha}'>
-            </div>
-            <div class='form-group'>
-                <button type='submit' class='btn btn-block btn-info'>Show Repository</button>
-            </div>
-        </form>
-        ";
-    }
 }
-/*
-private static $visibleStatusKey = 'visibleStatusKey';
-public function GetVisibleStatusKey(){return self::$visibleStatusKey;}
-private static $visibleStatusValueTrue = true;
-public function GetVisibleStatusValueAsTrue(){return self::$visibleStatusValueTrue;}
-private static $visibleStatusValueFalse = false;
-public function GetVisibleStatusValueAsFalse(){return self::$visibleStatusValueFalse;}*/

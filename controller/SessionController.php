@@ -29,11 +29,11 @@ class SessionController
         // This methode reacts client request...
         //$collection = $this->m_sessionHandler->GetWebhookCollection()->GetCollection();
 
-        if($this->m_nav->ClientWantsToMakeContentVisible())
-        {
-            $webhookCommit = $this->m_nav->MakeContentVisible();
-            $this->GetTypeWebhookCommit($webhookCommit)->
-        }
+        //if($this->m_nav->ClientWantsToMakeContentVisible())
+        //{
+        //    $webhookCommit = $this->m_nav->MakeContentVisible();
+        //    $this->GetTypeWebhookCommit($webhookCommit)->
+        //}
 
     }
 
