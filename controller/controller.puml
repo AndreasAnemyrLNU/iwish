@@ -1,0 +1,10 @@
+@startuml
+namespace controller #lightblue{
+    class DownloadController                #white
+    class GitController                     #white
+    class IndexController                   #white
+    class RepublishController               #white
+    class SessionController                 #white
+    class ViewCodeController                #white
+}
+@enduml

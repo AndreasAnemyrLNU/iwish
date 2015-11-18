@@ -1,0 +1,22 @@
+@startuml
+
+namespace view #lightyellow{
+    class BootStrapCDN                  #white
+    class JqueryCDN                     #white
+    class GitCommits                    #white
+    class GitPayload                    #white
+    class IndexPage                     #white
+    class Navigation                    #white
+    class WebHookAdded                  #white
+    class WebHookAuthor                 #white
+    class WebHookCommitCollection       #white
+    class WebHookCommits                #white
+    class WebhookCommitter              #white
+    class WebHookModified               #white
+    class WebHookPusher                 #white
+    class WebHookRemoved                #white
+    class WebHookRepository             #white
+    class WebHookSender                 #white
+}
+
+@enduml

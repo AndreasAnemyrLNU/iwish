@@ -1,0 +1,121 @@
+@startuml
+class indexphp{
+    +$controller
+    +$view
+}
+
+!include /model/model.puml
+!include /view/view.puml
+!include /controller/controller.puml
+
+indexphp --> controller.IndexController
+indexphp  --> view.IndexPage
+
+model.RepublishFile ----> model.Webhook
+model.RepublishFile ----> model.WebhookCollection
+
+model.SaveOldVersionInArchive ..> model.WebHookFileSystemDal
+
+model.ViewCode ------> model.Webhook
+
+model.WebHookFileSystemDal ..> model.WebhookCollection
+
+model.Commits --------> model.Author
+model.Commits --------> model.Committer
+model.Commits --------> model.Added
+model.Commits ------> model.Removed
+model.Commits --------> model.Modified
+
+model.HeadCommit ------> model.Author
+model.HeadCommit ------> model.Committer
+model.HeadCommit ------> model.Added
+model.HeadCommit ----> model.Removed
+model.HeadCommit --------> model.Modified
+
+model.Repository ------> model.Owner
+
+model.Webhook ------> model.Commits
+model.Webhook ------> model.HeadCommit
+model.Webhook ------> model.Repository
+model.Webhook ------> model.Pusher
+model.Webhook ------> model.Sender
+
+model.WebhookCollection -----> model.Webhook
+
+view.GitCommits -----> model.WebhookCollection
+view.GitCommits ----> view.Navigation
+view.GitCommits -----> Errorhandler
+view.GitCommits -----> view.WebHookCommits
+view.GitCommits -----> view.WebHookRepository
+view.GitCommits -----> view.WebHookSender
+
+view.IndexPage --> view.BootStrapCDN
+view.IndexPage --> view.JqueryCDN
+
+view.Navigation ------> model.SessionHandler
+
+view.WebHookAdded ------> model.Commits
+view.WebHookAdded ------> view.Navigation
+
+view.WebHookAuthor ------> model.Author
+view.WebHookAuthor ------> view.Navigation
+
+view.WebHookCommitCollection --> view.WebHookCommits
+
+view.WebHookCommits ------> model.Commits
+view.WebHookCommits ------> view.Navigation
+
+view.WebhookCommitter ------> model.Committer
+view.WebhookCommitter ------> view.Navigation
+
+view.WebHookModified ------> model.Commits
+view.WebHookModified ------> view.Navigation
+
+view.WebHookRemoved ------> model.Commits
+view.WebHookRemoved ------> view.Navigation
+
+view.WebHookRepository ------> model.Repository
+view.WebHookRepository ------> view.Navigation
+
+view.WebHookSender -----> model.Sender
+view.WebHookSender ------> view.Navigation
+
+controller.DownloadController -----> view.Navigation
+controller.DownloadController ......> model.SaveOldVersionInArchive
+
+controller.GitController ......> model.Commits
+controller.GitController ......> model.Author
+controller.GitController ......> model.Committer
+controller.GitController ......> model.Added
+controller.GitController ......> model.Removed
+controller.GitController ......> model.Modified
+controller.GitController ......> model.HeadCommit
+controller.GitController ......> model.Repository
+controller.GitController ......> model.Owner
+controller.GitController ......> model.Pusher
+controller.GitController ......> model.Sender
+controller.GitController ......> model.Webhook
+
+controller.IndexController ------> view.GitPayload
+controller.IndexController ------> view.Navigation
+controller.IndexController ------> model.WebHookFileSystemDal
+controller.IndexController ------> model.WebhookCollection
+controller.IndexController ------> model.SessionHandler
+controller.IndexController ......> controller.DownloadController
+controller.IndexController ......> controller.RepublishController
+controller.IndexController ......> controller.ViewCodeController
+controller.IndexController ......> controller.GitController
+controller.IndexController ......> view.GitCommits
+
+controller.RepublishController --> model.Webhook
+controller.RepublishController --> view.Navigation
+controller.RepublishController ......> model.ViewCode
+
+controller.SessionController --> model.SessionHandler
+controller.SessionController --> view.Navigation
+
+controller.ViewCodeController ----> model.Webhook
+controller.ViewCodeController ----> view.Navigation
+
+
+@enduml

@@ -18,6 +18,7 @@ class WebHookRepository
     private $m_formId;
 
     public function __construct(\model\Repository $r, \view\Navigation $n, $sha)
+
     {
         $this->m_repository = $r;
         $this->m_nav = $n;

@@ -7,6 +7,8 @@
  *
  */
 
+    require_once("ErrorHandler.php");
+
     require_once("model/archive/SaveOldVersionInArchive.php");
     require_once("model/archive/RepublishFile.php");
     require_once("model/dal/WebHookFileSystemDAL.php");

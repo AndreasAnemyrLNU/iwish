@@ -1,0 +1,25 @@
+@startuml
+
+namespace model #lightgreen{
+    class RepublishFile             #white
+    class SaveOldVersionInArchive   #white
+    class ViewCode                  #white
+    class WebHookFileSystemDal      #white
+    class SessionHandler            #white
+    class Added                     #white
+    class Author                    #white
+    class Commits                   #white
+    class Committer                 #white
+    class HeadCommit                #white
+    class Modified                  #white
+    class Owner                     #white
+    class Pusher                    #white
+    class Removed                   #white
+    class Repository                #white
+    class Sender                    #white
+    class Webhook                   #white
+    class WebhookCollection         #white
+}
+
+
+@enduml

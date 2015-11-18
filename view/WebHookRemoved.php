@@ -81,7 +81,6 @@ class WebHookRemoved
                         }&{$this->m_nav->RenderGetParam($this->m_nav->GetFileNameKey(), $file )
                         }&{$this->m_nav->RenderGetParam($this->m_nav->GetShaKey(), $this->m_commits->getId() )}
                             class='btn btn-xs btn-warning'  role='button'>Republish</a>
-                        <pre>{$this->m_previewCode}</pre>
                         <!-- End -->
                         <!-- Start  Region :: Delete -->
                         <a  href=?{$this->m_nav->RenderGetParam($this->m_nav->getControllerKey(), $this->m_nav->GetDeleteControllerValue())
@@ -89,7 +88,6 @@ class WebHookRemoved
                         }&{$this->m_nav->RenderGetParam($this->m_nav->GetFileNameKey(), $file )
                         }&{$this->m_nav->RenderGetParam($this->m_nav->GetShaKey(), $this->m_commits->getId() )}
                             class='btn btn-xs btn-danger'  role='button'>Delete</a>
-                        <pre>{$this->m_previewCode}</pre>
                         <!-- End -->
                 </li>";
     }

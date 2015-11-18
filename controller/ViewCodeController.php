@@ -22,13 +22,12 @@ class ViewCodeController
 
     public function DoViewCode()
     {
-        $viewCode = new \model\ViewCode
-        (
-            $this->m_webhook,
-            $this->m_nav->ReadValueFromKeyInGET($this->m_nav->GetFilesKey()),
-            $this->m_nav->ReadValueFromKeyInGET($this->m_nav->GetFileNameKey())
-        );
-
-        return htmlentities($viewCode->GetContentInFile());
+            $viewCode = new \model\ViewCode
+            (
+                $this->m_webhook,
+                $this->m_nav->ReadValueFromKeyInGET($this->m_nav->GetFilesKey()),
+                $this->m_nav->ReadValueFromKeyInGET($this->m_nav->GetFileNameKey())
+            );
+            return htmlentities($viewCode->GetContentInFile());
     }
 }

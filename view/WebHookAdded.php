@@ -25,6 +25,7 @@ class WebHookAdded
         $this->m_sha = $this->m_commits->getId();
         $this->m_formId = 'view::webhookadded' . $this->m_commits->getId();
         $this->m_visible = $n->IsVisibilityTrueOrFalse($this->m_formId);
+        $this->m_previewCode = $previewCode;
         $this->getHTML();
     }
 
@@ -57,12 +58,19 @@ class WebHookAdded
         $ret = "";
         foreach($files as $file)
         {
-            $ret.= $this->RenderFilesLi($file);
+            //TODO Preven reading when not necessary. Later...
+            $test = new \model\webhookFileSystemDAL();
+            $codeReader =new \model\ViewCode($test->Read()->GetWebHookByIdOfCommits($this->m_sha), 'Added', $file );
+
+            $previewCode = $codeReader->GetContentInFile();
+
+            $ret.= $this->RenderFilesLi($file, $previewCode);
+
         }
         return $ret;
     }
 
-    private function RenderFilesLi($file)
+    private function RenderFilesLi($file, $previewCode)
     {
         return "<li>
                     <p>$file</p>
@@ -72,7 +80,7 @@ class WebHookAdded
                         }&{$this->m_nav->RenderGetParam($this->m_nav->GetFileNameKey(), $file )
                         }&{$this->m_nav->RenderGetParam($this->m_nav->GetShaKey(), $this->m_commits->getId() )}
                             class='btn btn-xs btn-info'  role='button'>View Code</a>
-                        <pre>{$this->m_previewCode}</pre>
+                        <pre>{$previewCode}</pre>
                         <!-- End -->
                         <!-- Start Region :: Republish -->
                         <a  href=?{$this->m_nav->RenderGetParam($this->m_nav->getControllerKey(), $this->m_nav->GetRepublishControllerValue())
@@ -80,7 +88,6 @@ class WebHookAdded
                         }&{$this->m_nav->RenderGetParam($this->m_nav->GetFileNameKey(), $file )
                         }&{$this->m_nav->RenderGetParam($this->m_nav->GetShaKey(), $this->m_commits->getId() )}
                             class='btn btn-xs btn-warning'  role='button'>Republish</a>
-                        <pre>{$this->m_previewCode}</pre>
                         <!-- End -->
                         <!-- Start  Region :: Delete -->
                         <a  href=?{$this->m_nav->RenderGetParam($this->m_nav->getControllerKey(), $this->m_nav->GetDeleteControllerValue())
@@ -88,7 +95,6 @@ class WebHookAdded
                         }&{$this->m_nav->RenderGetParam($this->m_nav->GetFileNameKey(), $file )
                         }&{$this->m_nav->RenderGetParam($this->m_nav->GetShaKey(), $this->m_commits->getId() )}
                             class='btn btn-xs btn-danger'  role='button'>Delete</a>
-                        <pre>{$this->m_previewCode}</pre>
                         <!-- End -->
                 </li>";
     }

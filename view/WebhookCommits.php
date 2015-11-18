@@ -25,6 +25,7 @@ class WebhookCommits
         $this->m_sha = $this->m_commits->getId();
         $this->m_formId = 'view::webhoocommits' . $this->m_commits->getId();
         $this->m_visible = $this->m_nav->IsVisibilityTrueOrFalse($this->m_formId);
+        $this->m_previewCode = $previewCode;
         $this->getHTML();
     }
 
@@ -62,9 +63,9 @@ class WebhookCommits
              </dl>
             {$this->RenderAuthor($this->m_commits->getAuthor())}
             {$this->RenderCommitter($this->m_commits->getCommitter())}
-            {$this->RenderAdded($this->m_commits, $this->m_nav, $this->m_previewCode)}
-            {$this->RenderRemoved($this->m_commits, $this->m_nav, $this->m_previewCode)}
-            {$this->RenderModified($this->m_commits, $this->m_nav, $this->m_previewCode)}
+            {$this->RenderAdded($this->m_commits, $this->m_nav)}
+            {$this->RenderRemoved($this->m_commits, $this->m_nav)}
+            {$this->RenderModified($this->m_commits, $this->m_nav)}
          </div>
          ";
     }
@@ -81,21 +82,21 @@ class WebhookCommits
         return $html->getHTML();
     }
 
-    public function RenderAdded(\model\Commits $c, \view\Navigation $n, $previewCode = '')
+    public function RenderAdded(\model\Commits $c, \view\Navigation $n)
     {
-        $html = new \view\WebHookAdded($c, $n, $previewCode = '');
+        $html = new \view\WebHookAdded($c, $n, $this->m_previewCode);
         return $html->getHTML();
     }
 
     public function RenderRemoved(\model\Commits $c, \view\Navigation $n)
     {
-        $html = new \view\WebHookRemoved($c, $n);
+        $html = new \view\WebHookRemoved($c, $n, $this->m_previewCode);
         return $html->getHTML();
     }
 
     public function RenderModified(\model\Commits $c, \view\Navigation $n)
     {
-        $html = new \view\WebHookModified($c, $n);
+        $html = new \view\WebHookModified($c, $n, $this->m_previewCode);
         return $html->getHTML();
     }
 }

@@ -28,6 +28,12 @@ class ViewCode
         $pathToArchive = $_SERVER['DOCUMENT_ROOT'] . '/1dv608/iwish/data/physicalRepoArchive/';
         $pathToFile = $pathToArchive . $this->webhook->getCommits()->getId() .'/'. $this->currentCollection .'/'. $this->file;
 
-        return file_get_contents($pathToFile);
+        //TODO Urrrggggh fix this later ;)
+        $content =  @file_get_contents($pathToFile);
+
+        //if($content == "" || $content == null)
+        //    throw new \Exception('',100);
+
+        return $content;
     }
 }
