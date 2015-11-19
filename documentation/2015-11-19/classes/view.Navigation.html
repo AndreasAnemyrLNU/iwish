@@ -1,0 +1,2258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>    API Documentation &raquo; \view\Navigation
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
+<body>
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">API Documentation</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/controller.html">controller</a></li>
+                                                                        <li><a href="../namespaces/model.html">model</a></li>
+                                                                        <li><a href="../namespaces/view.html">view</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            <style>
+        .deprecated h2 {
+            text-decoration: line-through;
+        }
+    </style>
+    <div class="row">
+        <div class="span4">
+                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
+        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
+        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+    </div>
+    <div class="btn-group visibility" data-toggle="buttons-checkbox">
+        <button class="btn public active" title="Show public elements">Public</button>
+        <button class="btn protected" title="Show protected elements">Protected</button>
+        <button class="btn private" title="Show private elements">Private</button>
+        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
+    </div>
+
+        <ul class="side-nav nav nav-list">
+        <li class="nav-header">
+            <i class="icon-custom icon-method"></i> Methods
+            <ul>
+                                                                                                    <li class="method public">
+        <a href="#method___construct" title="__construct :: ">
+            <span class="description"></span><pre>__construct</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_ClientTogglesVisibility" title="ClientTogglesVisibility :: ">
+            <span class="description"></span><pre>ClientTogglesVisibility</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_ClientWantsTheDownloadController" title="ClientWantsTheDownloadController :: ">
+            <span class="description"></span><pre>ClientWantsTheDownloadController</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_ClientWantsToDelete" title="ClientWantsToDelete :: ">
+            <span class="description"></span><pre>ClientWantsToDelete</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_ClientWantsToRepublish" title="ClientWantsToRepublish :: ">
+            <span class="description"></span><pre>ClientWantsToRepublish</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_ClientWantsToViewCode" title="ClientWantsToViewCode :: ">
+            <span class="description"></span><pre>ClientWantsToViewCode</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getControllerKey" title="getControllerKey :: ">
+            <span class="description"></span><pre>getControllerKey</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_GetDeleteControllerValue" title="GetDeleteControllerValue :: ">
+            <span class="description"></span><pre>GetDeleteControllerValue</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getDownLoadControllerValue" title="getDownLoadControllerValue :: ">
+            <span class="description"></span><pre>getDownLoadControllerValue</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_GetFileNameKey" title="GetFileNameKey :: ">
+            <span class="description"></span><pre>GetFileNameKey</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_GetFilesAddedValue" title="GetFilesAddedValue :: ">
+            <span class="description"></span><pre>GetFilesAddedValue</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_GetFilesKey" title="GetFilesKey :: ">
+            <span class="description"></span><pre>GetFilesKey</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_GetFilesModifiedValue" title="GetFilesModifiedValue :: ">
+            <span class="description"></span><pre>GetFilesModifiedValue</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_GetFilesRemovedValue" title="GetFilesRemovedValue :: ">
+            <span class="description"></span><pre>GetFilesRemovedValue</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_GetFormIdKey" title="GetFormIdKey :: ">
+            <span class="description"></span><pre>GetFormIdKey</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getGitControllerValue" title="getGitControllerValue :: ">
+            <span class="description"></span><pre>getGitControllerValue</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getIndexControllerValue" title="getIndexControllerValue :: ">
+            <span class="description"></span><pre>getIndexControllerValue</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_GetRepublishControllerValue" title="GetRepublishControllerValue :: ">
+            <span class="description"></span><pre>GetRepublishControllerValue</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_GetSessionHandler" title="GetSessionHandler :: ">
+            <span class="description"></span><pre>GetSessionHandler</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_GetShaKey" title="GetShaKey :: ">
+            <span class="description"></span><pre>GetShaKey</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_GetViewCodeControllerValue" title="GetViewCodeControllerValue :: ">
+            <span class="description"></span><pre>GetViewCodeControllerValue</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_GetVisibleStatusKey" title="GetVisibleStatusKey :: ">
+            <span class="description"></span><pre>GetVisibleStatusKey</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_GetVisibleStatusValueAsFalse" title="GetVisibleStatusValueAsFalse :: ">
+            <span class="description"></span><pre>GetVisibleStatusValueAsFalse</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_GetVisibleStatusValueAsTrue" title="GetVisibleStatusValueAsTrue :: ">
+            <span class="description"></span><pre>GetVisibleStatusValueAsTrue</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_GetWebhookBySha" title="GetWebhookBySha :: ">
+            <span class="description"></span><pre>GetWebhookBySha</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                                                                                                                                                                                        <li class="method public">
+        <a href="#method_IsVisibilityTrueOrFalse" title="IsVisibilityTrueOrFalse :: ">
+            <span class="description"></span><pre>IsVisibilityTrueOrFalse</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_ReadValueFromKeyInCOOKIE" title="ReadValueFromKeyInCOOKIE :: ">
+            <span class="description"></span><pre>ReadValueFromKeyInCOOKIE</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_ReadValueFromKeyInGET" title="ReadValueFromKeyInGET :: ">
+            <span class="description"></span><pre>ReadValueFromKeyInGET</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_ReadValueFromKeyInPOST" title="ReadValueFromKeyInPOST :: ">
+            <span class="description"></span><pre>ReadValueFromKeyInPOST</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_RenderFormThatCanToggleVisibility" title="RenderFormThatCanToggleVisibility :: ">
+            <span class="description"></span><pre>RenderFormThatCanToggleVisibility</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_RenderGetParam" title="RenderGetParam :: ">
+            <span class="description"></span><pre>RenderGetParam</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_SetCookie" title="SetCookie :: ">
+            <span class="description"></span><pre>SetCookie</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_ToggleVisibleStatus" title="ToggleVisibleStatus :: ">
+            <span class="description"></span><pre>ToggleVisibleStatus</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_UnsetCookie" title="UnsetCookie :: ">
+            <span class="description"></span><pre>UnsetCookie</pre>
+        </a>
+    </li>
+
+                                                </ul>
+        </li>
+        <li class="nav-header protected">» Protected
+            <ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
+        </li>
+        <li class="nav-header private">» Private
+            <ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="method private">
+                            <a href="#method_HasKeyInCOOKIE" title="HasKeyInCOOKIE :: ">
+                                <span class="description"></span><pre>HasKeyInCOOKIE</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method private">
+                            <a href="#method_HasKeyInGET" title="HasKeyInGET :: ">
+                                <span class="description"></span><pre>HasKeyInGET</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method private">
+                            <a href="#method_HasKeyInPOST" title="HasKeyInPOST :: ">
+                                <span class="description"></span><pre>HasKeyInPOST</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method private">
+                            <a href="#method_IsValueForControllerKeyInGETEqualsTheTestValue" title="IsValueForControllerKeyInGETEqualsTheTestValue :: ">
+                                <span class="description"></span><pre>IsValueForControllerKeyInGETEqualsTheTestValue</pre>
+                            </a>
+                        </li>
+                                                                                                                                                                                                                                                                                                                                                                                    </ul>
+        </li>
+        <li class="nav-header">
+            <i class="icon-custom icon-constant"></i> Constants
+            <ul>
+                            </ul>
+        </li>
+    </ul>
+
+
+        </div>
+
+        <div class="span8">
+            <div class="element class">
+                <h1>Navigation</h1>
+                <small style="display: block; text-align: right">
+                                                        </small>
+                <p class="short_description"></p>
+                <div class="details">
+                    <div class="long_description">
+                        
+                    </div>
+                    <table class="table table-bordered">
+                                                                                    <tr>
+                                    <th>
+                                        package
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                <p>Default</p>
+                                    </td>
+                                </tr>
+                                                                                                                                                                                </table>
+
+                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
+                                                                <a id="method___construct"></a>
+                        <div class="element clickable method public  method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+                            <h2>__construct</h2>
+                            <pre>__construct(\model\SessionHandler $sh) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$sh</h4>
+                                                <code><a href="../classes/model.SessionHandler.html">\model\SessionHandler</a></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_ClientTogglesVisibility"></a>
+                        <div class="element clickable method public  method_ClientTogglesVisibility" data-toggle="collapse" data-target=".method_ClientTogglesVisibility .collapse">
+                            <h2>ClientTogglesVisibility</h2>
+                            <pre>ClientTogglesVisibility() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_ClientWantsTheDownloadController"></a>
+                        <div class="element clickable method public  method_ClientWantsTheDownloadController" data-toggle="collapse" data-target=".method_ClientWantsTheDownloadController .collapse">
+                            <h2>ClientWantsTheDownloadController</h2>
+                            <pre>ClientWantsTheDownloadController() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_ClientWantsToDelete"></a>
+                        <div class="element clickable method public  method_ClientWantsToDelete" data-toggle="collapse" data-target=".method_ClientWantsToDelete .collapse">
+                            <h2>ClientWantsToDelete</h2>
+                            <pre>ClientWantsToDelete() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_ClientWantsToRepublish"></a>
+                        <div class="element clickable method public  method_ClientWantsToRepublish" data-toggle="collapse" data-target=".method_ClientWantsToRepublish .collapse">
+                            <h2>ClientWantsToRepublish</h2>
+                            <pre>ClientWantsToRepublish() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_ClientWantsToViewCode"></a>
+                        <div class="element clickable method public  method_ClientWantsToViewCode" data-toggle="collapse" data-target=".method_ClientWantsToViewCode .collapse">
+                            <h2>ClientWantsToViewCode</h2>
+                            <pre>ClientWantsToViewCode() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getControllerKey"></a>
+                        <div class="element clickable method public  method_getControllerKey" data-toggle="collapse" data-target=".method_getControllerKey .collapse">
+                            <h2>getControllerKey</h2>
+                            <pre>getControllerKey() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_GetDeleteControllerValue"></a>
+                        <div class="element clickable method public  method_GetDeleteControllerValue" data-toggle="collapse" data-target=".method_GetDeleteControllerValue .collapse">
+                            <h2>GetDeleteControllerValue</h2>
+                            <pre>GetDeleteControllerValue() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getDownLoadControllerValue"></a>
+                        <div class="element clickable method public  method_getDownLoadControllerValue" data-toggle="collapse" data-target=".method_getDownLoadControllerValue .collapse">
+                            <h2>getDownLoadControllerValue</h2>
+                            <pre>getDownLoadControllerValue() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_GetFileNameKey"></a>
+                        <div class="element clickable method public  method_GetFileNameKey" data-toggle="collapse" data-target=".method_GetFileNameKey .collapse">
+                            <h2>GetFileNameKey</h2>
+                            <pre>GetFileNameKey() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_GetFilesAddedValue"></a>
+                        <div class="element clickable method public  method_GetFilesAddedValue" data-toggle="collapse" data-target=".method_GetFilesAddedValue .collapse">
+                            <h2>GetFilesAddedValue</h2>
+                            <pre>GetFilesAddedValue() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_GetFilesKey"></a>
+                        <div class="element clickable method public  method_GetFilesKey" data-toggle="collapse" data-target=".method_GetFilesKey .collapse">
+                            <h2>GetFilesKey</h2>
+                            <pre>GetFilesKey() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_GetFilesModifiedValue"></a>
+                        <div class="element clickable method public  method_GetFilesModifiedValue" data-toggle="collapse" data-target=".method_GetFilesModifiedValue .collapse">
+                            <h2>GetFilesModifiedValue</h2>
+                            <pre>GetFilesModifiedValue() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_GetFilesRemovedValue"></a>
+                        <div class="element clickable method public  method_GetFilesRemovedValue" data-toggle="collapse" data-target=".method_GetFilesRemovedValue .collapse">
+                            <h2>GetFilesRemovedValue</h2>
+                            <pre>GetFilesRemovedValue() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_GetFormIdKey"></a>
+                        <div class="element clickable method public  method_GetFormIdKey" data-toggle="collapse" data-target=".method_GetFormIdKey .collapse">
+                            <h2>GetFormIdKey</h2>
+                            <pre>GetFormIdKey() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getGitControllerValue"></a>
+                        <div class="element clickable method public  method_getGitControllerValue" data-toggle="collapse" data-target=".method_getGitControllerValue .collapse">
+                            <h2>getGitControllerValue</h2>
+                            <pre>getGitControllerValue() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getIndexControllerValue"></a>
+                        <div class="element clickable method public  method_getIndexControllerValue" data-toggle="collapse" data-target=".method_getIndexControllerValue .collapse">
+                            <h2>getIndexControllerValue</h2>
+                            <pre>getIndexControllerValue() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_GetRepublishControllerValue"></a>
+                        <div class="element clickable method public  method_GetRepublishControllerValue" data-toggle="collapse" data-target=".method_GetRepublishControllerValue .collapse">
+                            <h2>GetRepublishControllerValue</h2>
+                            <pre>GetRepublishControllerValue() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_GetSessionHandler"></a>
+                        <div class="element clickable method public  method_GetSessionHandler" data-toggle="collapse" data-target=".method_GetSessionHandler .collapse">
+                            <h2>GetSessionHandler</h2>
+                            <pre>GetSessionHandler() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_GetShaKey"></a>
+                        <div class="element clickable method public  method_GetShaKey" data-toggle="collapse" data-target=".method_GetShaKey .collapse">
+                            <h2>GetShaKey</h2>
+                            <pre>GetShaKey() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_GetViewCodeControllerValue"></a>
+                        <div class="element clickable method public  method_GetViewCodeControllerValue" data-toggle="collapse" data-target=".method_GetViewCodeControllerValue .collapse">
+                            <h2>GetViewCodeControllerValue</h2>
+                            <pre>GetViewCodeControllerValue() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_GetVisibleStatusKey"></a>
+                        <div class="element clickable method public  method_GetVisibleStatusKey" data-toggle="collapse" data-target=".method_GetVisibleStatusKey .collapse">
+                            <h2>GetVisibleStatusKey</h2>
+                            <pre>GetVisibleStatusKey() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_GetVisibleStatusValueAsFalse"></a>
+                        <div class="element clickable method public  method_GetVisibleStatusValueAsFalse" data-toggle="collapse" data-target=".method_GetVisibleStatusValueAsFalse .collapse">
+                            <h2>GetVisibleStatusValueAsFalse</h2>
+                            <pre>GetVisibleStatusValueAsFalse() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_GetVisibleStatusValueAsTrue"></a>
+                        <div class="element clickable method public  method_GetVisibleStatusValueAsTrue" data-toggle="collapse" data-target=".method_GetVisibleStatusValueAsTrue .collapse">
+                            <h2>GetVisibleStatusValueAsTrue</h2>
+                            <pre>GetVisibleStatusValueAsTrue() </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_GetWebhookBySha"></a>
+                        <div class="element clickable method public  method_GetWebhookBySha" data-toggle="collapse" data-target=".method_GetWebhookBySha .collapse">
+                            <h2>GetWebhookBySha</h2>
+                            <pre>GetWebhookBySha(\model\WebhookCollection $w) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$w</h4>
+                                                <code><a href="../classes/model.WebhookCollection.html">\model\WebhookCollection</a></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_HasKeyInCOOKIE"></a>
+                        <div class="element clickable method private  method_HasKeyInCOOKIE" data-toggle="collapse" data-target=".method_HasKeyInCOOKIE .collapse">
+                            <h2>HasKeyInCOOKIE</h2>
+                            <pre>HasKeyInCOOKIE( $key) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$key</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_HasKeyInGET"></a>
+                        <div class="element clickable method private  method_HasKeyInGET" data-toggle="collapse" data-target=".method_HasKeyInGET .collapse">
+                            <h2>HasKeyInGET</h2>
+                            <pre>HasKeyInGET( $key) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$key</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_HasKeyInPOST"></a>
+                        <div class="element clickable method private  method_HasKeyInPOST" data-toggle="collapse" data-target=".method_HasKeyInPOST .collapse">
+                            <h2>HasKeyInPOST</h2>
+                            <pre>HasKeyInPOST( $key) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$key</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_IsValueForControllerKeyInGETEqualsTheTestValue"></a>
+                        <div class="element clickable method private  method_IsValueForControllerKeyInGETEqualsTheTestValue" data-toggle="collapse" data-target=".method_IsValueForControllerKeyInGETEqualsTheTestValue .collapse">
+                            <h2>IsValueForControllerKeyInGETEqualsTheTestValue</h2>
+                            <pre>IsValueForControllerKeyInGETEqualsTheTestValue( $testValue) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$testValue</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_IsVisibilityTrueOrFalse"></a>
+                        <div class="element clickable method public  method_IsVisibilityTrueOrFalse" data-toggle="collapse" data-target=".method_IsVisibilityTrueOrFalse .collapse">
+                            <h2>IsVisibilityTrueOrFalse</h2>
+                            <pre>IsVisibilityTrueOrFalse( $formId) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$formId</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_ReadValueFromKeyInCOOKIE"></a>
+                        <div class="element clickable method public  method_ReadValueFromKeyInCOOKIE" data-toggle="collapse" data-target=".method_ReadValueFromKeyInCOOKIE .collapse">
+                            <h2>ReadValueFromKeyInCOOKIE</h2>
+                            <pre>ReadValueFromKeyInCOOKIE( $key) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$key</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_ReadValueFromKeyInGET"></a>
+                        <div class="element clickable method public  method_ReadValueFromKeyInGET" data-toggle="collapse" data-target=".method_ReadValueFromKeyInGET .collapse">
+                            <h2>ReadValueFromKeyInGET</h2>
+                            <pre>ReadValueFromKeyInGET( $key) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$key</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_ReadValueFromKeyInPOST"></a>
+                        <div class="element clickable method public  method_ReadValueFromKeyInPOST" data-toggle="collapse" data-target=".method_ReadValueFromKeyInPOST .collapse">
+                            <h2>ReadValueFromKeyInPOST</h2>
+                            <pre>ReadValueFromKeyInPOST( $key) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$key</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_RenderFormThatCanToggleVisibility"></a>
+                        <div class="element clickable method public  method_RenderFormThatCanToggleVisibility" data-toggle="collapse" data-target=".method_RenderFormThatCanToggleVisibility .collapse">
+                            <h2>RenderFormThatCanToggleVisibility</h2>
+                            <pre>RenderFormThatCanToggleVisibility( $buttonName,  $visible,  $sha,  $formId) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$buttonName</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$visible</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$sha</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$formId</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_RenderGetParam"></a>
+                        <div class="element clickable method public  method_RenderGetParam" data-toggle="collapse" data-target=".method_RenderGetParam .collapse">
+                            <h2>RenderGetParam</h2>
+                            <pre>RenderGetParam( $key,  $value) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$key</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$value</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_SetCookie"></a>
+                        <div class="element clickable method public  method_SetCookie" data-toggle="collapse" data-target=".method_SetCookie .collapse">
+                            <h2>SetCookie</h2>
+                            <pre>SetCookie( $key,  $value) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$key</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$value</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_ToggleVisibleStatus"></a>
+                        <div class="element clickable method public  method_ToggleVisibleStatus" data-toggle="collapse" data-target=".method_ToggleVisibleStatus .collapse">
+                            <h2>ToggleVisibleStatus</h2>
+                            <pre>ToggleVisibleStatus( $visibleSatus,  $asString) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$visibleSatus</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$asString</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_UnsetCookie"></a>
+                        <div class="element clickable method public  method_UnsetCookie" data-toggle="collapse" data-target=".method_UnsetCookie .collapse">
+                            <h2>UnsetCookie</h2>
+                            <pre>UnsetCookie( $key) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$key</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                    
+                    
+                                                                <h3><i class="icon-custom icon-property"></i> Properties</h3>
+                                                    <a id="property_m_sessionhandler"> </a>
+                            <div class="element clickable property  private property_m_sessionhandler" data-toggle="collapse" data-target=".property_m_sessionhandler .collapse">
+                                <h2>m_sessionhandler</h2>
+                                <pre>m_sessionhandler : </pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_controllerKey"> </a>
+                            <div class="element clickable property  private property_controllerKey" data-toggle="collapse" data-target=".property_controllerKey .collapse">
+                                <h2>controllerKey</h2>
+                                <pre>controllerKey : </pre>
+                                <div class="labels">
+                                                                        <span class="label">static</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_indexControllerValue"> </a>
+                            <div class="element clickable property  private property_indexControllerValue" data-toggle="collapse" data-target=".property_indexControllerValue .collapse">
+                                <h2>indexControllerValue</h2>
+                                <pre>indexControllerValue : </pre>
+                                <div class="labels">
+                                                                        <span class="label">static</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_gitControllerValue"> </a>
+                            <div class="element clickable property  private property_gitControllerValue" data-toggle="collapse" data-target=".property_gitControllerValue .collapse">
+                                <h2>gitControllerValue</h2>
+                                <pre>gitControllerValue : </pre>
+                                <div class="labels">
+                                                                        <span class="label">static</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_republishControllerValue"> </a>
+                            <div class="element clickable property  private property_republishControllerValue" data-toggle="collapse" data-target=".property_republishControllerValue .collapse">
+                                <h2>republishControllerValue</h2>
+                                <pre>republishControllerValue : </pre>
+                                <div class="labels">
+                                                                        <span class="label">static</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_viewCodeControllerValue"> </a>
+                            <div class="element clickable property  private property_viewCodeControllerValue" data-toggle="collapse" data-target=".property_viewCodeControllerValue .collapse">
+                                <h2>viewCodeControllerValue</h2>
+                                <pre>viewCodeControllerValue : </pre>
+                                <div class="labels">
+                                                                        <span class="label">static</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_deleteControllerValue"> </a>
+                            <div class="element clickable property  private property_deleteControllerValue" data-toggle="collapse" data-target=".property_deleteControllerValue .collapse">
+                                <h2>deleteControllerValue</h2>
+                                <pre>deleteControllerValue : </pre>
+                                <div class="labels">
+                                                                        <span class="label">static</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_downLoadControllerValue"> </a>
+                            <div class="element clickable property  private property_downLoadControllerValue" data-toggle="collapse" data-target=".property_downLoadControllerValue .collapse">
+                                <h2>downLoadControllerValue</h2>
+                                <pre>downLoadControllerValue : </pre>
+                                <div class="labels">
+                                                                        <span class="label">static</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_shaKey"> </a>
+                            <div class="element clickable property  private property_shaKey" data-toggle="collapse" data-target=".property_shaKey .collapse">
+                                <h2>shaKey</h2>
+                                <pre>shaKey : </pre>
+                                <div class="labels">
+                                                                        <span class="label">static</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_filesKey"> </a>
+                            <div class="element clickable property  private property_filesKey" data-toggle="collapse" data-target=".property_filesKey .collapse">
+                                <h2>filesKey</h2>
+                                <pre>filesKey : </pre>
+                                <div class="labels">
+                                                                        <span class="label">static</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_filesAddedValue"> </a>
+                            <div class="element clickable property  private property_filesAddedValue" data-toggle="collapse" data-target=".property_filesAddedValue .collapse">
+                                <h2>filesAddedValue</h2>
+                                <pre>filesAddedValue : </pre>
+                                <div class="labels">
+                                                                        <span class="label">static</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_filesModifiedValue"> </a>
+                            <div class="element clickable property  private property_filesModifiedValue" data-toggle="collapse" data-target=".property_filesModifiedValue .collapse">
+                                <h2>filesModifiedValue</h2>
+                                <pre>filesModifiedValue : </pre>
+                                <div class="labels">
+                                                                        <span class="label">static</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_filesRemovedValue"> </a>
+                            <div class="element clickable property  private property_filesRemovedValue" data-toggle="collapse" data-target=".property_filesRemovedValue .collapse">
+                                <h2>filesRemovedValue</h2>
+                                <pre>filesRemovedValue : </pre>
+                                <div class="labels">
+                                                                        <span class="label">static</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_fileNameKey"> </a>
+                            <div class="element clickable property  private property_fileNameKey" data-toggle="collapse" data-target=".property_fileNameKey .collapse">
+                                <h2>fileNameKey</h2>
+                                <pre>fileNameKey : </pre>
+                                <div class="labels">
+                                                                        <span class="label">static</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_visibleStatusKey"> </a>
+                            <div class="element clickable property  private property_visibleStatusKey" data-toggle="collapse" data-target=".property_visibleStatusKey .collapse">
+                                <h2>visibleStatusKey</h2>
+                                <pre>visibleStatusKey : </pre>
+                                <div class="labels">
+                                                                        <span class="label">static</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_visibleStatusValueTrue"> </a>
+                            <div class="element clickable property  private property_visibleStatusValueTrue" data-toggle="collapse" data-target=".property_visibleStatusValueTrue .collapse">
+                                <h2>visibleStatusValueTrue</h2>
+                                <pre>visibleStatusValueTrue : </pre>
+                                <div class="labels">
+                                                                        <span class="label">static</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_visibleStatusValueFalse"> </a>
+                            <div class="element clickable property  private property_visibleStatusValueFalse" data-toggle="collapse" data-target=".property_visibleStatusValueFalse .collapse">
+                                <h2>visibleStatusValueFalse</h2>
+                                <pre>visibleStatusValueFalse : </pre>
+                                <div class="labels">
+                                                                        <span class="label">static</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_formIdKey"> </a>
+                            <div class="element clickable property  public property_formIdKey" data-toggle="collapse" data-target=".property_formIdKey .collapse">
+                                <h2>formIdKey</h2>
+                                <pre>formIdKey : </pre>
+                                <div class="labels">
+                                                                        <span class="label">static</span>                                </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        
+                                                    </th>
+                                                    <td>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                            </div>
+            </div>
+            <a id="\view\Navigation"></a>
+            <ul class="breadcrumb">
+                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
+                    
+    
+    <li><span class="divider">\</span><a href="../namespaces/view.html">view</a></li>
+
+                <li class="active"><span class="divider">\</span><a href="../classes/view.Navigation.html">Navigation</a></li>
+            </ul>
+        </div>
+    </div>
+
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Thu, 19 Nov 2015 09:51:55 +0000.<br/>
+    </footer>
+    </body>
+</html>
