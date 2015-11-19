@@ -9,6 +9,8 @@ System can handle incoming postrequest generated from a github webhook from deve
 System cna parse JSON to own php object. 100% identical JSON incoming.
 System store parsed data into own local archive for later visualization
 
+Properly working usecase!
+
 ######Usecase starts in IndexController by the if-statement below...
 
     <pre>
@@ -19,28 +21,52 @@ System store parsed data into own local archive for later visualization
     }
     </pre>
 
+####USECASE 2
 
+System is prepared for using Sessions
 
-
+######Usecase starts in IndexController by this code
 
 <pre>
-new \controller\SessionController($this->nav, $this->m_sessionHandler);
+    new \controller\SessionController($this->nav, $this->m_sessionHandler);
+</pre>
 
+####USECASE 3
+
+Views can handle to toggle visibility using Cookies.
+(Forms is generated effectiveness without string dependencies)
+
+Properly working usecase!
+<pre>
             $this->nav->ClientTogglesVisibility();
+</pre>
 
-            if($this->nav->ClientWantsTheDownloadController())
-            {
-                $downloadController = new \controller\DownloadController($this->nav);
-                $downloadController->DoDownload();
-            }
+####USECASE 4
 
-            if($this->nav->ClientWantsToRepublish())
-            {
-                $webhook = $this->nav->GetWebhookBySha($this->webhookCollection);
-                $republishController = new \controller\RepublishController($webhook, $this->nav);
-                $republishController->DoRepublish();
-            }
+Client can restore a previos file from commit history
+Properly working usecase!
 
+######Usecase starts in IndexController by the if-statement below...
+<pre>
+    if($this->nav->ClientWantsTheDownloadController())
+    {
+        $downloadController = new \controller\DownloadController($this->nav);
+        $downloadController->DoDownload();
+    }
+
+    if($this->nav->ClientWantsToRepublish())
+    {
+        $webhook = $this->nav->GetWebhookBySha($this->webhookCollection);
+        $republishController = new \controller\RepublishController($webhook, $this->nav);
+        $republishController->DoRepublish();
+    }
+</pre>
+
+####USECASE 5
+
+Client can view code from a previos file in commit history
+NOT 100% Properly working usecase!
+<pre>
             if($this->nav->ClientWantsToViewCode())
             {
                 $webhook = $this->nav->GetWebhookBySha($this->webhookCollection);
