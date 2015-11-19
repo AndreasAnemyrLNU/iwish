@@ -9,7 +9,7 @@ System can handle incoming postrequest generated from a github webhook from deve
 System cna parse JSON to own php object. 100% identical JSON incoming.
 System store parsed data into own local archive for later visualization
 
-######Usecase implement in IndexController here
+######Usecase starts in IndexController by the if-statement below...
 
     <pre>
     if($this->gitPayLoadView->DidGithubSendArchiveParamSetToTrue())
