@@ -4,7 +4,7 @@
 ##[More Documentation about project](./../../wiki)
 ##[Demo Installation](http://www.xponeras.se/1dv608/iwish/)
 ##[Introduction Youtube(Swedish)](https://www.youtube.com/watch?v=E3m2-Ryo-9Y&list=PLRFqBeKyQ8ovgqVC_MvLt1rVJVLRma_Ox)
-
+##[Klassdiagram 2015-11-19](https://github.com/AndreasAnemyrLNU/iwish/blob/master/documentation/IWISH_classdiagram_20151118.svg)
 
 ####USECASE 1
 
