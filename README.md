@@ -1,7 +1,7 @@
 # iwish
 ##Programming Project - Part of course 1DV608 - Linnaeus Iniversity...
 
-##[More Docuimentation about project](./wiki)
+##[More Docuimentation about project](./iwish/wiki)
 
 ####USECASE 1
 
