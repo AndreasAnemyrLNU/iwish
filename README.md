@@ -34,7 +34,8 @@ System is prepared for using Sessions
 ####USECASE 3
 
 Views can handle to toggle visibility using Cookies.
-(Forms is generated effectiveness without string dependencies)
+
+Forms is generated effectiveness without string dependencies
 
 Properly working usecase!
 <pre>
@@ -44,9 +45,11 @@ Properly working usecase!
 ####USECASE 4
 
 Client can restore a previos file from commit history
+
 Properly working usecase!
 
-######Usecase starts in IndexController by the if-statement below...
+######Usecase starts in IndexController by the two if-statements below...
+
 <pre>
     if($this->nav->ClientWantsTheDownloadController())
     {
@@ -66,6 +69,9 @@ Properly working usecase!
 
 Client can view code from a previos file in commit history
 NOT 100% Properly working usecase!
+
+######Usecase starts in IndexController by the if-statements below...
+
 <pre>
             if($this->nav->ClientWantsToViewCode())
             {
