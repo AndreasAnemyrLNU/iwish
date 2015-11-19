@@ -9,7 +9,7 @@ System can handle incoming postrequest generated from a github webhook from deve
 System cna parse JSON to own php object. 100% identical JSON incoming.
 System store parsed data into own local archive for later visualization
 
-    ######This if starts process  of usecase 1
+######Usecase implement in IndexController here
 
     <pre>
     if($this->gitPayLoadView->DidGithubSendArchiveParamSetToTrue())
@@ -18,6 +18,11 @@ System store parsed data into own local archive for later visualization
         $gitController->doParse($this->gitPayLoadView->GetPayLoad());
     }
     </pre>
+
+
+
+
+
 <pre>
 new \controller\SessionController($this->nav, $this->m_sessionHandler);
 
