@@ -67,7 +67,7 @@ class GitCommits
     {
      return
         "
-        <!--
+
         <div class='row'>
             <div class='col-xs-10 col-sm-10 col-md-10 col-lg-10'>
                 <dl>
@@ -97,7 +97,7 @@ class GitCommits
             <img src={$this->GetSender($w->getSender())->getAvatarUrl()} class='img-responsive img-circle' alt='Avatar Pic'>
         </div>
         </div>
-        -->
+
         <div class='row'>
             <div class='panel panel-success'>
                     <a href=?{$this->m_nav->RenderGetParam($this->m_nav->getControllerKey(), $this->m_nav->getDownLoadControllerValue())}&{$this->m_nav->RenderGetParam($this->m_nav->GetShaKey(), $w->getCommits()->getId())}
