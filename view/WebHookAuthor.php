@@ -4,6 +4,7 @@
  * User: AndreasAnemyr
  * Date: 2015-11-12
  * Time: 14:08
+ * @author Andreas Anemyr <andreas@anemyr.se>
  */
 
 namespace view;
@@ -17,7 +18,12 @@ class WebHookAuthor
     private $m_sha;
     private $m_formId;
 
-    public function __construct(\model\Author $a, \view\Navigation $n, $sha)
+    /**
+     * @param \model\Author $a
+     * @param Navigation $n
+     * @param $sha
+     */
+        public function __construct(\model\Author $a, \view\Navigation $n, $sha)
     {
         $this->m_author = $a;
         $this->m_nav = $n;
@@ -27,6 +33,10 @@ class WebHookAuthor
         $this->getHTML();
     }
 
+
+    /**
+     * @return string
+     */
     public function getHTML()
     {
         if(!$this->m_visible)

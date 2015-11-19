@@ -4,6 +4,7 @@
  * User: AndreasAnemyr
  * Date: 2015-11-10
  * Time: 18:19
+ * @author Andreas Anemyr <andreas@anemyr.se>
  */
 
 namespace model;
@@ -11,6 +12,9 @@ namespace model;
 
 class Committer
 {
+    /**
+     * @var
+     */
     private $name;
     private $email;
     private $username;

@@ -4,13 +4,23 @@
  * User: AndreasAnemyr
  * Date: 2015-11-11
  * Time: 21:26
+ * @author Andreas Anemyr <andreas@anemyr.se>
  */
 
 namespace view;
 
 
+/**
+ * Class indexPage
+ * @package view
+ */
 class indexPage
 {
+
+    /**
+     * @param $body
+     * @return string
+     */
     public function getHTML($body)
     {
         $bootstrapCDN      = new \view\BootstrapCDN();

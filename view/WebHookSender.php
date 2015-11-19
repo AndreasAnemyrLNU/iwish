@@ -4,6 +4,7 @@
  * User: AndreasAnemyr
  * Date: 2015-11-13
  * Time: 00:29
+ * @author Andreas Anemyr <andreas@anemyr.se>
  */
 
 namespace view;
@@ -17,6 +18,11 @@ class WebHookSender
     private $m_sha;
     private $m_formId;
 
+    /**
+     * @param \model\Sender $s
+     * @param Navigation $n
+     * @param $sha
+     */
     public function __construct(\model\Sender $s, \view\Navigation $n, $sha)
     {
         $this->m_sender = $s;
@@ -28,6 +34,9 @@ class WebHookSender
         $this->getHTML();
     }
 
+    /**
+     * @return string
+     */
     public function getHTML()
     {
         if(!$this->m_visible)

@@ -4,6 +4,7 @@
  * User: AndreasAnemyr
  * Date: 2015-11-11
  * Time: 01:22
+ * @author Andreas Anemyr <andreas@anemyr.se>
  */
 
 namespace model;
@@ -11,6 +12,9 @@ namespace model;
 
 class Sender
 {
+    /**
+     * @var
+     */
     private $login;
     private $id;
     private $avatar_url;

@@ -4,10 +4,14 @@
  * User: AndreasAnemyr...
  * Date: 2015-11-10
  * Time: 11:26
- *
+ * @author Andreas Anemyr <andreas@anemyr.se>
  */
 namespace controller;
 
+/**
+ * Class IndexController
+ * @package controller
+ */
 class IndexController
 {
     private $gitPayLoadView;
@@ -28,6 +32,9 @@ class IndexController
             $this->webhookCollection = $this->dal->Read();
     }
 
+    /**
+     * @return \view\GitCommits
+     */
     public function DoIndex()
     {
         try

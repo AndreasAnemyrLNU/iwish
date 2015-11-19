@@ -4,13 +4,21 @@
  * User: AndreasAnemyr
  * Date: 2015-11-10
  * Time: 18:21
+ * @author Andreas Anemyr <andreas@anemyr.se>
  */
 
 namespace model;
 
 
+/**
+ * Class Added
+ * @package model
+ */
 class Added
 {
+    /**
+     * @var
+     */
     private $m_added;
 
     /**

@@ -4,11 +4,16 @@
  * User: AndreasAnemyr
  * Date: 2015-11-11
  * Time: 12:18
+ * @author Andreas Anemyr <andreas@anemyr.se>
  */
 
 namespace view;
 
 
+/**
+ * Class GitPayload
+ * @package view
+ */
 class GitPayload
 {
     /***
@@ -16,8 +21,14 @@ class GitPayload
      */
     private static $archive = "archive";
 
+    /**
+     * @var string
+     */
     private static $payload = "payload";
 
+    /**
+     * @return bool
+     */
     public function DidGithubSendArchiveParamSetToTrue()
     {
         if(isset($_POST[self::$archive])) {
@@ -27,6 +38,10 @@ class GitPayload
             return false;
     }
 
+    /**
+     * @return mixed
+     * @throws \Exception
+     */
     public function GetPayLoad()
     {
         if(isset($_POST[self::$payload]))

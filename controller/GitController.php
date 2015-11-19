@@ -4,13 +4,22 @@
  * User: AndreasAnemyr
  * Date: 2015-11-11
  * Time: 11:59
+ * @author Andreas Anemyr <andreas@anemyr.se>
  */
+
 
 namespace controller;
 
-
+/**
+ * Class GitController
+ * @package controller
+ * @description
+ */
 class GitController
 {
+    /**
+     * @param $payload
+     */
     public function doParse($payload)
     {
         $jsonObj                    = json_decode($payload);
@@ -29,6 +38,7 @@ class GitController
         $jsonObjRepository          = $jsonObj->repository;
         $jsonPusher                 = $jsonObj->pusher;
         $jsonSender                 = $jsonObj->sender;
+
 
         $commits = new \model\Commits
         (
@@ -217,6 +227,7 @@ class GitController
             $jsonSender
         );
 
+        //TODO This solution should probably be repaced with som model to do this instead!
         file_put_contents('data/../data/webhook/' . $commits->getId(), serialize($webhook));
     }
 

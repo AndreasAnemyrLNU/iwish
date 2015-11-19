@@ -4,22 +4,54 @@
  * User: AndreasAnemyr
  * Date: 2015-11-10
  * Time: 15:25
+ * @author Andreas Anemyr <andreas@anemyr.se>
  */
 
 namespace model;
 
+//TODO Fix type in parmas below!!
 
 class Commits
 {
+    /**
+     * @var
+     */
     private $id;
+    /**
+     * @var
+     */
     private $distinct;
+    /**
+     * @var
+     */
     private $message;
+    /**
+     * @var
+     */
     private $timestamp;
+    /**
+     * @var
+     */
     private $url;
+    /**
+     * @var
+     */
     private $author;
+    /**
+     * @var
+     */
     private $committer;
+    /**
+     * @var
+     */
     private $added;
+    /**
+     * @var
+     */
     private $removed;
+    /**
+     * @var
+     */
     private $modified;
 
     /**
@@ -34,9 +66,7 @@ class Commits
      * @param $added
      * @param $removed
      * @param $modified
-
      */
-
     public function __construct($id, $distinct, $message, $timestamp, $url, $author, $committer, $added, $removed, $modified)
     {
         $this->id           = $id;

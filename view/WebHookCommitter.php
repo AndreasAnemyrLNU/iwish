@@ -4,6 +4,7 @@
  * User: AndreasAnemyr
  * Date: 2015-11-12
  * Time: 20:44
+ * @author Andreas Anemyr <andreas@anemyr.se>
  */
 
 namespace view;
@@ -17,6 +18,11 @@ class WebHookCommitter
     private $m_formId;
     private $m_visible;
 
+    /**
+     * @param \model\Committer $m_committer
+     * @param Navigation $n
+     * @param $sha
+     */
     public function __construct(\model\Committer $m_committer, \view\Navigation $n, $sha)
     {
         $this->m_committer = $m_committer;
@@ -27,6 +33,9 @@ class WebHookCommitter
         $this->getHTML();
     }
 
+    /**
+     * @return string
+     */
     public function getHTML()
     {
         if(!$this->m_visible)

@@ -4,13 +4,21 @@
  * User: AndreasAnemyr
  * Date: 2015-11-12
  * Time: 02:17
+ * @author Andreas Anemyr <andreas@anemyr.se>
  */
 
 namespace view;
 
 
+/**
+ * Class BootstrapCDN
+ * @package view
+ */
 class BootstrapCDN
 {
+    /**
+     * @return string
+     */
     public function getStyleheet()
     {
         return
@@ -20,6 +28,10 @@ class BootstrapCDN
                     integrity=\"sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==\"
                     crossorigin=\"anonymous\">";
     }
+
+    /**
+     * @return string
+     */
     public function getJavascript()
     {
         return

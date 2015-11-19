@@ -1,5 +1,7 @@
 <?php
 
+//@author Andreas Anemyr <andreas@anemyr.se>
+
 /**
  * Created by PhpStorm.
  * User: AndreasAnemyr
@@ -8,9 +10,19 @@
  */
 class ErrorHandler
 {
+    /**
+     * TODO ???
+     */
     const Error100 = 100;
+    /**
+     * TODO ???
+     */
     const Error200 = 200;
 
+    /**
+     * @param $errCode
+     * @return string
+     */
     public function GetErrorMessageByCode($errCode)
     {
         if($errCode == self::Error100)

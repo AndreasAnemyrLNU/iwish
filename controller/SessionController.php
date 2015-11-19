@@ -4,16 +4,25 @@
  * User: AndreasAnemyr
  * Date: 2015-11-16
  * Time: 09:15
+ * @author Andreas Anemyr <andreas@anemyr.se>
  */
 
 namespace controller;
 
 
+/**
+ * Class SessionController
+ * @package controller
+ */
 class SessionController
 {
     private $m_sessionHandler;
     private $m_nav;
 
+    /**
+     * @param \view\Navigation $n
+     * @param \model\SessionHandler $sh
+     */
     public function __construct(\view\Navigation $n, \model\SessionHandler $sh)
     {
         $this->m_sessionHandler = $sh;
@@ -24,6 +33,9 @@ class SessionController
         $this->DoSession();
     }
 
+    /**
+     *
+     */
     public function DoSession()
     {
         // This methode reacts client request...
@@ -37,5 +49,9 @@ class SessionController
 
     }
 
+    /**
+     * @param \view\WebhookCommits $wc
+     * @return \view\WebhookCommits
+     */
     public function GetTypeWebhookCommit(\view\WebhookCommits $wc){return $wc;}
 }

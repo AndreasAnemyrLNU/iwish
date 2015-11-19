@@ -4,6 +4,7 @@
  * User: AndreasAnemyr
  * Date: 2015-11-12
  * Time: 20:25
+ * @author Andreas Anemyr <andreas@anemyr.se>
  */
 
 namespace view;
@@ -18,6 +19,11 @@ class WebhookCommits
     private $m_visible;
     private $m_previewCode;
 
+    /**
+     * @param \model\Commits $commits
+     * @param Navigation $nav
+     * @param string $previewCode
+     */
     public function __construct(\model\Commits $commits, \view\Navigation $nav, $previewCode = '')
     {
         $this->m_nav = $nav;
@@ -29,11 +35,17 @@ class WebhookCommits
         $this->getHTML();
     }
 
+    /**
+     * @return \model\Commits
+     */
     public function GetCommits()
     {
         return $this->m_commits;
     }
 
+    /**
+     * @return string
+     */
     public function getHTML()
     {
         if(!$this->m_visible)
@@ -70,30 +82,53 @@ class WebhookCommits
          ";
     }
 
+    /**
+     * @param \model\Author $a
+     * @return string
+     */
     public function RenderAuthor(\model\Author $a)
     {
         $html = new \view\WebHookAuthor($a, $this->m_nav, $this->m_sha);
         return $html->getHTML();
     }
 
+    /**
+     * @param \model\Committer $c
+     * @return string
+     */
     public function RenderCommitter(\model\Committer $c)
     {
         $html = new \view\WebHookCommitter($c, $this->m_nav, $this->m_sha);
         return $html->getHTML();
     }
 
+    /**
+     * @param \model\Commits $c
+     * @param Navigation $n
+     * @return string
+     */
     public function RenderAdded(\model\Commits $c, \view\Navigation $n)
     {
         $html = new \view\WebHookAdded($c, $n, $this->m_previewCode);
         return $html->getHTML();
     }
 
+    /**
+     * @param \model\Commits $c
+     * @param Navigation $n
+     * @return string
+     */
     public function RenderRemoved(\model\Commits $c, \view\Navigation $n)
     {
         $html = new \view\WebHookRemoved($c, $n, $this->m_previewCode);
         return $html->getHTML();
     }
 
+    /**
+     * @param \model\Commits $c
+     * @param Navigation $n
+     * @return string
+     */
     public function RenderModified(\model\Commits $c, \view\Navigation $n)
     {
         $html = new \view\WebHookModified($c, $n, $this->m_previewCode);

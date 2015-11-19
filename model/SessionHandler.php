@@ -7,13 +7,21 @@ namespace model;
  * User: AndreasAnemyr
  * Date: 2015-11-16
  * Time: 09:13
+ * @author Andreas Anemyr <andreas@anemyr.se>
  */
 class SessionHandler
 {
     // Start Region :::: applications webhookCommitCollection
     //***************************************************************//
+
+    /**
+     * @var
+     */
     private $m_webhookCommitCollection;
 
+    /**
+     * @param \view\WebhookCommits $wc
+     */
     public function AddWebhookCommit(\view\WebhookCommits $wc)
     {
         // Just add if not exists before...
@@ -24,17 +32,25 @@ class SessionHandler
         }
     }
 
+    /**
+     * @return mixed
+     */
     public function GetWebhookCommitCollection()
     {
         return $this->m_webhookCommitCollection;
     }
 
+    /**
+     * @param \view\WebhookCommitCollection $wc
+     * @return \view\WebhookCommitCollection
+     */
     private function GetTypeWebhookCollection(\view\WebhookCommitCollection $wc)
     {
         return $wc;
     }
     //***************************************************************//
     // End Region :::: applications webhookCommitCollection
+
 
     public function ReloadSession()
     {

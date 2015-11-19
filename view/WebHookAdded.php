@@ -4,6 +4,7 @@
  * User: AndreasAnemyr
  * Date: 2015-11-12
  * Time: 20:55
+ * @author Andreas Anemyr <andreas@anemyr.se>
  */
 
 namespace view;
@@ -11,13 +12,37 @@ namespace view;
 
 class WebHookAdded
 {
+    /**
+     * @var bool
+     */
     private $m_visible;
+
+    /**
+     * @var \model\Commits
+     */
     private $m_commits;
+
+    /**
+     * @var Navigation
+     */
     private $m_nav;
+
+    /**
+     * @var mixed
+     */
     private $m_sha;
+
     private $m_formId;
+    /**
+     * @var string
+     */
     private $m_previewCode;
 
+    /**
+     * @param \model\Commits $committs
+     * @param Navigation $n
+     * @param string $previewCode
+     */
     public function __construct(\model\Commits $committs, \view\Navigation $n, $previewCode = '')
     {
         $this->m_commits = $committs;
@@ -29,7 +54,10 @@ class WebHookAdded
         $this->getHTML();
     }
 
-    public function getHTML()
+    /**
+     * @return string
+     */
+        public function getHTML()
     {
         if(!$this->m_visible)
             return $this->m_nav->RenderFormThatCanToggleVisibility
@@ -51,7 +79,11 @@ class WebHookAdded
         ";
     }
 
-    private function RenderAdded()
+    /**
+     * @return string
+     * @throws \Exception
+     */
+        private function RenderAdded()
     {
         $files = $this->m_commits->getAdded()->getAdded();
 
@@ -70,7 +102,12 @@ class WebHookAdded
         return $ret;
     }
 
-    private function RenderFilesLi($file, $previewCode)
+    /**
+     * @param $file
+     * @param $previewCode
+     * @return string
+     */
+        private function RenderFilesLi($file, $previewCode)
     {
         return "<li>
                     <p>$file</p>

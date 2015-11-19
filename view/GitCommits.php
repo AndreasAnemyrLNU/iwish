@@ -4,6 +4,7 @@
  * User: AndreasAnemyr
  * Date: 2015-11-11
  * Time: 22:43
+ * @author Andreas Anemyr <andreas@anemyr.se>
  */
 
 namespace view;
@@ -11,12 +12,40 @@ namespace view;
 
 class GitCommits
 {
+    /**
+     * @var \model\WebhookCollection
+     */
     private $m_webhookCollection;
+    /**
+     * @var Navigation
+     */
     private $m_nav;
+    /**
+     * @var string
+     */
     private $m_previewCode;
+    /**
+     * @var \Exception
+     */
     private $m_exception;
+    /**
+     * @var \ErrorHandler
+     */
     private $m_errorHandler;
 
+    /**
+     * @param \model\WebhookCollection $webhookCollection
+     * @param Navigation $n
+     * @param string $previewCode
+     * @param \Exception|null $exception
+     */
+
+    /**
+     * @param \model\WebhookCollection $webhookCollection
+     * @param Navigation $n
+     * @param string $previewCode
+     * @param \Exception|null $exception
+     */
     public function __construct(\model\WebhookCollection $webhookCollection, \view\Navigation $n, $previewCode ="", \Exception $exception = null)
     {
         $this->m_errorHandler = new \ErrorHandler();
@@ -26,6 +55,9 @@ class GitCommits
         $this->m_exception = $exception;
     }
 
+    /**
+     * @return string
+     */
     public function getHTML()
     {
 
@@ -52,6 +84,9 @@ class GitCommits
         </div>";
     }
 
+    /**
+     * @return string
+     */
     private function ExtractWebhook()
     {
         $webhooks = $this->m_webhookCollection->GetWebhooks();
@@ -63,6 +98,10 @@ class GitCommits
         return $ret;
     }
 
+    /**
+     * @param \model\Webhook $w
+     * @return string
+     */
     private function RenderWebHook(\model\Webhook $w)
     {
      return
@@ -111,16 +150,30 @@ class GitCommits
         ";
     }
 
+    /**
+     * @param \model\Repository $repository
+     * @return \model\Repository
+     */
     private function GetRepository(\model\Repository $repository)
     {
         return $repository;
     }
 
+    /**
+     * @param \model\Sender $sender
+     * @return \model\Sender
+     */
     private function GetSender(\model\Sender $sender)
     {
         return $sender;
     }
 
+    /**
+     * @param \model\Commits $c
+     * @param Navigation $nav
+     * @param string $previewCode
+     * @return string
+     */
     private function RenderCommits(\model\Commits $c, \view\Navigation $nav, $previewCode = "")
     {
         $wc = new \view\WebhookCommits($c, $nav, $previewCode);
@@ -128,18 +181,31 @@ class GitCommits
         return  $wc->getHTML();
     }
 
+    /**
+     * @param \model\Repository $r
+     * @param $sha
+     * @return string
+     */
     private function RenderRepository(\model\Repository $r, $sha)
     {
         $html   = new \view\WebHookRepository($r, $this->m_nav, $sha);
         return  $html->getHTML();
     }
 
+    /**
+     * @param \model\Sender $s
+     * @param $sha
+     * @return string
+     */
     private function RenderSender(\model\Sender $s, $sha)
     {
         $html   = new \view\WebHookSender($s, $this->m_nav, $sha);
         return  $html->getHTML();
     }
 
+    /**
+     * @return string
+     */
     private function ShowExistingErrorMessagesIfExceptionExists()
     {
         if($this->m_exception != null)

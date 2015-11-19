@@ -4,17 +4,38 @@
  * User: AndreasAnemyr
  * Date: 2015-11-15
  * Time: 11:48
+ * @author Andreas Anemyr <andreas@anemyr.se>
  */
 
 namespace model;
 
 
+/**
+ * Class RepublishFile
+ * @package model
+ */
 class RepublishFile
 {
+    /**
+     * @var Webhook
+     */
     private $webhook;
+
+    /**
+     * @var
+     */
     private $currentCollection;
+
+    /**
+     * @var
+     */
     private $file;
 
+    /**
+     * @param Webhook $w
+     * @param $currentCollection
+     * @param $file
+     */
     public function __construct(\model\Webhook $w, $currentCollection, $file)
     {
         $this->webhook = $w;
@@ -23,6 +44,9 @@ class RepublishFile
         $this->RepublishFile();
     }
 
+    /**
+     *
+     */
     public function RepublishFile()
     {
         //TODO Replace hardcoded string for root with dynamic stuff instead!

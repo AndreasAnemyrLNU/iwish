@@ -4,8 +4,11 @@
  * User: AndreasAnemyr
  * Date: 2015-11-10
  * Time: 11:11
- *
+ *@author Andreas Anemyr <andreas@anemyr.se>
  */
+    error_reporting(0);
+
+
 
     require_once("ErrorHandler.php");
 

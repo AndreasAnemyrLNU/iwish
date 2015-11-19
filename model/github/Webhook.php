@@ -4,6 +4,7 @@
  * User: AndreasAnemyr
  * Date: 2015-11-10
  * Time: 14:30
+ * @author Andreas Anemyr <andreas@anemyr.se>
  */
 
 namespace model;
@@ -25,6 +26,21 @@ class Webhook
     private $m_pusher;
     private $m_sender;
 
+    /**
+     * @param $ref
+     * @param $before
+     * @param $after
+     * @param $created
+     * @param $deleted
+     * @param $forced
+     * @param $base_ref
+     * @param $compare
+     * @param Commits $commits
+     * @param HeadCommit $headCommit
+     * @param Repository $repository
+     * @param Pusher $pusher
+     * @param Sender $sender
+     */
     public function __construct(
         $ref,
         $before,

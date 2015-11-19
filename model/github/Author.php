@@ -4,13 +4,26 @@
  * User: AndreasAnemyr...
  * Date: 2015-11-10
  * Time: 17:57
+ * @author Andreas Anemyr <andreas@anemyr.se>
  */
 namespace model;
 class Author
 {
+    /**
+     * @var
+     */
     private $m_name;
+
+    /**
+     * @var
+     */
     private $m_emial;
+
+    /**
+     * @var
+     */
     private $m_username;
+
     /**
      * author constructor...
      * @param $name
@@ -47,5 +60,4 @@ class Author
     {
         return $this->m_username;
     }
-
 }

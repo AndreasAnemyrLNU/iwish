@@ -4,6 +4,7 @@
  * User: AndreasAnemyr
  * Date: 2015-11-12
  * Time: 22:41
+ * @author Andreas Anemyr <andreas@anemyr.se>
  */
 
 namespace view;
@@ -17,6 +18,11 @@ class WebHookModified
     private $m_formId;
     private $m_previewCode;
 
+    /**
+     * @param \model\Commits $committs
+     * @param Navigation $n
+     * @param $previewCode
+     */
     public function __construct(\model\Commits $committs, \view\Navigation $n, $previewCode)
     {
         $this->m_commits = $committs;
@@ -28,6 +34,9 @@ class WebHookModified
         $this->getHTML();
     }
 
+    /**
+     * @return string
+     */
     public function getHTML()
     {
         if(!$this->m_visible)
@@ -49,6 +58,9 @@ class WebHookModified
         ";
     }
 
+    /**
+     * @return string
+     */
     private function RenderModified()
     {
         $files = $this->m_commits->getModified()->getModified();
@@ -61,6 +73,10 @@ class WebHookModified
         return $ret;
     }
 
+    /**
+     * @param $file
+     * @return string
+     */
     private function RenderFilesLi($file)
     {
         return "<li>

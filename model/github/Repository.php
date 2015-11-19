@@ -4,6 +4,7 @@
  * User: AndreasAnemyr
  * Date: 2015-11-10
  * Time: 21:14
+ * @author Andreas Anemyr <andreas@anemyr.se>
  */
 
 namespace model;
@@ -14,6 +15,9 @@ class Repository
     private $id;
     private $name;
     private $full_name;
+    /**
+     * @var owner
+     */
     private $owner;
     private $private;
     private $html_url;

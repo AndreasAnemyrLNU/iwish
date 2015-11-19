@@ -4,14 +4,25 @@
  * User: AndreasAnemyr
  * Date: 2015-11-10
  * Time: 21:17
+ * @author Andreas Anemyr <andreas@anemyr.se>
  */
 
 namespace model;
 
 
+/**
+ * Class Owner
+ * @package model
+ */
 class Owner
 {
+    /**
+     * @var
+     */
     private $name;
+    /**
+     * @var
+     */
     private $email;
 
     /**

@@ -4,11 +4,16 @@
  * User: AndreasAnemyr
  * Date: 2015-11-12
  * Time: 09:18
+ * @author Andreas Anemyr <andreas@anemyr.se>
  */
 
 namespace view;
 
 
+/**
+ * Class JqueryCDN
+ * @package view
+ */
 class JqueryCDN
 {
     public function getJavascript()

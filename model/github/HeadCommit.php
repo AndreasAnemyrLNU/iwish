@@ -4,22 +4,54 @@
  * User: AndreasAnemyr
  * Date: 2015-11-11
  * Time: 10:46
+ * @author Andreas Anemyr <andreas@anemyr.se>
  */
 
 namespace model;
 
+//TODO Fix types in phpDocs.....
 
 class HeadCommit
 {
+    /**
+     * @var
+     */
     private $m_id;
+    /**
+     * @var
+     */
     private $m_distinct;
+    /**
+     * @var
+     */
     private $m_message;
+    /**
+     * @var
+     */
     private $m_timestamp;
+    /**
+     * @var
+     */
     private $m_url;
+    /**
+     * @var
+     */
     private $m_author;
+    /**
+     * @var
+     */
     private $m_committer;
+    /**
+     * @var
+     */
     private $m_added;
+    /**
+     * @var
+     */
     private $m_removed;
+    /**
+     * @var
+     */
     private $m_modified;
 
     /**

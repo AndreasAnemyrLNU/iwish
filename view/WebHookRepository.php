@@ -4,6 +4,7 @@
  * User: AndreasAnemyr
  * Date: 2015-11-12
  * Time: 22:46
+ * @author Andreas Anemyr <andreas@anemyr.se>
  */
 
 namespace view;
@@ -17,6 +18,11 @@ class WebHookRepository
     private $m_sha;
     private $m_formId;
 
+    /**
+     * @param \model\Repository $r
+     * @param Navigation $n
+     * @param $sha
+     */
     public function __construct(\model\Repository $r, \view\Navigation $n, $sha)
 
     {
@@ -29,6 +35,9 @@ class WebHookRepository
         $this->getHTML();
     }
 
+    /**
+     * @return string
+     */
     public function getHTML()
     {
         if(!$this->m_visible)
