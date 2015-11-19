@@ -1,6 +1,7 @@
 # iwish
 ##Programming Project - Part of course 1DV608 - Linnaeus Iniversity...
 
+##[More Docuimentation about project](./wiki)
 
 ####USECASE 1
 
@@ -17,3 +18,28 @@ System store parsed data into own local archive for later visualization
         $gitController->doParse($this->gitPayLoadView->GetPayLoad());
     }
     </pre>
+<pre>
+new \controller\SessionController($this->nav, $this->m_sessionHandler);
+
+            $this->nav->ClientTogglesVisibility();
+
+            if($this->nav->ClientWantsTheDownloadController())
+            {
+                $downloadController = new \controller\DownloadController($this->nav);
+                $downloadController->DoDownload();
+            }
+
+            if($this->nav->ClientWantsToRepublish())
+            {
+                $webhook = $this->nav->GetWebhookBySha($this->webhookCollection);
+                $republishController = new \controller\RepublishController($webhook, $this->nav);
+                $republishController->DoRepublish();
+            }
+
+            if($this->nav->ClientWantsToViewCode())
+            {
+                $webhook = $this->nav->GetWebhookBySha($this->webhookCollection);
+                $viewCodeController = new \controller\ViewCodeController($webhook, $this->nav);
+                $previewCode = $viewCodeController->DoViewCode();
+            }
+</pre>
