@@ -6,7 +6,7 @@
 ####USECASE 1
 
 System can handle incoming postrequest generated from a github webhook from developers own repository
-System cna parse JSON to own php object. 100% identical JSON incoming.
+System can parse JSON to own php object. 100% identical JSON incoming.
 System store parsed data into own local archive for later visualization
 
 Properly working usecase!
