@@ -2,6 +2,7 @@
 ##Programming Project - Part of course 1DV608 - Linnaeus Iniversity...
 
 ##[More Documentation about project](./../../wiki)
+##[Demo Installation](http://www.xponeras.se/1dv608/iwish/)
 ##[Introduction Youtube(Swedish)](https://www.youtube.com/watch?v=E3m2-Ryo-9Y&list=PLRFqBeKyQ8ovgqVC_MvLt1rVJVLRma_Ox)
 
 
